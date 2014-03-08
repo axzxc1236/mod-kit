@@ -138,19 +138,19 @@
 
         If CheckBox2.Enabled And CheckBox2.Checked = True Then
             If ComboBox2.Text = "latest" Then ComboBox2.Text = "1.57-dev-" & My.Resources.mods_ver.Invtweak172latest
-            If My.Computer.FileSystem.FileExists(Form1.TextBox1.Text & "\mods\InventoryTweaks-" & ComboBox2.Text & ".jar") Then My.Computer.FileSystem.DeleteFile(Form1.TextBox1.Text & "\mods" & "InventoryTweaks-" & ComboBox2.Text & ".jar")
+            If My.Computer.FileSystem.FileExists(Form1.TextBox1.Text & "\mods\InventoryTweaks-" & ComboBox2.Text & ".jar") Then My.Computer.FileSystem.DeleteFile(Form1.TextBox1.Text & "\mods\" & "InventoryTweaks-" & ComboBox2.Text & ".jar")
             My.Computer.Network.DownloadFile("http://build.technicpack.net/job/Inventory-Tweaks/" & Val(My.Resources.mods_ver.Invtweak172latest) & "/artifact/build/libs/InventoryTweaks-" & ComboBox2.Text & ".jar",
                                               Form1.TextBox1.Text & "\mods\" & "InventoryTweaks-" & ComboBox2.Text & ".jar")
         End If
 
         If CheckBox3.Enabled And CheckBox3.Checked = True Then
             If My.Computer.FileSystem.FileExists(Form1.TextBox1.Text & "\mods\" & "voxelmap-1.7.2-1.0.jar") Then My.Computer.FileSystem.DeleteFile(Form1.TextBox1.Text & "\mods\" & "voxelmap-1.7.2-1.0.jar")
-            My.Computer.Network.DownloadFile("https://github.com/axzxc1236/mod-kit/raw/mods/voxelmap/voxelmap-1.7.2-1.0.jar",Form1.TextBox1.Text & "\mods\" & "voxelmap-1.7.2-1.0.jar")
+            My.Computer.Network.DownloadFile("https://dl.dropboxusercontent.com/s/boitpzvszpbsqfx/voxelmap-1.7.2-1.0.jar?dl=1&token_hash=AAF1ZA2AhwjhslkjEfT9kSk_qqfxduqviI4JGhgtg7M9Bw", Form1.TextBox1.Text & "\mods\" & "voxelmap-1.7.2-1.0.jar")
         End If
 
         If CheckBox4.Enabled And CheckBox4.Checked = True Then
-            If ComboBox4.Text = "latest" Then ComboBox4.Text = "3.0.8" & My.Resources.mods_ver.Invtweak172latest
-            If My.Computer.FileSystem.FileExists(Form1.TextBox1.Text & "\mods\[1.7.2]DamageIndicatorsMod-" & ComboBox4.Text & ".jar") Then My.Computer.FileSystem.DeleteFile(Form1.TextBox1.Text & "\mods" & "InventoryTweaks-" & ComboBox2.Text & ".jar")
+            If ComboBox4.Text = "latest" Then ComboBox4.Text = "3.0." & My.Resources.mods_ver.DI172latest
+            If My.Computer.FileSystem.FileExists(Form1.TextBox1.Text & "\mods\[1.7.2]DamageIndicatorsMod-" & ComboBox4.Text & ".jar") Then My.Computer.FileSystem.DeleteFile(Form1.TextBox1.Text & "\mods\" & "InventoryTweaks-" & ComboBox2.Text & ".jar")
             My.Computer.Network.DownloadFile("https://dl.dropboxusercontent.com/u/74770478/%5B1.7.2%5DDamageIndicatorsMod-" & ComboBox4.Text & ".jar",
                                               Form1.TextBox1.Text & "\mods\" & "[1.7.2]DamageIndicatorsMod-" & ComboBox4.Text & ".jar")
         End If
