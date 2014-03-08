@@ -22,7 +22,7 @@
     End Sub
 
     Private Sub Ver172_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedDialog
 
         'mod1 - Forge
         ComboBox1.Items.Add("latest")
@@ -116,13 +116,14 @@
 
         Dim count, current As Short
         current = 1
-        If CheckBox1.Enabled = True And CheckBox1.Checked = True Then count = count + 1
-        If CheckBox2.Enabled = True And CheckBox2.Checked = True Then count = count + 1
-        If CheckBox3.Enabled = True And CheckBox3.Checked = True Then count = count + 1
-        If CheckBox4.Enabled = True And CheckBox4.Checked = True Then count = count + 1
-        If Not My.Computer.FileSystem.FileExists(Form1.TextBox1.Text & "\libraries\org\scala-lang\scala-compiler\2.10.2\scala-compiler-2.10.2.jar") Then count = count + 1
-        If Not My.Computer.FileSystem.FileExists(Form1.TextBox1.Text & "\libraries\org\scala-lang\scala-library\2.10.2\scala-library-2.10.2.jar") Then count = count + 1
-        If Not My.Computer.FileSystem.FileExists(Form1.TextBox1.Text & "\libraries\net\minecraftforge\minecraftforge\" & ComboBox1.Text & "\minecraftforge-" & ComboBox1.Text & ".jar") Then count = count + 1
+        If CheckBox1.Enabled = True And CheckBox1.Checked = True Then count += 1
+        If CheckBox2.Enabled = True And CheckBox2.Checked = True Then count += 1
+        If CheckBox3.Enabled = True And CheckBox3.Checked = True Then count += 1
+        If CheckBox4.Enabled = True And CheckBox4.Checked = True Then count += 1
+        If CheckBox5.Enabled = True And CheckBox4.Checked = True Then count += 1
+        If Not My.Computer.FileSystem.FileExists(Form1.TextBox1.Text & "\libraries\org\scala-lang\scala-compiler\2.10.2\scala-compiler-2.10.2.jar") Then count += 1
+        If Not My.Computer.FileSystem.FileExists(Form1.TextBox1.Text & "\libraries\org\scala-lang\scala-library\2.10.2\scala-library-2.10.2.jar") Then count += 1
+        If Not My.Computer.FileSystem.FileExists(Form1.TextBox1.Text & "\libraries\net\minecraftforge\minecraftforge\" & ComboBox1.Text & "\minecraftforge-" & ComboBox1.Text & ".jar") Then count += 1
 
         If Not My.Computer.FileSystem.FileExists(Form1.TextBox1.Text & "\libraries\org\scala-lang\scala-compiler\2.10.2\scala-compiler-2.10.2.jar") Then
             Me.Name = current & " of " & count & "安裝scala-compiler"
@@ -171,6 +172,14 @@
             current += 1
         End If
 
+        If CheckBox5.Enabled And CheckBox5.Checked = True Then
+            Me.Name = current & " of " & count & "安裝bspkrsCore"
+            If My.Computer.FileSystem.FileExists(Form1.TextBox1.Text & "\mods\[1.7.2]bspkrsCore-universal-6.0(1.7.2).jar") Then My.Computer.FileSystem.DeleteFile(Form1.TextBox1.Text & "\mods\" & "[1.7.2]bspkrsCore-universal-6.0(1.7.2).jar")
+            My.Computer.Network.DownloadFile("http://bspk.rs/MC/bspkrsCore/[1.7.2]bspkrsCore-universal-6.0(1.7.2).jar",
+                                              Form1.TextBox1.Text & "\mods\[1.7.2]bspkrsCore-universal-6.0(1.7.2).jar")
+            current += 1
+        End If
+
         MsgBox("Done!")
 
     End Sub
@@ -213,6 +222,7 @@
         CheckBox2.Checked = True
         CheckBox3.Checked = True
         CheckBox4.Checked = True
+        CheckBox5.Checked = True
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
@@ -220,5 +230,6 @@
         CheckBox2.Checked = False
         CheckBox3.Checked = False
         CheckBox4.Checked = False
+        CheckBox5.Checked = False
     End Sub
 End Class

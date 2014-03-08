@@ -22,6 +22,7 @@ Partial Class Ver172
     '請不要使用程式碼編輯器進行修改。
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Ver172))
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.CheckBox3 = New System.Windows.Forms.CheckBox()
@@ -44,178 +45,118 @@ Partial Class Ver172
         '
         'CheckBox1
         '
-        Me.CheckBox1.AutoSize = True
+        resources.ApplyResources(Me.CheckBox1, "CheckBox1")
         Me.CheckBox1.Checked = True
         Me.CheckBox1.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox1.Location = New System.Drawing.Point(12, 12)
         Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(51, 16)
-        Me.CheckBox1.TabIndex = 0
-        Me.CheckBox1.Text = "Forge"
         Me.CheckBox1.UseVisualStyleBackColor = True
         '
         'CheckBox2
         '
-        Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Location = New System.Drawing.Point(12, 34)
+        resources.ApplyResources(Me.CheckBox2, "CheckBox2")
         Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(104, 16)
-        Me.CheckBox2.TabIndex = 1
-        Me.CheckBox2.Text = "Inventory tweaks"
         Me.CheckBox2.UseVisualStyleBackColor = True
         '
         'CheckBox3
         '
-        Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.Location = New System.Drawing.Point(12, 56)
+        resources.ApplyResources(Me.CheckBox3, "CheckBox3")
         Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(72, 16)
-        Me.CheckBox3.TabIndex = 2
-        Me.CheckBox3.Text = "Voxelmap"
         Me.CheckBox3.UseVisualStyleBackColor = True
         '
         'CheckBox4
         '
-        Me.CheckBox4.AutoSize = True
-        Me.CheckBox4.Location = New System.Drawing.Point(12, 78)
+        resources.ApplyResources(Me.CheckBox4, "CheckBox4")
         Me.CheckBox4.Name = "CheckBox4"
-        Me.CheckBox4.Size = New System.Drawing.Size(111, 16)
-        Me.CheckBox4.TabIndex = 3
-        Me.CheckBox4.Text = "Damage Indicators"
         Me.CheckBox4.UseVisualStyleBackColor = True
         '
         'ComboBox1
         '
+        resources.ApplyResources(Me.ComboBox1, "ComboBox1")
         Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(157, 10)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(115, 20)
-        Me.ComboBox1.TabIndex = 6
         '
         'Label1
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(122, 13)
+        resources.ApplyResources(Me.Label1, "Label1")
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(29, 12)
-        Me.Label1.TabIndex = 7
-        Me.Label1.Text = "版本"
         '
         'Label2
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(122, 35)
+        resources.ApplyResources(Me.Label2, "Label2")
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(29, 12)
-        Me.Label2.TabIndex = 8
-        Me.Label2.Text = "版本"
         '
         'ComboBox2
         '
+        resources.ApplyResources(Me.ComboBox2, "ComboBox2")
         Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(157, 32)
         Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(115, 20)
-        Me.ComboBox2.TabIndex = 9
         '
         'Label3
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(122, 57)
+        resources.ApplyResources(Me.Label3, "Label3")
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(29, 12)
-        Me.Label3.TabIndex = 10
-        Me.Label3.Text = "版本"
         '
         'Label4
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(122, 79)
+        resources.ApplyResources(Me.Label4, "Label4")
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(29, 12)
-        Me.Label4.TabIndex = 11
-        Me.Label4.Text = "版本"
         '
         'ComboBox3
         '
+        resources.ApplyResources(Me.ComboBox3, "ComboBox3")
         Me.ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Location = New System.Drawing.Point(157, 54)
         Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(115, 20)
-        Me.ComboBox3.TabIndex = 12
         '
         'ComboBox4
         '
+        resources.ApplyResources(Me.ComboBox4, "ComboBox4")
         Me.ComboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox4.FormattingEnabled = True
-        Me.ComboBox4.Location = New System.Drawing.Point(157, 76)
         Me.ComboBox4.Name = "ComboBox4"
-        Me.ComboBox4.Size = New System.Drawing.Size(115, 20)
-        Me.ComboBox4.TabIndex = 13
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(12, 224)
+        resources.ApplyResources(Me.Button1, "Button1")
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 14
-        Me.Button1.Text = "安裝"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(93, 224)
+        resources.ApplyResources(Me.Button2, "Button2")
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 15
-        Me.Button2.Text = "全部勾選"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(174, 224)
+        resources.ApplyResources(Me.Button3, "Button3")
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
-        Me.Button3.TabIndex = 16
-        Me.Button3.Text = "全部取消"
         Me.Button3.UseVisualStyleBackColor = True
         '
         'ComboBox5
         '
+        resources.ApplyResources(Me.ComboBox5, "ComboBox5")
         Me.ComboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox5.FormattingEnabled = True
-        Me.ComboBox5.Location = New System.Drawing.Point(157, 98)
         Me.ComboBox5.Name = "ComboBox5"
-        Me.ComboBox5.Size = New System.Drawing.Size(115, 20)
-        Me.ComboBox5.TabIndex = 19
         '
         'Label5
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(122, 101)
+        resources.ApplyResources(Me.Label5, "Label5")
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(29, 12)
-        Me.Label5.TabIndex = 18
-        Me.Label5.Text = "版本"
         '
         'CheckBox5
         '
-        Me.CheckBox5.AutoSize = True
-        Me.CheckBox5.Location = New System.Drawing.Point(12, 100)
+        resources.ApplyResources(Me.CheckBox5, "CheckBox5")
         Me.CheckBox5.Name = "CheckBox5"
-        Me.CheckBox5.Size = New System.Drawing.Size(77, 16)
-        Me.CheckBox5.TabIndex = 17
-        Me.CheckBox5.Text = "bspkrsCore"
         Me.CheckBox5.UseVisualStyleBackColor = True
         '
         'Ver172
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
+        resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(284, 259)
         Me.Controls.Add(Me.ComboBox5)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.CheckBox5)
@@ -235,7 +176,6 @@ Partial Class Ver172
         Me.Controls.Add(Me.CheckBox2)
         Me.Controls.Add(Me.CheckBox1)
         Me.Name = "Ver172"
-        Me.Text = "Ver172"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
