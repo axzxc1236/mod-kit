@@ -46,10 +46,10 @@
 
         'combo4
         ComboBox4.Items.Add("latest")
-        For i = 8 To 0 Step -1
-            ComboBox4.Items.Add("v3.0." & i)
+        For i = Val(My.Resources.mods_ver.DI172latest) To Val(My.Resources.mods_ver.DI172min) Step -1
+            ComboBox4.Items.Add("3.0." & i)
         Next
-        ComboBox4.Items.Remove("v3.0.1")
+        ComboBox4.Items.Remove("3.0.1")
         ComboBox4.Text = "latest"
 
 
@@ -77,19 +77,19 @@
     End Sub
 
     Private Sub Button1_Click(ByVal sender As Object, ByVal e As EventArgs) Handles Button1.Click
-        'If CheckBox1.Checked = True Then
-        '    'forge
-        '    If My.Computer.FileSystem.DirectoryExists(Form1.Text & "\mods") Then
-        '        Dim choose As SByte
-        '        choose = MsgBox("建議先刪除mods資料夾(避免崩潰)再繼續，要繼續嗎?", MsgBoxStyle.YesNo)
-        '        If choose = 6 Then Call install()
-        '    Else
-        '        Call install()
-        '    End If
-        'Else
-        '    'vanilla
-        '    Call install_vanilla()
-        'End If
+        If CheckBox1.Checked = True Then
+            'forge
+            If My.Computer.FileSystem.DirectoryExists(Form1.Text & "\mods") Then
+                Dim choose As SByte
+                choose = MsgBox("建議先刪除mods資料夾(避免崩潰)再繼續，要繼續嗎?", MsgBoxStyle.YesNo)
+                If choose = 6 Then Call install()
+            Else
+                Call install()
+            End If
+        Else
+            'vanilla
+            Call install_vanilla()
+        End If
 
     End Sub
 
@@ -147,6 +147,14 @@
             If My.Computer.FileSystem.FileExists(Form1.TextBox1.Text & "\mods\" & "voxelmap-1.7.2-1.0.jar") Then My.Computer.FileSystem.DeleteFile(Form1.TextBox1.Text & "\mods\" & "voxelmap-1.7.2-1.0.jar")
             My.Computer.Network.DownloadFile("https://github.com/axzxc1236/mod-kit/raw/mods/voxelmap/voxelmap-1.7.2-1.0.jar",Form1.TextBox1.Text & "\mods\" & "voxelmap-1.7.2-1.0.jar")
         End If
+
+        If CheckBox4.Enabled And CheckBox4.Checked = True Then
+            If ComboBox4.Text = "latest" Then ComboBox4.Text = "3.0.8" & My.Resources.mods_ver.Invtweak172latest
+            If My.Computer.FileSystem.FileExists(Form1.TextBox1.Text & "\mods\[1.7.2]DamageIndicatorsMod-" & ComboBox4.Text & ".jar") Then My.Computer.FileSystem.DeleteFile(Form1.TextBox1.Text & "\mods" & "InventoryTweaks-" & ComboBox2.Text & ".jar")
+            My.Computer.Network.DownloadFile("https://dl.dropboxusercontent.com/u/74770478/%5B1.7.2%5DDamageIndicatorsMod-" & ComboBox4.Text & ".jar",
+                                              Form1.TextBox1.Text & "\mods\" & "[1.7.2]DamageIndicatorsMod-" & ComboBox4.Text & ".jar")
+        End If
+
         MsgBox("Done!")
 
     End Sub

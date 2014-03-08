@@ -65,6 +65,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  查詢類似 8 的當地語系化字串。
+        '''</summary>
+        Friend Shared ReadOnly Property DI172latest() As String
+            Get
+                Return ResourceManager.GetString("DI172latest", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  查詢類似 0 的當地語系化字串。
+        '''</summary>
+        Friend Shared ReadOnly Property DI172min() As String
+            Get
+                Return ResourceManager.GetString("DI172min", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  查詢類似 1039 的當地語系化字串。
         '''</summary>
         Friend Shared ReadOnly Property forge172latest() As String

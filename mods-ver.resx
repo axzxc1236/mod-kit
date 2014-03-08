@@ -132,4 +132,10 @@
   <data name="Invtweak172min" xml:space="preserve">
     <value>97</value>
   </data>
+  <data name="DI172latest" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="DI172min" xml:space="preserve">
+    <value>0</value>
+  </data>
 </root>
