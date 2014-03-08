@@ -138,4 +138,22 @@
   <data name="DI172min" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="ASHUD172latest" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="ASHUD172min" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="DHUD172latest" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="DHUD172min" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="SEHUD172latest" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="SEHUD172min" xml:space="preserve">
+    <value>20</value>
+  </data>
 </root>

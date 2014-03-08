@@ -65,6 +65,42 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  查詢類似 18 的當地語系化字串。
+        '''</summary>
+        Friend Shared ReadOnly Property ASHUD172latest() As String
+            Get
+                Return ResourceManager.GetString("ASHUD172latest", resourceCulture)
+            End Get
+        End Property
+
+        '''<summary>
+        '''  查詢類似 16 的當地語系化字串。
+        '''</summary>
+        Friend Shared ReadOnly Property ASHUD172min() As String
+            Get
+                Return ResourceManager.GetString("ASHUD172min", resourceCulture)
+            End Get
+        End Property
+
+        '''<summary>
+        '''  查詢類似 18 的當地語系化字串。
+        '''</summary>
+        Friend Shared ReadOnly Property DHUD172latest() As String
+            Get
+                Return ResourceManager.GetString("DHUD172latest", resourceCulture)
+            End Get
+        End Property
+
+        '''<summary>
+        '''  查詢類似 17 的當地語系化字串。
+        '''</summary>
+        Friend Shared ReadOnly Property DHUD172min() As String
+            Get
+                Return ResourceManager.GetString("DHUD172min", resourceCulture)
+            End Get
+        End Property
+
+        '''<summary>
         '''  查詢類似 8 的當地語系化字串。
         '''</summary>
         Friend Shared ReadOnly Property DI172latest() As String
@@ -72,7 +108,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DI172latest", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  查詢類似 0 的當地語系化字串。
         '''</summary>
@@ -81,7 +117,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("DI172min", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  查詢類似 1039 的當地語系化字串。
         '''</summary>
@@ -90,7 +126,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("forge172latest", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  查詢類似 967 的當地語系化字串。
         '''</summary>
@@ -99,7 +135,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("forge172min", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  查詢類似 1024 的當地語系化字串。
         '''</summary>
@@ -108,7 +144,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("forge172recommand", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  查詢類似 112 的當地語系化字串。
         '''</summary>
@@ -117,13 +153,31 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Invtweak172latest", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  查詢類似 97 的當地語系化字串。
         '''</summary>
         Friend Shared ReadOnly Property Invtweak172min() As String
             Get
                 Return ResourceManager.GetString("Invtweak172min", resourceCulture)
+            End Get
+        End Property
+
+        '''<summary>
+        '''  查詢類似 21 的當地語系化字串。
+        '''</summary>
+        Friend Shared ReadOnly Property SEHUD172latest() As String
+            Get
+                Return ResourceManager.GetString("SEHUD172latest", resourceCulture)
+            End Get
+        End Property
+
+        '''<summary>
+        '''  查詢類似 20 的當地語系化字串。
+        '''</summary>
+        Friend Shared ReadOnly Property SEHUD172min() As String
+            Get
+                Return ResourceManager.GetString("SEHUD172min", resourceCulture)
             End Get
         End Property
     End Class

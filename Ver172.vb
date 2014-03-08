@@ -3,17 +3,24 @@
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
         If CheckBox1.Checked = False Then
             ComboBox1.Enabled = False
-
             CheckBox2.Enabled = False
             CheckBox4.Enabled = False
+            CheckBox5.Enabled = False
+            CheckBox6.Enabled = False
+            CheckBox7.Enabled = False
+            CheckBox8.Enabled = False
 
             CheckBox2.Checked = False
             CheckBox4.Checked = False
+            CheckBox5.Checked = False
+            CheckBox6.Checked = False
+            CheckBox7.Checked = False
+            CheckBox8.Checked = False
         Else
             ComboBox1.Enabled = True
-
             CheckBox2.Enabled = True
             CheckBox4.Enabled = True
+            CheckBox5.Enabled = True
         End If
     End Sub
 
@@ -61,11 +68,40 @@
         ComboBox5.Visible = False
         Label5.Visible = False
 
+        'mod6 - ArmorStatusHUD
+        ComboBox6.Items.Add("latest")
+        For i = Val(My.Resources.mods_ver.ASHUD172latest) To Val(My.Resources.mods_ver.ASHUD172min) Step -1
+            ComboBox6.Items.Add("1." & i)
+        Next
+        ComboBox6.Text = "latest"
+
+        'mod7 - DirectionHUD
+        ComboBox7.Items.Add("latest")
+        For i = Val(My.Resources.mods_ver.DHUD172latest) To Val(My.Resources.mods_ver.DHUD172min) Step -1
+            ComboBox7.Items.Add("1." & i)
+        Next
+        ComboBox7.Text = "latest"
+
+        'mod8 - StatusEffectHUD
+        ComboBox8.Items.Add("latest")
+        For i = Val(My.Resources.mods_ver.SEHUD172latest) To Val(My.Resources.mods_ver.SEHUD172min) Step -1
+            ComboBox8.Items.Add("1." & i)
+        Next
+        ComboBox8.Text = "latest"
+
 
 
 
         ComboBox2.Enabled = False
         ComboBox4.Enabled = False
+        ComboBox6.Enabled = False
+        ComboBox7.Enabled = False
+        ComboBox8.Enabled = False
+
+        CheckBox6.Enabled = False
+        CheckBox7.Enabled = False
+        CheckBox8.Enabled = False
+
     End Sub
 
     Private Sub CheckBox2_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox2.CheckedChanged
@@ -120,7 +156,10 @@
         If CheckBox2.Enabled = True And CheckBox2.Checked = True Then count += 1
         If CheckBox3.Enabled = True And CheckBox3.Checked = True Then count += 1
         If CheckBox4.Enabled = True And CheckBox4.Checked = True Then count += 1
-        If CheckBox5.Enabled = True And CheckBox4.Checked = True Then count += 1
+        If CheckBox5.Enabled = True And CheckBox5.Checked = True Then count += 1
+        If CheckBox6.Enabled = True And CheckBox6.Checked = True Then count += 1
+        If CheckBox7.Enabled = True And CheckBox7.Checked = True Then count += 1
+        If CheckBox8.Enabled = True And CheckBox8.Checked = True Then count += 1
         If Not My.Computer.FileSystem.FileExists(Form1.TextBox1.Text & "\libraries\org\scala-lang\scala-compiler\2.10.2\scala-compiler-2.10.2.jar") Then count += 1
         If Not My.Computer.FileSystem.FileExists(Form1.TextBox1.Text & "\libraries\org\scala-lang\scala-library\2.10.2\scala-library-2.10.2.jar") Then count += 1
         If Not My.Computer.FileSystem.FileExists(Form1.TextBox1.Text & "\libraries\net\minecraftforge\minecraftforge\" & ComboBox1.Text & "\minecraftforge-" & ComboBox1.Text & ".jar") Then count += 1
@@ -180,6 +219,35 @@
             current += 1
         End If
 
+        If CheckBox6.Enabled And CheckBox6.Checked = True Then
+            Me.Name = current & " of " & count & "安裝ArmorStatusHUD"
+            If ComboBox6.Text = "latest" Then ComboBox6.Text = "1." & My.Resources.mods_ver.ASHUD172latest
+            If My.Computer.FileSystem.FileExists(Form1.TextBox1.Text & "\mods\[1.7.2]ArmorStatusHUD-client-" & ComboBox6.Text & "(1.7.2).jar") Then My.Computer.FileSystem.DeleteFile(Form1.TextBox1.Text & "\mods\[1.7.2]ArmorStatusHUD-client-" & ComboBox6.Text & "(1.7.2).jar")
+            My.Computer.Network.DownloadFile("http://bspk.rs/MC/ArmorStatusHUD/[1.7.2]ArmorStatusHUD-client-" & ComboBox6.Text & "(1.7.2).jar",
+                                              Form1.TextBox1.Text & "\mods\[1.7.2]ArmorStatusHUD-client-" & ComboBox6.Text & "(1.7.2).jar")
+            current += 1
+        End If
+
+        If CheckBox7.Enabled And CheckBox7.Checked = True Then
+            Me.Name = current & " of " & count & "安裝DirectionHUD"
+            If ComboBox7.Text = "latest" Then ComboBox7.Text = "1." & My.Resources.mods_ver.DHUD172latest
+            If My.Computer.FileSystem.FileExists(Form1.TextBox1.Text & "\mods\[1.7.2]DirectionHUD-client-" & ComboBox7.Text & "(1.7.2).jar") Then My.Computer.FileSystem.DeleteFile(Form1.TextBox1.Text & "\mods\" & "[1.7.2]DirectionHUD-client-" & ComboBox7.Text & "(1.7.2).jar")
+            My.Computer.Network.DownloadFile("http://bspk.rs/MC/DirectionHUD/[1.7.2]DirectionHUD-client-" & ComboBox7.Text & "(1.7.2).jar",
+                                              Form1.TextBox1.Text & "\mods\" & "[1.7.2]DirectionHUD-client-" & ComboBox7.Text & "(1.7.2).jar")
+            current += 1
+        End If
+
+        If CheckBox8.Enabled And CheckBox8.Checked = True Then
+            Me.Name = current & " of " & count & "安裝StatusEffectHUD"
+            If ComboBox8.Text = "latest" Then ComboBox8.Text = "1." & My.Resources.mods_ver.SEHUD172latest
+            If My.Computer.FileSystem.FileExists(Form1.TextBox1.Text & "\mods\[1.7.2]StatusEffectHUD-client-" & ComboBox8.Text & "(1.7.2).jar") Then My.Computer.FileSystem.DeleteFile(Form1.TextBox1.Text & "\mods\" & "[1.7.2]StatusEffectHUD-client-" & ComboBox8.Text & "(1.7.2).jar")
+            My.Computer.Network.DownloadFile("http://bspk.rs/MC/StatusEffectHUD/[1.7.2]StatusEffectHUD-client-" & ComboBox8.Text & "(1.7.2).jar",
+                                              Form1.TextBox1.Text & "\mods\" & "[1.7.2]StatusEffectHUD-client-" & ComboBox4.Text & "(1.7.2).jar")
+            current += 1
+        End If
+
+
+
         MsgBox("Done!")
 
     End Sub
@@ -223,6 +291,9 @@
         CheckBox3.Checked = True
         CheckBox4.Checked = True
         CheckBox5.Checked = True
+        CheckBox6.Checked = True
+        CheckBox7.Checked = True
+        CheckBox8.Checked = True
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
@@ -231,5 +302,45 @@
         CheckBox3.Checked = False
         CheckBox4.Checked = False
         CheckBox5.Checked = False
+        CheckBox6.Checked = False
+        CheckBox7.Checked = False
+        CheckBox8.Checked = False
+
+    End Sub
+    Private Sub CheckBox5_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox5.CheckedChanged
+        If CheckBox5.Checked = True Then
+            CheckBox6.Enabled = True
+            CheckBox7.Enabled = True
+            CheckBox8.Enabled = True
+
+        Else
+
+            CheckBox6.Enabled = False
+            CheckBox7.Enabled = False
+            CheckBox8.Enabled = False
+
+            ComboBox6.Enabled = False
+            ComboBox7.Enabled = False
+            ComboBox8.Enabled = False
+
+            CheckBox6.Checked = False
+            CheckBox7.Checked = False
+            CheckBox8.Checked = False
+        End If
+    End Sub
+
+    Private Sub CheckBox6_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox6.CheckedChanged
+        If CheckBox6.Checked = False Then ComboBox6.Enabled = False
+        If CheckBox6.Checked = True Then ComboBox6.Enabled = True
+    End Sub
+
+    Private Sub CheckBox7_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox7.CheckedChanged
+        If CheckBox7.Checked = False Then ComboBox7.Enabled = False
+        If CheckBox7.Checked = True Then ComboBox7.Enabled = True
+    End Sub
+
+    Private Sub CheckBox8_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox8.CheckedChanged
+        If CheckBox8.Checked = False Then ComboBox8.Enabled = False
+        If CheckBox8.Checked = True Then ComboBox8.Enabled = True
     End Sub
 End Class

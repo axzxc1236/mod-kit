@@ -41,6 +41,15 @@ Partial Class Ver172
         Me.ComboBox5 = New System.Windows.Forms.ComboBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.CheckBox5 = New System.Windows.Forms.CheckBox()
+        Me.ComboBox6 = New System.Windows.Forms.ComboBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.CheckBox6 = New System.Windows.Forms.CheckBox()
+        Me.ComboBox7 = New System.Windows.Forms.ComboBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.CheckBox7 = New System.Windows.Forms.CheckBox()
+        Me.ComboBox8 = New System.Windows.Forms.ComboBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.CheckBox8 = New System.Windows.Forms.CheckBox()
         Me.SuspendLayout()
         '
         'CheckBox1
@@ -71,9 +80,9 @@ Partial Class Ver172
         '
         'ComboBox1
         '
-        resources.ApplyResources(Me.ComboBox1, "ComboBox1")
         Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = True
+        resources.ApplyResources(Me.ComboBox1, "ComboBox1")
         Me.ComboBox1.Name = "ComboBox1"
         '
         'Label1
@@ -88,9 +97,9 @@ Partial Class Ver172
         '
         'ComboBox2
         '
-        resources.ApplyResources(Me.ComboBox2, "ComboBox2")
         Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox2.FormattingEnabled = True
+        resources.ApplyResources(Me.ComboBox2, "ComboBox2")
         Me.ComboBox2.Name = "ComboBox2"
         '
         'Label3
@@ -105,16 +114,16 @@ Partial Class Ver172
         '
         'ComboBox3
         '
-        resources.ApplyResources(Me.ComboBox3, "ComboBox3")
         Me.ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox3.FormattingEnabled = True
+        resources.ApplyResources(Me.ComboBox3, "ComboBox3")
         Me.ComboBox3.Name = "ComboBox3"
         '
         'ComboBox4
         '
-        resources.ApplyResources(Me.ComboBox4, "ComboBox4")
         Me.ComboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox4.FormattingEnabled = True
+        resources.ApplyResources(Me.ComboBox4, "ComboBox4")
         Me.ComboBox4.Name = "ComboBox4"
         '
         'Button1
@@ -137,9 +146,9 @@ Partial Class Ver172
         '
         'ComboBox5
         '
-        resources.ApplyResources(Me.ComboBox5, "ComboBox5")
         Me.ComboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox5.FormattingEnabled = True
+        resources.ApplyResources(Me.ComboBox5, "ComboBox5")
         Me.ComboBox5.Name = "ComboBox5"
         '
         'Label5
@@ -153,10 +162,73 @@ Partial Class Ver172
         Me.CheckBox5.Name = "CheckBox5"
         Me.CheckBox5.UseVisualStyleBackColor = True
         '
+        'ComboBox6
+        '
+        Me.ComboBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox6.FormattingEnabled = True
+        resources.ApplyResources(Me.ComboBox6, "ComboBox6")
+        Me.ComboBox6.Name = "ComboBox6"
+        '
+        'Label6
+        '
+        resources.ApplyResources(Me.Label6, "Label6")
+        Me.Label6.Name = "Label6"
+        '
+        'CheckBox6
+        '
+        resources.ApplyResources(Me.CheckBox6, "CheckBox6")
+        Me.CheckBox6.Name = "CheckBox6"
+        Me.CheckBox6.UseVisualStyleBackColor = True
+        '
+        'ComboBox7
+        '
+        Me.ComboBox7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox7.FormattingEnabled = True
+        resources.ApplyResources(Me.ComboBox7, "ComboBox7")
+        Me.ComboBox7.Name = "ComboBox7"
+        '
+        'Label7
+        '
+        resources.ApplyResources(Me.Label7, "Label7")
+        Me.Label7.Name = "Label7"
+        '
+        'CheckBox7
+        '
+        resources.ApplyResources(Me.CheckBox7, "CheckBox7")
+        Me.CheckBox7.Name = "CheckBox7"
+        Me.CheckBox7.UseVisualStyleBackColor = True
+        '
+        'ComboBox8
+        '
+        Me.ComboBox8.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox8.FormattingEnabled = True
+        resources.ApplyResources(Me.ComboBox8, "ComboBox8")
+        Me.ComboBox8.Name = "ComboBox8"
+        '
+        'Label8
+        '
+        resources.ApplyResources(Me.Label8, "Label8")
+        Me.Label8.Name = "Label8"
+        '
+        'CheckBox8
+        '
+        resources.ApplyResources(Me.CheckBox8, "CheckBox8")
+        Me.CheckBox8.Name = "CheckBox8"
+        Me.CheckBox8.UseVisualStyleBackColor = True
+        '
         'Ver172
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.ComboBox8)
+        Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.CheckBox8)
+        Me.Controls.Add(Me.ComboBox7)
+        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.CheckBox7)
+        Me.Controls.Add(Me.ComboBox6)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.CheckBox6)
         Me.Controls.Add(Me.ComboBox5)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.CheckBox5)
@@ -198,4 +270,13 @@ Partial Class Ver172
     Friend WithEvents ComboBox5 As System.Windows.Forms.ComboBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents CheckBox5 As System.Windows.Forms.CheckBox
+    Friend WithEvents ComboBox6 As System.Windows.Forms.ComboBox
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents CheckBox6 As System.Windows.Forms.CheckBox
+    Friend WithEvents ComboBox7 As System.Windows.Forms.ComboBox
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents CheckBox7 As System.Windows.Forms.CheckBox
+    Friend WithEvents ComboBox8 As System.Windows.Forms.ComboBox
+    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents CheckBox8 As System.Windows.Forms.CheckBox
 End Class
