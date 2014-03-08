@@ -77,13 +77,20 @@
     End Sub
 
     Private Sub Button1_Click(ByVal sender As Object, ByVal e As EventArgs) Handles Button1.Click
-        If My.Computer.FileSystem.DirectoryExists(Form1.TextBox1.Text) Then
-            If MsgBox("建議先刪除mods資料夾(避免崩潰)再繼續，要繼續嗎?", MsgBoxStyle.YesNo) = 6 Then
-                Call install()
-            End If
-        Else
-            Call install()
-        End If
+        'If CheckBox1.Checked = True Then
+        '    'forge
+        '    If My.Computer.FileSystem.DirectoryExists(Form1.Text & "\mods") Then
+        '        Dim choose As SByte
+        '        choose = MsgBox("建議先刪除mods資料夾(避免崩潰)再繼續，要繼續嗎?", MsgBoxStyle.YesNo)
+        '        If choose = 6 Then Call install()
+        '    Else
+        '        Call install()
+        '    End If
+        'Else
+        '    'vanilla
+        '    Call install_vanilla()
+        'End If
+
     End Sub
 
     Sub install()
@@ -137,21 +144,42 @@
         End If
 
         If CheckBox3.Enabled And CheckBox3.Checked = True Then
-            If CheckBox1.Checked = True Then
-                'My.Computer.Network.DownloadFile("http://build.technicpack.net/job/Inventory-Tweaks/" & Val(My.Resources.mods_ver.Invtweak172latest) & "/artifact/build/libs/InventoryTweaks-" & ComboBox2.Text & ".jar",
-                '                              Form1.TextBox1.Text & "\mods\" & "InventoryTweaks-" & ComboBox2.Text & ".jar")
-            End If
+            If My.Computer.FileSystem.FileExists(Form1.TextBox1.Text & "\mods\" & "voxelmap-1.7.2-1.0.jar") Then My.Computer.FileSystem.DeleteFile(Form1.TextBox1.Text & "\mods\" & "voxelmap-1.7.2-1.0.jar")
+            My.Computer.Network.DownloadFile("https://github.com/axzxc1236/mod-kit/raw/mods/voxelmap/voxelmap-1.7.2-1.0.jar",Form1.TextBox1.Text & "\mods\" & "voxelmap-1.7.2-1.0.jar")
         End If
-
         MsgBox("Done!")
 
+    End Sub
+
+    Sub install_vanilla()
+        If My.Computer.FileSystem.DirectoryExists(Environment.CurrentDirectory & "\mod-kit\") Then My.Computer.FileSystem.DeleteDirectory(Environment.CurrentDirectory & "\mod-kit\", FileIO.DeleteDirectoryOption.DeleteAllContents)
+        My.Computer.Network.DownloadFile("https://dl.dropboxusercontent.com/s/07mw2d3o2v8xkq2/7za.exe?dl=1&token_hash=AAEVhq1Ho3nIxdlSgCPmXJFw-QK6eC6Qjrxj9R2Lf27EBA", Environment.CurrentDirectory & "\mod-kit\7za.exe", "", "", False, 100000, True)
+        My.Computer.Network.DownloadFile("http://s3.amazonaws.com/Minecraft.Download/versions/1.7.2/1.7.2.jar", Environment.CurrentDirectory & "\mod-kit\tmp.jar", "", "", False, 100000, True)
+        My.Computer.Network.DownloadFile("http://static.planetminecraft.com/files/resource_media/mod/1410/zanmap172j.zip", Environment.CurrentDirectory & "\mod-kit\mod.zip", "", "", False, 100000, True)
+        FileCopy("172voxel.bat", Environment.CurrentDirectory & "\mod-kit\172voxel.bat")
+        Shell("cmd /c mod-kit\172voxel.bat", AppWinStyle.Hide, True)
+
+        'the code below doesn't work,I don't know why!
+
+        'Shell(Environment.CurrentDirectory & "\mod-kit\7za.exe -y d " & Environment.CurrentDirectory & "\mod-kit\tmp.jar META-INF\*", AppWinStyle.Hide, True)
+        'Shell(Environment.CurrentDirectory & "\mod-kit\7za.exe -y x " & Environment.CurrentDirectory & "\mod-kit\mod.zip -o" & Environment.CurrentDirectory & "\tmp", AppWinStyle.Hide, True)
+        'Shell(Environment.CurrentDirectory & "\mod-kit\7za.exe -y a " & Environment.CurrentDirectory & "\mod-kit\tmp.jar tmp\*.*", AppWinStyle.Hide, True)
+
+        If My.Computer.FileSystem.DirectoryExists(Form1.TextBox1.Text & "\versions\mod-kit\") Then My.Computer.FileSystem.DeleteDirectory(Form1.TextBox1.Text & "\versions\mod-kit\", FileIO.DeleteDirectoryOption.DeleteAllContents)
+
+        My.Computer.FileSystem.CopyFile(Environment.CurrentDirectory & "\mod-kit\tmp.jar", Form1.TextBox1.Text & "\versions\mod-kit\mod-kit.jar")
+        My.Computer.Network.DownloadFile("http://s3.amazonaws.com/Minecraft.Download/versions/1.7.2/1.7.2.json", Form1.TextBox1.Text & "\versions\mod-kit\mod-kit.json")
+
+        My.Computer.FileSystem.WriteAllText(Form1.TextBox1.Text & "\versions\mod-kit\mod-kit.json", My.Computer.FileSystem.ReadAllText(Form1.TextBox1.Text & "\versions\mod-kit\mod-kit.json").Replace("1.7.2", "mod-kit"), False)
+
+        MsgBox("Done!")
     End Sub
 
     Private Sub CheckBox4_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox4.CheckedChanged
         If CheckBox4.Checked = True Then
             ComboBox4.Enabled = True
         Else
-            ComboBox4.Enabled = False
+        ComboBox4.Enabled = False
         End If
     End Sub
 
