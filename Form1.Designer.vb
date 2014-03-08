@@ -29,7 +29,6 @@ Partial Class Form1
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Button3 = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Button4 = New System.Windows.Forms.Button()
@@ -100,15 +99,6 @@ Partial Class Form1
         Me.Label4.TabIndex = 6
         Me.Label4.Text = "Label4"
         '
-        'Button3
-        '
-        Me.Button3.Location = New System.Drawing.Point(93, 13)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
-        Me.Button3.TabIndex = 7
-        Me.Button3.Text = "Button3"
-        Me.Button3.UseVisualStyleBackColor = True
-        '
         'Label5
         '
         Me.Label5.AutoSize = True
@@ -148,7 +138,6 @@ Partial Class Form1
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
@@ -169,7 +158,6 @@ Partial Class Form1
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents Button4 As System.Windows.Forms.Button
