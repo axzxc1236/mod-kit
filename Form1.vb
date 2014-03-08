@@ -42,4 +42,9 @@
             Label4.Text = "☒ 沒有使用過舊版啟動器(沒發現bin資料夾)"
         End If
     End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Me.Hide()
+        About.Show()
+    End Sub
 End Class
