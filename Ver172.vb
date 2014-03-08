@@ -30,6 +30,11 @@
         For i = Val(My.Resources.mods_ver.forge172latest) To Val(My.Resources.mods_ver.forge172min) Step -1
             ComboBox1.Items.Add("10.12.0." & i)
         Next
+        ComboBox1.Items.Remove("10.12.0.1038")
+        ComboBox1.Items.Remove("10.12.0.1037")
+        ComboBox1.Items.Remove("10.12.0.1036")
+        ComboBox1.Items.Remove("10.12.0.1035")
+        ComboBox1.Items.Remove("10.12.0.978")
         ComboBox1.Text = "latest"
 
         'combo2
