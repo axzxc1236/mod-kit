@@ -136,7 +136,14 @@
                                               Form1.TextBox1.Text & "\mods\" & "InventoryTweaks-" & ComboBox2.Text & ".jar")
         End If
 
-            MsgBox("Done!")
+        If CheckBox3.Enabled And CheckBox3.Checked = True Then
+            If CheckBox1.Checked = True Then
+                'My.Computer.Network.DownloadFile("http://build.technicpack.net/job/Inventory-Tweaks/" & Val(My.Resources.mods_ver.Invtweak172latest) & "/artifact/build/libs/InventoryTweaks-" & ComboBox2.Text & ".jar",
+                '                              Form1.TextBox1.Text & "\mods\" & "InventoryTweaks-" & ComboBox2.Text & ".jar")
+            End If
+        End If
+
+        MsgBox("Done!")
 
     End Sub
 
