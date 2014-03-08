@@ -24,7 +24,7 @@
     Private Sub Ver172_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedToolWindow
 
-        'combo1
+        'mod1 - Forge
         ComboBox1.Items.Add("latest")
         ComboBox1.Items.Add("Recommand")
         For i = Val(My.Resources.mods_ver.forge172latest) To Val(My.Resources.mods_ver.forge172min) Step -1
@@ -37,7 +37,7 @@
         ComboBox1.Items.Remove("10.12.0.978")
         ComboBox1.Text = "latest"
 
-        'combo2
+        'mod2 - Inventory tweaks
         ComboBox2.Items.Add("latest")
         For i = Val(My.Resources.mods_ver.Invtweak172latest) To Val(My.Resources.mods_ver.Invtweak172min) Step -1
             ComboBox2.Items.Add("1.57-dev-" & i)
@@ -45,11 +45,11 @@
         ComboBox2.Items.Remove("1.57-dev-99")
         ComboBox2.Text = "latest"
 
-        'combo3
+        'mod3 - Voxelmap
         Label3.Visible = False
         ComboBox3.Visible = False
 
-        'combo4
+        'mod4 - Damage Indicators
         ComboBox4.Items.Add("latest")
         For i = Val(My.Resources.mods_ver.DI172latest) To Val(My.Resources.mods_ver.DI172min) Step -1
             ComboBox4.Items.Add("3.0." & i)
@@ -57,6 +57,9 @@
         ComboBox4.Items.Remove("3.0.1")
         ComboBox4.Text = "latest"
 
+        'mod5 - bspkrsCore
+        ComboBox5.Visible = False
+        Label5.Visible = False
 
 
 
@@ -139,25 +142,33 @@
             My.Computer.Network.DownloadFile("http://s3.amazonaws.com/Minecraft.Download/versions/1.7.2/1.7.2.jar", Form1.TextBox1.Text & "\versions\1.7.2-Forge" & ComboBox1.Text & "\1.7.2-Forge" & ComboBox1.Text & ".jar")
             My.Computer.Network.DownloadFile("https://raw.github.com/MinecraftForge/FML/master/jsons/1.7.2.json", Form1.TextBox1.Text & "\versions\1.7.2-Forge" & ComboBox1.Text & "\1.7.2-Forge" & ComboBox1.Text & ".json")
             My.Computer.Network.DownloadFile("http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.7.2-" & ComboBox1.Text & "/forge-1.7.2-" & ComboBox1.Text & "-universal.jar", Form1.TextBox1.Text & "\libraries\net\minecraftforge\minecraftforge\" & ComboBox1.Text & "\minecraftforge-" & ComboBox1.Text & ".jar", "", "", False, 100000, True)
+            current += 1
         End If
 
         If CheckBox2.Enabled And CheckBox2.Checked = True Then
+            Me.Name = current & " of " & count & "安裝Inventory tweaks"
             If ComboBox2.Text = "latest" Then ComboBox2.Text = "1.57-dev-" & My.Resources.mods_ver.Invtweak172latest
             If My.Computer.FileSystem.FileExists(Form1.TextBox1.Text & "\mods\InventoryTweaks-" & ComboBox2.Text & ".jar") Then My.Computer.FileSystem.DeleteFile(Form1.TextBox1.Text & "\mods\" & "InventoryTweaks-" & ComboBox2.Text & ".jar")
             My.Computer.Network.DownloadFile("http://build.technicpack.net/job/Inventory-Tweaks/" & Val(My.Resources.mods_ver.Invtweak172latest) & "/artifact/build/libs/InventoryTweaks-" & ComboBox2.Text & ".jar",
                                               Form1.TextBox1.Text & "\mods\" & "InventoryTweaks-" & ComboBox2.Text & ".jar")
+            current += 1
         End If
 
         If CheckBox3.Enabled And CheckBox3.Checked = True Then
+            Me.Name = current & " of " & count & "安裝Voxelmap"
             If My.Computer.FileSystem.FileExists(Form1.TextBox1.Text & "\mods\" & "voxelmap-1.7.2-1.0.jar") Then My.Computer.FileSystem.DeleteFile(Form1.TextBox1.Text & "\mods\" & "voxelmap-1.7.2-1.0.jar")
-            My.Computer.Network.DownloadFile("https://dl.dropboxusercontent.com/s/boitpzvszpbsqfx/voxelmap-1.7.2-1.0.jar?dl=1&token_hash=AAF1ZA2AhwjhslkjEfT9kSk_qqfxduqviI4JGhgtg7M9Bw", Form1.TextBox1.Text & "\mods\" & "voxelmap-1.7.2-1.0.jar")
+            My.Computer.Network.DownloadFile("https://dl.dropboxusercontent.com/s/boitpzvszpbsqfx/voxelmap-1.7.2-1.0.jar?dl=1&token_hash=AAF1ZA2AhwjhslkjEfT9kSk_qqfxduqviI4JGhgtg7M9Bw",
+                                             Form1.TextBox1.Text & "\mods\" & "voxelmap-1.7.2-1.0.jar")
+            current += 1
         End If
 
         If CheckBox4.Enabled And CheckBox4.Checked = True Then
+            Me.Name = current & " of " & count & "安裝Damage Indicators"
             If ComboBox4.Text = "latest" Then ComboBox4.Text = "3.0." & My.Resources.mods_ver.DI172latest
-            If My.Computer.FileSystem.FileExists(Form1.TextBox1.Text & "\mods\[1.7.2]DamageIndicatorsMod-" & ComboBox4.Text & ".jar") Then My.Computer.FileSystem.DeleteFile(Form1.TextBox1.Text & "\mods\" & "InventoryTweaks-" & ComboBox2.Text & ".jar")
+            If My.Computer.FileSystem.FileExists(Form1.TextBox1.Text & "\mods\[1.7.2]DamageIndicatorsMod-" & ComboBox4.Text & ".jar") Then My.Computer.FileSystem.DeleteFile(Form1.TextBox1.Text & "\mods\" & "[1.7.2]DamageIndicatorsMod-" & ComboBox4.Text & ".jar")
             My.Computer.Network.DownloadFile("https://dl.dropboxusercontent.com/u/74770478/%5B1.7.2%5DDamageIndicatorsMod-" & ComboBox4.Text & ".jar",
                                               Form1.TextBox1.Text & "\mods\" & "[1.7.2]DamageIndicatorsMod-" & ComboBox4.Text & ".jar")
+            current += 1
         End If
 
         MsgBox("Done!")

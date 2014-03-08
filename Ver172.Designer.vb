@@ -37,6 +37,9 @@ Partial Class Ver172
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
+        Me.ComboBox5 = New System.Windows.Forms.ComboBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.CheckBox5 = New System.Windows.Forms.CheckBox()
         Me.SuspendLayout()
         '
         'CheckBox1
@@ -66,9 +69,9 @@ Partial Class Ver172
         Me.CheckBox3.AutoSize = True
         Me.CheckBox3.Location = New System.Drawing.Point(12, 56)
         Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(70, 16)
+        Me.CheckBox3.Size = New System.Drawing.Size(72, 16)
         Me.CheckBox3.TabIndex = 2
-        Me.CheckBox3.Text = "voxelmap"
+        Me.CheckBox3.Text = "Voxelmap"
         Me.CheckBox3.UseVisualStyleBackColor = True
         '
         'CheckBox4
@@ -155,7 +158,7 @@ Partial Class Ver172
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(12, 100)
+        Me.Button1.Location = New System.Drawing.Point(12, 224)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 14
@@ -164,7 +167,7 @@ Partial Class Ver172
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(93, 100)
+        Me.Button2.Location = New System.Drawing.Point(93, 224)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
         Me.Button2.TabIndex = 15
@@ -173,18 +176,49 @@ Partial Class Ver172
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(174, 100)
+        Me.Button3.Location = New System.Drawing.Point(174, 224)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(75, 23)
         Me.Button3.TabIndex = 16
         Me.Button3.Text = "全部取消"
         Me.Button3.UseVisualStyleBackColor = True
         '
+        'ComboBox5
+        '
+        Me.ComboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox5.FormattingEnabled = True
+        Me.ComboBox5.Location = New System.Drawing.Point(157, 98)
+        Me.ComboBox5.Name = "ComboBox5"
+        Me.ComboBox5.Size = New System.Drawing.Size(115, 20)
+        Me.ComboBox5.TabIndex = 19
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(122, 101)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(29, 12)
+        Me.Label5.TabIndex = 18
+        Me.Label5.Text = "版本"
+        '
+        'CheckBox5
+        '
+        Me.CheckBox5.AutoSize = True
+        Me.CheckBox5.Location = New System.Drawing.Point(12, 100)
+        Me.CheckBox5.Name = "CheckBox5"
+        Me.CheckBox5.Size = New System.Drawing.Size(77, 16)
+        Me.CheckBox5.TabIndex = 17
+        Me.CheckBox5.Text = "bspkrsCore"
+        Me.CheckBox5.UseVisualStyleBackColor = True
+        '
         'Ver172
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(284, 131)
+        Me.ClientSize = New System.Drawing.Size(284, 259)
+        Me.Controls.Add(Me.ComboBox5)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.CheckBox5)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
@@ -221,4 +255,7 @@ Partial Class Ver172
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents ComboBox5 As System.Windows.Forms.ComboBox
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents CheckBox5 As System.Windows.Forms.CheckBox
 End Class
