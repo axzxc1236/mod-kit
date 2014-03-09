@@ -8,10 +8,10 @@ Imports System.Runtime.InteropServices
 
 ' 檢閱組件屬性的值
 
-<Assembly: AssemblyTitle("Unnamed Installer")> 
-<Assembly: AssemblyDescription("")> 
+<Assembly: AssemblyTitle("mod-kit")> 
+<Assembly: AssemblyDescription("A creation of 21")> 
 <Assembly: AssemblyCompany("")> 
-<Assembly: AssemblyProduct("Unnamed Installer")> 
+<Assembly: AssemblyProduct("mod-kit")> 
 <Assembly: AssemblyCopyright("Copyright ©  2014")> 
 <Assembly: AssemblyTrademark("")> 
 
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' 指定為預設值: 
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("1.0.0.0")> 
-<Assembly: AssemblyFileVersion("1.0.0.0")> 
+<Assembly: AssemblyVersion("0.2.0.0")> 
+<Assembly: AssemblyFileVersion("0.2.0.0")> 

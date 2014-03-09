@@ -52,4 +52,8 @@
         Me.Hide()
         Credits.Show()
     End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        Shell("Changelog.txt")
+    End Sub
 End Class
