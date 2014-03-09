@@ -30,6 +30,7 @@
     End Sub
 
     Private Sub Credits_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedToolWindow
         LinkLabel1.Text = ""
         Label2.Visible = False
     End Sub

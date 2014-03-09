@@ -1,7 +1,6 @@
 ﻿Public Class Form1
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedToolWindow
 
         'get orginal minecraft folder path
         TextBox1.Text = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) & "\.minecraft"
