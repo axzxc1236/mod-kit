@@ -1,12 +1,13 @@
    0.3:
       新增InGameInfo 1.7.2
 	  修正安裝提示
-	  
+      清理代碼
+      修改安裝提示
 	  
   0.2:
       新增Icon
       修改檔案描述
       新增Change log
       在方案裡刪除了我的舊檔案
-	  修正了StatusEffectHUD的檔名錯誤
-	  修正了Credits裡的模組原網連結
+      修正了StatusEffectHUD的檔名錯誤
+      修正了Credits裡的模組原網連結
