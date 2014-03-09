@@ -64,7 +64,8 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>0.2.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -175,7 +176,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="0.2.ico" />
     <Content Include="172voxel.bat">
       <CustomToolNamespace>172voxel.bat</CustomToolNamespace>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
