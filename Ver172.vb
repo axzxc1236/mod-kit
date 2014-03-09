@@ -242,7 +242,7 @@
             If ComboBox8.Text = "latest" Then ComboBox8.Text = "1." & My.Resources.mods_ver.SEHUD172latest
             If My.Computer.FileSystem.FileExists(Form1.TextBox1.Text & "\mods\[1.7.2]StatusEffectHUD-client-" & ComboBox8.Text & "(1.7.2).jar") Then My.Computer.FileSystem.DeleteFile(Form1.TextBox1.Text & "\mods\" & "[1.7.2]StatusEffectHUD-client-" & ComboBox8.Text & "(1.7.2).jar")
             My.Computer.Network.DownloadFile("http://bspk.rs/MC/StatusEffectHUD/[1.7.2]StatusEffectHUD-client-" & ComboBox8.Text & "(1.7.2).jar",
-                                              Form1.TextBox1.Text & "\mods\" & "[1.7.2]StatusEffectHUD-client-" & ComboBox4.Text & "(1.7.2).jar")
+                                              Form1.TextBox1.Text & "\mods\" & "[1.7.2]StatusEffectHUD-client-" & ComboBox8.Text & "(1.7.2).jar", "", "", False, 100000, True)
             current += 1
         End If
 
