@@ -156,4 +156,10 @@
   <data name="SEHUD172min" xml:space="preserve">
     <value>20</value>
   </data>
+  <data name="InGameInfo172latest" xml:space="preserve">
+    <value>42</value>
+  </data>
+  <data name="InGameInfo172min" xml:space="preserve">
+    <value>36</value>
+  </data>
 </root>

@@ -1,9 +1,14 @@
 ﻿Public Class Form1
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        If Not ComboBox1.Text = "" Then Me.Hide()
-        If ComboBox1.Text = "1.7.2" Then Ver172.Show()
-        If ComboBox1.Text = "1.6.4" Then Ver164.Show()
+        If My.Computer.FileSystem.DirectoryExists(TextBox1.Text) Then
+            If Not ComboBox1.Text = "" Then Me.Hide()
+            If ComboBox1.Text = "1.7.2" Then Ver172.Show()
+            If ComboBox1.Text = "1.6.4" Then Ver164.Show()
+        Else
+            MsgBox("請先選擇你的.minecraft資料夾")
+        End If
+
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load

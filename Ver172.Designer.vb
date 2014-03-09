@@ -50,6 +50,9 @@ Partial Class Ver172
         Me.ComboBox8 = New System.Windows.Forms.ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.CheckBox8 = New System.Windows.Forms.CheckBox()
+        Me.ComboBox9 = New System.Windows.Forms.ComboBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.CheckBox9 = New System.Windows.Forms.CheckBox()
         Me.SuspendLayout()
         '
         'CheckBox1
@@ -216,10 +219,31 @@ Partial Class Ver172
         Me.CheckBox8.Name = "CheckBox8"
         Me.CheckBox8.UseVisualStyleBackColor = True
         '
+        'ComboBox9
+        '
+        Me.ComboBox9.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox9.FormattingEnabled = True
+        resources.ApplyResources(Me.ComboBox9, "ComboBox9")
+        Me.ComboBox9.Name = "ComboBox9"
+        '
+        'Label9
+        '
+        resources.ApplyResources(Me.Label9, "Label9")
+        Me.Label9.Name = "Label9"
+        '
+        'CheckBox9
+        '
+        resources.ApplyResources(Me.CheckBox9, "CheckBox9")
+        Me.CheckBox9.Name = "CheckBox9"
+        Me.CheckBox9.UseVisualStyleBackColor = True
+        '
         'Ver172
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.ComboBox9)
+        Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.CheckBox9)
         Me.Controls.Add(Me.ComboBox8)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.CheckBox8)
@@ -279,4 +303,7 @@ Partial Class Ver172
     Friend WithEvents ComboBox8 As System.Windows.Forms.ComboBox
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents CheckBox8 As System.Windows.Forms.CheckBox
+    Friend WithEvents ComboBox9 As System.Windows.Forms.ComboBox
+    Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents CheckBox9 As System.Windows.Forms.CheckBox
 End Class

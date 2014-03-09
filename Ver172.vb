@@ -9,6 +9,7 @@
             CheckBox6.Enabled = False
             CheckBox7.Enabled = False
             CheckBox8.Enabled = False
+            CheckBox9.Enabled = False
 
             CheckBox2.Checked = False
             CheckBox4.Checked = False
@@ -16,11 +17,13 @@
             CheckBox6.Checked = False
             CheckBox7.Checked = False
             CheckBox8.Checked = False
+            CheckBox9.Checked = False
         Else
             ComboBox1.Enabled = True
             CheckBox2.Enabled = True
             CheckBox4.Enabled = True
             CheckBox5.Enabled = True
+            CheckBox9.Enabled = True
         End If
     End Sub
 
@@ -29,7 +32,7 @@
     End Sub
 
     Private Sub Ver172_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedDialog
+        Me.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedToolWindow
 
         'mod1 - Forge
         ComboBox1.Items.Add("latest")
@@ -89,6 +92,15 @@
         Next
         ComboBox8.Text = "latest"
 
+        'mod8 - InGameInfoXML
+        ComboBox9.Items.Add("latest")
+        For i = Val(My.Resources.mods_ver.InGameInfo172latest) To 40 Step -1
+            ComboBox9.Items.Add("2.6.0." & i)
+        Next
+        For i = 39 To Val(My.Resources.mods_ver.InGameInfo172min) Step -1
+            ComboBox9.Items.Add("2.5.1." & i)
+        Next
+        ComboBox9.Text = "latest"
 
 
 
@@ -97,6 +109,7 @@
         ComboBox6.Enabled = False
         ComboBox7.Enabled = False
         ComboBox8.Enabled = False
+        ComboBox9.Enabled = False
 
         CheckBox6.Enabled = False
         CheckBox7.Enabled = False
@@ -165,19 +178,19 @@
         If Not My.Computer.FileSystem.FileExists(Form1.TextBox1.Text & "\libraries\net\minecraftforge\minecraftforge\" & ComboBox1.Text & "\minecraftforge-" & ComboBox1.Text & ".jar") Then count += 1
 
         If Not My.Computer.FileSystem.FileExists(Form1.TextBox1.Text & "\libraries\org\scala-lang\scala-compiler\2.10.2\scala-compiler-2.10.2.jar") Then
-            Me.Name = current & " of " & count & "安裝scala-compiler"
+            Me.text = current & " of " & count & "安裝scala-compiler"
             My.Computer.Network.DownloadFile("http://repo.maven.apache.org/maven2/org/scala-lang/scala-compiler/2.10.2/scala-compiler-2.10.2.jar", Form1.TextBox1.Text & "\libraries\org\scala-lang\scala-compiler\2.10.2\scala-compiler-2.10.2.jar")
             current += 1
         End If
 
         If Not My.Computer.FileSystem.FileExists(Form1.TextBox1.Text & "\libraries\org\scala-lang\scala-library\2.10.2\scala-library-2.10.2.jar") Then
-            Me.Name = current & " of " & count & "安裝scala-library"
+            Me.text = current & " of " & count & "安裝scala-library"
             My.Computer.Network.DownloadFile("http://repo.maven.apache.org/maven2/org/scala-lang/scala-library/2.10.2/scala-library-2.10.2.jar", Form1.TextBox1.Text & "\libraries\org\scala-lang\scala-compiler\2.10.2\scala-compiler-2.10.2.jar")
             current += 1
         End If
 
         If CheckBox1.Enabled = True And Not My.Computer.FileSystem.DirectoryExists(Form1.TextBox1.Text & "\versions\1.7.2-Forge" & ComboBox1.Text) Then
-            Me.Name = current & " of " & count & "安裝Forge"
+            Me.text = current & " of " & count & "安裝Forge"
             My.Computer.FileSystem.CreateDirectory(Form1.TextBox1.Text & "\versions\1.7.2-Forge" & ComboBox1.Text)
             My.Computer.Network.DownloadFile("http://s3.amazonaws.com/Minecraft.Download/versions/1.7.2/1.7.2.jar", Form1.TextBox1.Text & "\versions\1.7.2-Forge" & ComboBox1.Text & "\1.7.2-Forge" & ComboBox1.Text & ".jar")
             My.Computer.Network.DownloadFile("https://raw.github.com/MinecraftForge/FML/master/jsons/1.7.2.json", Form1.TextBox1.Text & "\versions\1.7.2-Forge" & ComboBox1.Text & "\1.7.2-Forge" & ComboBox1.Text & ".json")
@@ -186,7 +199,7 @@
         End If
 
         If CheckBox2.Enabled And CheckBox2.Checked = True Then
-            Me.Name = current & " of " & count & "安裝Inventory tweaks"
+            Me.text = current & " of " & count & "安裝Inventory tweaks"
             If ComboBox2.Text = "latest" Then ComboBox2.Text = "1.57-dev-" & My.Resources.mods_ver.Invtweak172latest
             If My.Computer.FileSystem.FileExists(Form1.TextBox1.Text & "\mods\InventoryTweaks-" & ComboBox2.Text & ".jar") Then My.Computer.FileSystem.DeleteFile(Form1.TextBox1.Text & "\mods\" & "InventoryTweaks-" & ComboBox2.Text & ".jar")
             My.Computer.Network.DownloadFile("http://build.technicpack.net/job/Inventory-Tweaks/" & Val(My.Resources.mods_ver.Invtweak172latest) & "/artifact/build/libs/InventoryTweaks-" & ComboBox2.Text & ".jar",
@@ -195,7 +208,7 @@
         End If
 
         If CheckBox3.Enabled And CheckBox3.Checked = True Then
-            Me.Name = current & " of " & count & "安裝Voxelmap"
+            Me.text = current & " of " & count & "安裝Voxelmap"
             If My.Computer.FileSystem.FileExists(Form1.TextBox1.Text & "\mods\" & "voxelmap-1.7.2-1.0.jar") Then My.Computer.FileSystem.DeleteFile(Form1.TextBox1.Text & "\mods\" & "voxelmap-1.7.2-1.0.jar")
             My.Computer.Network.DownloadFile("https://dl.dropboxusercontent.com/s/boitpzvszpbsqfx/voxelmap-1.7.2-1.0.jar?dl=1&token_hash=AAF1ZA2AhwjhslkjEfT9kSk_qqfxduqviI4JGhgtg7M9Bw",
                                              Form1.TextBox1.Text & "\mods\" & "voxelmap-1.7.2-1.0.jar")
@@ -203,7 +216,7 @@
         End If
 
         If CheckBox4.Enabled And CheckBox4.Checked = True Then
-            Me.Name = current & " of " & count & "安裝Damage Indicators"
+            Me.text = current & " of " & count & "安裝Damage Indicators"
             If ComboBox4.Text = "latest" Then ComboBox4.Text = "3.0." & My.Resources.mods_ver.DI172latest
             If My.Computer.FileSystem.FileExists(Form1.TextBox1.Text & "\mods\[1.7.2]DamageIndicatorsMod-" & ComboBox4.Text & ".jar") Then My.Computer.FileSystem.DeleteFile(Form1.TextBox1.Text & "\mods\" & "[1.7.2]DamageIndicatorsMod-" & ComboBox4.Text & ".jar")
             My.Computer.Network.DownloadFile("https://dl.dropboxusercontent.com/u/74770478/%5B1.7.2%5DDamageIndicatorsMod-" & ComboBox4.Text & ".jar",
@@ -212,7 +225,7 @@
         End If
 
         If CheckBox5.Enabled And CheckBox5.Checked = True Then
-            Me.Name = current & " of " & count & "安裝bspkrsCore"
+            Me.text = current & " of " & count & "安裝bspkrsCore"
             If My.Computer.FileSystem.FileExists(Form1.TextBox1.Text & "\mods\[1.7.2]bspkrsCore-universal-6.0(1.7.2).jar") Then My.Computer.FileSystem.DeleteFile(Form1.TextBox1.Text & "\mods\" & "[1.7.2]bspkrsCore-universal-6.0(1.7.2).jar")
             My.Computer.Network.DownloadFile("http://bspk.rs/MC/bspkrsCore/[1.7.2]bspkrsCore-universal-6.0(1.7.2).jar",
                                               Form1.TextBox1.Text & "\mods\[1.7.2]bspkrsCore-universal-6.0(1.7.2).jar")
@@ -220,7 +233,7 @@
         End If
 
         If CheckBox6.Enabled And CheckBox6.Checked = True Then
-            Me.Name = current & " of " & count & "安裝ArmorStatusHUD"
+            Me.text = current & " of " & count & "安裝ArmorStatusHUD"
             If ComboBox6.Text = "latest" Then ComboBox6.Text = "1." & My.Resources.mods_ver.ASHUD172latest
             If My.Computer.FileSystem.FileExists(Form1.TextBox1.Text & "\mods\[1.7.2]ArmorStatusHUD-client-" & ComboBox6.Text & "(1.7.2).jar") Then My.Computer.FileSystem.DeleteFile(Form1.TextBox1.Text & "\mods\[1.7.2]ArmorStatusHUD-client-" & ComboBox6.Text & "(1.7.2).jar")
             My.Computer.Network.DownloadFile("http://bspk.rs/MC/ArmorStatusHUD/[1.7.2]ArmorStatusHUD-client-" & ComboBox6.Text & "(1.7.2).jar",
@@ -229,7 +242,7 @@
         End If
 
         If CheckBox7.Enabled And CheckBox7.Checked = True Then
-            Me.Name = current & " of " & count & "安裝DirectionHUD"
+            Me.text = current & " of " & count & "安裝DirectionHUD"
             If ComboBox7.Text = "latest" Then ComboBox7.Text = "1." & My.Resources.mods_ver.DHUD172latest
             If My.Computer.FileSystem.FileExists(Form1.TextBox1.Text & "\mods\[1.7.2]DirectionHUD-client-" & ComboBox7.Text & "(1.7.2).jar") Then My.Computer.FileSystem.DeleteFile(Form1.TextBox1.Text & "\mods\" & "[1.7.2]DirectionHUD-client-" & ComboBox7.Text & "(1.7.2).jar")
             My.Computer.Network.DownloadFile("http://bspk.rs/MC/DirectionHUD/[1.7.2]DirectionHUD-client-" & ComboBox7.Text & "(1.7.2).jar",
@@ -238,11 +251,20 @@
         End If
 
         If CheckBox8.Enabled And CheckBox8.Checked = True Then
-            Me.Name = current & " of " & count & "安裝StatusEffectHUD"
+            Me.text = current & " of " & count & "安裝StatusEffectHUD"
             If ComboBox8.Text = "latest" Then ComboBox8.Text = "1." & My.Resources.mods_ver.SEHUD172latest
             If My.Computer.FileSystem.FileExists(Form1.TextBox1.Text & "\mods\[1.7.2]StatusEffectHUD-client-" & ComboBox8.Text & "(1.7.2).jar") Then My.Computer.FileSystem.DeleteFile(Form1.TextBox1.Text & "\mods\" & "[1.7.2]StatusEffectHUD-client-" & ComboBox8.Text & "(1.7.2).jar")
             My.Computer.Network.DownloadFile("http://bspk.rs/MC/StatusEffectHUD/[1.7.2]StatusEffectHUD-client-" & ComboBox8.Text & "(1.7.2).jar",
                                               Form1.TextBox1.Text & "\mods\" & "[1.7.2]StatusEffectHUD-client-" & ComboBox8.Text & "(1.7.2).jar", "", "", False, 100000, True)
+            current += 1
+        End If
+
+        If CheckBox9.Enabled And CheckBox9.Checked = True Then
+            Me.text = current & " of " & count & "安裝InGameInfoXML"
+            If ComboBox9.Text = "latest" Then ComboBox9.Text = "2.6.0." & My.Resources.mods_ver.InGameInfo172latest
+            If My.Computer.FileSystem.FileExists(Form1.TextBox1.Text & "\mods\[1.7.2]InGameInfoXML-" & ComboBox9.Text & ".jar") Then My.Computer.FileSystem.DeleteFile(Form1.TextBox1.Text & "\mods\[1.7.2]InGameInfoXML-" & ComboBox9.Text & ".jar")
+            My.Computer.Network.DownloadFile("http://mc.lunatri.us/files/mods/forge/InGameInfoXML/[1.7.2]InGameInfoXML-" & ComboBox9.Text & ".jar",
+                                              Form1.TextBox1.Text & "\mods\[1.7.2]InGameInfoXML-" & ComboBox9.Text & ".jar", "", "", False, 100000, True)
             current += 1
         End If
 
@@ -280,7 +302,7 @@
         If CheckBox4.Checked = True Then
             ComboBox4.Enabled = True
         Else
-        ComboBox4.Enabled = False
+            ComboBox4.Enabled = False
         End If
     End Sub
 
@@ -294,6 +316,7 @@
         CheckBox6.Checked = True
         CheckBox7.Checked = True
         CheckBox8.Checked = True
+        CheckBox9.Checked = True
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
@@ -305,6 +328,7 @@
         CheckBox6.Checked = False
         CheckBox7.Checked = False
         CheckBox8.Checked = False
+        CheckBox9.Checked = False
 
     End Sub
     Private Sub CheckBox5_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox5.CheckedChanged
@@ -343,4 +367,10 @@
         If CheckBox8.Checked = False Then ComboBox8.Enabled = False
         If CheckBox8.Checked = True Then ComboBox8.Enabled = True
     End Sub
+
+    Private Sub CheckBox9_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox9.CheckedChanged
+        If CheckBox9.Checked = False Then ComboBox9.Enabled = False
+        If CheckBox9.Checked = True Then ComboBox9.Enabled = True
+    End Sub
+
 End Class
