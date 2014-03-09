@@ -1,5 +1,20 @@
 ﻿Public Class Form1
 
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedToolWindow
+
+        'get orginal minecraft folder path
+        TextBox1.Text = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) & "\.minecraft"
+
+        Call detect()
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Me.Hide()
+        About.Show()
+    End Sub
+
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         If My.Computer.FileSystem.DirectoryExists(TextBox1.Text) Then
             If Not ComboBox1.Text = "" Then Me.Hide()
@@ -11,18 +26,20 @@
 
     End Sub
 
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'get orginal minecraft folder path
-        TextBox1.Text = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) & "\.minecraft"
-
-        Call detect()
-        
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Me.Hide()
+        Credits.Show()
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         FolderBrowserDialog1.ShowDialog()
         TextBox1.Text = FolderBrowserDialog1.SelectedPath
         Call detect()
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        Me.Hide()
+        Changelog.Show()
     End Sub
 
     Public Sub detect()
@@ -48,18 +65,4 @@
         End If
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Me.Hide()
-        About.Show()
-    End Sub
-
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        Me.Hide()
-        Credits.Show()
-    End Sub
-
-    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
-        Me.Hide()
-        Changelog.Show()
-    End Sub
 End Class
