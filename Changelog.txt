@@ -3,3 +3,5 @@
       修改檔案描述
       新增Change log
       在方案裡刪除了我的舊檔案
+	  修正了StatusEffectHUD的檔名錯誤
+	  修正了Credits裡的模組原網連結
