@@ -201,59 +201,52 @@
         If CheckBox2.Enabled And CheckBox2.Checked = True Then
             Me.text = current & " of " & count & "安裝Inventory tweaks"
             If ComboBox2.Text = "latest" Then ComboBox2.Text = "1.57-dev-" & My.Resources.mods_ver.Invtweak172latest
-            If My.Computer.FileSystem.FileExists(Form1.TextBox1.Text & "\mods\InventoryTweaks-" & ComboBox2.Text & ".jar") Then My.Computer.FileSystem.DeleteFile(Form1.TextBox1.Text & "\mods\" & "InventoryTweaks-" & ComboBox2.Text & ".jar")
             My.Computer.Network.DownloadFile("http://build.technicpack.net/job/Inventory-Tweaks/" & Val(My.Resources.mods_ver.Invtweak172latest) & "/artifact/build/libs/InventoryTweaks-" & ComboBox2.Text & ".jar",
-                                              Form1.TextBox1.Text & "\mods\" & "InventoryTweaks-" & ComboBox2.Text & ".jar")
+                                              Form1.TextBox1.Text & "\mods\" & "InventoryTweaks-" & ComboBox2.Text & ".jar", "", "", False, 100000, True)
             current += 1
         End If
 
         If CheckBox3.Enabled And CheckBox3.Checked = True Then
             Me.text = current & " of " & count & "安裝Voxelmap"
-            If My.Computer.FileSystem.FileExists(Form1.TextBox1.Text & "\mods\" & "voxelmap-1.7.2-1.0.jar") Then My.Computer.FileSystem.DeleteFile(Form1.TextBox1.Text & "\mods\" & "voxelmap-1.7.2-1.0.jar")
             My.Computer.Network.DownloadFile("https://dl.dropboxusercontent.com/s/boitpzvszpbsqfx/voxelmap-1.7.2-1.0.jar?dl=1&token_hash=AAF1ZA2AhwjhslkjEfT9kSk_qqfxduqviI4JGhgtg7M9Bw",
-                                             Form1.TextBox1.Text & "\mods\" & "voxelmap-1.7.2-1.0.jar")
+                                             Form1.TextBox1.Text & "\mods\" & "voxelmap-1.7.2-1.0.jar", "", "", False, 100000, True)
             current += 1
         End If
 
         If CheckBox4.Enabled And CheckBox4.Checked = True Then
             Me.text = current & " of " & count & "安裝Damage Indicators"
             If ComboBox4.Text = "latest" Then ComboBox4.Text = "3.0." & My.Resources.mods_ver.DI172latest
-            If My.Computer.FileSystem.FileExists(Form1.TextBox1.Text & "\mods\[1.7.2]DamageIndicatorsMod-" & ComboBox4.Text & ".jar") Then My.Computer.FileSystem.DeleteFile(Form1.TextBox1.Text & "\mods\" & "[1.7.2]DamageIndicatorsMod-" & ComboBox4.Text & ".jar")
             My.Computer.Network.DownloadFile("https://dl.dropboxusercontent.com/u/74770478/%5B1.7.2%5DDamageIndicatorsMod-" & ComboBox4.Text & ".jar",
-                                              Form1.TextBox1.Text & "\mods\" & "[1.7.2]DamageIndicatorsMod-" & ComboBox4.Text & ".jar")
+                                              Form1.TextBox1.Text & "\mods\" & "[1.7.2]DamageIndicatorsMod-" & ComboBox4.Text & ".jar", "", "", False, 100000, True)
             current += 1
         End If
 
         If CheckBox5.Enabled And CheckBox5.Checked = True Then
             Me.text = current & " of " & count & "安裝bspkrsCore"
-            If My.Computer.FileSystem.FileExists(Form1.TextBox1.Text & "\mods\[1.7.2]bspkrsCore-universal-6.0(1.7.2).jar") Then My.Computer.FileSystem.DeleteFile(Form1.TextBox1.Text & "\mods\" & "[1.7.2]bspkrsCore-universal-6.0(1.7.2).jar")
             My.Computer.Network.DownloadFile("http://bspk.rs/MC/bspkrsCore/[1.7.2]bspkrsCore-universal-6.0(1.7.2).jar",
-                                              Form1.TextBox1.Text & "\mods\[1.7.2]bspkrsCore-universal-6.0(1.7.2).jar")
+                                              Form1.TextBox1.Text & "\mods\[1.7.2]bspkrsCore-universal-6.0(1.7.2).jar", "", "", False, 100000, True)
             current += 1
         End If
 
         If CheckBox6.Enabled And CheckBox6.Checked = True Then
             Me.text = current & " of " & count & "安裝ArmorStatusHUD"
             If ComboBox6.Text = "latest" Then ComboBox6.Text = "1." & My.Resources.mods_ver.ASHUD172latest
-            If My.Computer.FileSystem.FileExists(Form1.TextBox1.Text & "\mods\[1.7.2]ArmorStatusHUD-client-" & ComboBox6.Text & "(1.7.2).jar") Then My.Computer.FileSystem.DeleteFile(Form1.TextBox1.Text & "\mods\[1.7.2]ArmorStatusHUD-client-" & ComboBox6.Text & "(1.7.2).jar")
             My.Computer.Network.DownloadFile("http://bspk.rs/MC/ArmorStatusHUD/[1.7.2]ArmorStatusHUD-client-" & ComboBox6.Text & "(1.7.2).jar",
-                                              Form1.TextBox1.Text & "\mods\[1.7.2]ArmorStatusHUD-client-" & ComboBox6.Text & "(1.7.2).jar")
+                                              Form1.TextBox1.Text & "\mods\[1.7.2]ArmorStatusHUD-client-" & ComboBox6.Text & "(1.7.2).jar", "", "", False, 100000, True)
             current += 1
         End If
 
         If CheckBox7.Enabled And CheckBox7.Checked = True Then
             Me.text = current & " of " & count & "安裝DirectionHUD"
             If ComboBox7.Text = "latest" Then ComboBox7.Text = "1." & My.Resources.mods_ver.DHUD172latest
-            If My.Computer.FileSystem.FileExists(Form1.TextBox1.Text & "\mods\[1.7.2]DirectionHUD-client-" & ComboBox7.Text & "(1.7.2).jar") Then My.Computer.FileSystem.DeleteFile(Form1.TextBox1.Text & "\mods\" & "[1.7.2]DirectionHUD-client-" & ComboBox7.Text & "(1.7.2).jar")
             My.Computer.Network.DownloadFile("http://bspk.rs/MC/DirectionHUD/[1.7.2]DirectionHUD-client-" & ComboBox7.Text & "(1.7.2).jar",
-                                              Form1.TextBox1.Text & "\mods\" & "[1.7.2]DirectionHUD-client-" & ComboBox7.Text & "(1.7.2).jar")
+                                              Form1.TextBox1.Text & "\mods\" & "[1.7.2]DirectionHUD-client-" & ComboBox7.Text & "(1.7.2).jar", "", "", False, 100000, True)
             current += 1
         End If
 
         If CheckBox8.Enabled And CheckBox8.Checked = True Then
             Me.text = current & " of " & count & "安裝StatusEffectHUD"
             If ComboBox8.Text = "latest" Then ComboBox8.Text = "1." & My.Resources.mods_ver.SEHUD172latest
-            If My.Computer.FileSystem.FileExists(Form1.TextBox1.Text & "\mods\[1.7.2]StatusEffectHUD-client-" & ComboBox8.Text & "(1.7.2).jar") Then My.Computer.FileSystem.DeleteFile(Form1.TextBox1.Text & "\mods\" & "[1.7.2]StatusEffectHUD-client-" & ComboBox8.Text & "(1.7.2).jar")
             My.Computer.Network.DownloadFile("http://bspk.rs/MC/StatusEffectHUD/[1.7.2]StatusEffectHUD-client-" & ComboBox8.Text & "(1.7.2).jar",
                                               Form1.TextBox1.Text & "\mods\" & "[1.7.2]StatusEffectHUD-client-" & ComboBox8.Text & "(1.7.2).jar", "", "", False, 100000, True)
             current += 1
@@ -262,7 +255,6 @@
         If CheckBox9.Enabled And CheckBox9.Checked = True Then
             Me.text = current & " of " & count & "安裝InGameInfoXML"
             If ComboBox9.Text = "latest" Then ComboBox9.Text = "2.6.0." & My.Resources.mods_ver.InGameInfo172latest
-            If My.Computer.FileSystem.FileExists(Form1.TextBox1.Text & "\mods\[1.7.2]InGameInfoXML-" & ComboBox9.Text & ".jar") Then My.Computer.FileSystem.DeleteFile(Form1.TextBox1.Text & "\mods\[1.7.2]InGameInfoXML-" & ComboBox9.Text & ".jar")
             My.Computer.Network.DownloadFile("http://mc.lunatri.us/files/mods/forge/InGameInfoXML/[1.7.2]InGameInfoXML-" & ComboBox9.Text & ".jar",
                                               Form1.TextBox1.Text & "\mods\[1.7.2]InGameInfoXML-" & ComboBox9.Text & ".jar", "", "", False, 100000, True)
             current += 1
