@@ -1,32 +1,4 @@
 ﻿Public Class Ver172
-
-    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
-        If CheckBox1.Checked = False Then
-            ComboBox1.Enabled = False
-            CheckBox2.Enabled = False
-            CheckBox4.Enabled = False
-            CheckBox5.Enabled = False
-            CheckBox6.Enabled = False
-            CheckBox7.Enabled = False
-            CheckBox8.Enabled = False
-            CheckBox9.Enabled = False
-
-            CheckBox2.Checked = False
-            CheckBox4.Checked = False
-            CheckBox5.Checked = False
-            CheckBox6.Checked = False
-            CheckBox7.Checked = False
-            CheckBox8.Checked = False
-            CheckBox9.Checked = False
-        Else
-            ComboBox1.Enabled = True
-            CheckBox2.Enabled = True
-            CheckBox4.Enabled = True
-            CheckBox5.Enabled = True
-            CheckBox9.Enabled = True
-        End If
-    End Sub
-
     Private Sub Ver172_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         Form1.Show()
     End Sub
@@ -92,7 +64,7 @@
         Next
         ComboBox8.Text = "latest"
 
-        'mod8 - InGameInfoXML
+        'mod9 - InGameInfoXML
         ComboBox9.Items.Add("latest")
         For i = Val(My.Resources.mods_ver.InGameInfo172latest) To 40 Step -1
             ComboBox9.Items.Add("2.6.0." & i)
@@ -101,8 +73,6 @@
             ComboBox9.Items.Add("2.5.1." & i)
         Next
         ComboBox9.Text = "latest"
-
-
 
         ComboBox2.Enabled = False
         ComboBox4.Enabled = False
@@ -116,23 +86,90 @@
         CheckBox8.Enabled = False
 
     End Sub
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
+        If CheckBox1.Checked = False Then
+            ComboBox1.Enabled = False
+            CheckBox2.Enabled = False
+            CheckBox4.Enabled = False
+            CheckBox5.Enabled = False
+            CheckBox6.Enabled = False
+            CheckBox7.Enabled = False
+            CheckBox8.Enabled = False
+            CheckBox9.Enabled = False
 
-    Private Sub CheckBox2_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox2.CheckedChanged
-        If CheckBox2.Checked = True Then
-            ComboBox2.Enabled = True
+            CheckBox2.Checked = False
+            CheckBox4.Checked = False
+            CheckBox5.Checked = False
+            CheckBox6.Checked = False
+            CheckBox7.Checked = False
+            CheckBox8.Checked = False
+            CheckBox9.Checked = False
         Else
-            ComboBox2.Enabled = False
+            ComboBox1.Enabled = True
+            CheckBox2.Enabled = True
+            CheckBox4.Enabled = True
+            CheckBox5.Enabled = True
+            CheckBox9.Enabled = True
         End If
+    End Sub
+    Private Sub CheckBox2_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox2.CheckedChanged
+        If CheckBox2.Checked = True Then ComboBox2.Enabled = True
+        If CheckBox2.Checked = False Then ComboBox2.Enabled = False
     End Sub
 
     Private Sub CheckBox3_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox3.CheckedChanged
-        If CheckBox3.Checked = True Then
-            ComboBox3.Enabled = True
+        If CheckBox3.Checked = True Then ComboBox3.Enabled = True
+        If CheckBox3.Checked = False Then ComboBox3.Enabled = False
+    End Sub
+
+    Private Sub CheckBox4_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox4.CheckedChanged
+        If CheckBox4.Checked = True Then
+            ComboBox4.Enabled = True
         Else
-            ComboBox3.Enabled = False
+            ComboBox4.Enabled = False
         End If
     End Sub
 
+
+    Private Sub CheckBox5_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox5.CheckedChanged
+        If CheckBox5.Checked = True Then
+            CheckBox6.Enabled = True
+            CheckBox7.Enabled = True
+            CheckBox8.Enabled = True
+
+        Else
+
+            CheckBox6.Enabled = False
+            CheckBox7.Enabled = False
+            CheckBox8.Enabled = False
+
+            ComboBox6.Enabled = False
+            ComboBox7.Enabled = False
+            ComboBox8.Enabled = False
+
+            CheckBox6.Checked = False
+            CheckBox7.Checked = False
+            CheckBox8.Checked = False
+        End If
+    End Sub
+    Private Sub CheckBox6_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox6.CheckedChanged
+        If CheckBox6.Checked = False Then ComboBox6.Enabled = False
+        If CheckBox6.Checked = True Then ComboBox6.Enabled = True
+    End Sub
+    Private Sub CheckBox7_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox7.CheckedChanged
+        If CheckBox7.Checked = False Then ComboBox7.Enabled = False
+        If CheckBox7.Checked = True Then ComboBox7.Enabled = True
+    End Sub
+
+    Private Sub CheckBox8_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox8.CheckedChanged
+        If CheckBox8.Checked = False Then ComboBox8.Enabled = False
+        If CheckBox8.Checked = True Then ComboBox8.Enabled = True
+    End Sub
+
+    Private Sub CheckBox9_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox9.CheckedChanged
+        If CheckBox9.Checked = False Then ComboBox9.Enabled = False
+        If CheckBox9.Checked = True Then ComboBox9.Enabled = True
+    End Sub
     Private Sub Button1_Click(ByVal sender As Object, ByVal e As EventArgs) Handles Button1.Click
         If CheckBox1.Checked = True Then
             'forge
@@ -149,6 +186,32 @@
         End If
 
     End Sub
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        CheckBox1.Checked = True
+        CheckBox2.Checked = True
+        CheckBox3.Checked = True
+        CheckBox4.Checked = True
+        CheckBox5.Checked = True
+        CheckBox6.Checked = True
+        CheckBox7.Checked = True
+        CheckBox8.Checked = True
+        CheckBox9.Checked = True
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        CheckBox1.Checked = False
+        CheckBox2.Checked = False
+        CheckBox3.Checked = False
+        CheckBox4.Checked = False
+        CheckBox5.Checked = False
+        CheckBox6.Checked = False
+        CheckBox7.Checked = False
+        CheckBox8.Checked = False
+        CheckBox9.Checked = False
+
+    End Sub
+    
+
 
     Sub install()
         If ComboBox1.Text = "latest" Then ComboBox1.Text = "10.12.0." & My.Resources.mods_ver.forge172latest
@@ -289,80 +352,6 @@
 
         MsgBox("Done!")
     End Sub
-
-    Private Sub CheckBox4_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox4.CheckedChanged
-        If CheckBox4.Checked = True Then
-            ComboBox4.Enabled = True
-        Else
-            ComboBox4.Enabled = False
-        End If
-    End Sub
-
-
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        CheckBox1.Checked = True
-        CheckBox2.Checked = True
-        CheckBox3.Checked = True
-        CheckBox4.Checked = True
-        CheckBox5.Checked = True
-        CheckBox6.Checked = True
-        CheckBox7.Checked = True
-        CheckBox8.Checked = True
-        CheckBox9.Checked = True
-    End Sub
-
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        CheckBox1.Checked = False
-        CheckBox2.Checked = False
-        CheckBox3.Checked = False
-        CheckBox4.Checked = False
-        CheckBox5.Checked = False
-        CheckBox6.Checked = False
-        CheckBox7.Checked = False
-        CheckBox8.Checked = False
-        CheckBox9.Checked = False
-
-    End Sub
-    Private Sub CheckBox5_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox5.CheckedChanged
-        If CheckBox5.Checked = True Then
-            CheckBox6.Enabled = True
-            CheckBox7.Enabled = True
-            CheckBox8.Enabled = True
-
-        Else
-
-            CheckBox6.Enabled = False
-            CheckBox7.Enabled = False
-            CheckBox8.Enabled = False
-
-            ComboBox6.Enabled = False
-            ComboBox7.Enabled = False
-            ComboBox8.Enabled = False
-
-            CheckBox6.Checked = False
-            CheckBox7.Checked = False
-            CheckBox8.Checked = False
-        End If
-    End Sub
-
-    Private Sub CheckBox6_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox6.CheckedChanged
-        If CheckBox6.Checked = False Then ComboBox6.Enabled = False
-        If CheckBox6.Checked = True Then ComboBox6.Enabled = True
-    End Sub
-
-    Private Sub CheckBox7_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox7.CheckedChanged
-        If CheckBox7.Checked = False Then ComboBox7.Enabled = False
-        If CheckBox7.Checked = True Then ComboBox7.Enabled = True
-    End Sub
-
-    Private Sub CheckBox8_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox8.CheckedChanged
-        If CheckBox8.Checked = False Then ComboBox8.Enabled = False
-        If CheckBox8.Checked = True Then ComboBox8.Enabled = True
-    End Sub
-
-    Private Sub CheckBox9_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox9.CheckedChanged
-        If CheckBox9.Checked = False Then ComboBox9.Enabled = False
-        If CheckBox9.Checked = True Then ComboBox9.Enabled = True
-    End Sub
+    
 
 End Class

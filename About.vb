@@ -1,7 +1,6 @@
 ﻿Public Class About
 
     Private Sub About_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
-        Me.Hide()
         Form1.Show()
     End Sub
 
