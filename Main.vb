@@ -1,7 +1,11 @@
-﻿Public Class Form1
+﻿Public Class Main
+
+    Private Sub Main_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        End
+    End Sub
+
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
         'get orginal minecraft folder path
         TextBox1.Text = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) & "\.minecraft"
 
@@ -63,5 +67,4 @@
             Label4.Text = "☒ 沒有使用過舊版啟動器(沒發現bin資料夾)"
         End If
     End Sub
-
 End Class

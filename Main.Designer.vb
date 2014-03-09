@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form1
+Partial Class Main
     Inherits System.Windows.Forms.Form
 
     'Form 覆寫 Dispose 以清除元件清單。
@@ -22,7 +22,7 @@ Partial Class Form1
     '請不要使用程式碼編輯器進行修改。
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main))
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
@@ -151,7 +151,7 @@ Partial Class Form1
         Me.Button5.Text = "Change log"
         Me.Button5.UseVisualStyleBackColor = True
         '
-        'Form1
+        'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -169,7 +169,7 @@ Partial Class Form1
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Name = "Form1"
+        Me.Name = "Main"
         Me.Text = "mod-kit v0.3"
         Me.ResumeLayout(False)
         Me.PerformLayout()

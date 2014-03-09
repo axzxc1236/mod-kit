@@ -64,8 +64,7 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>0.4.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -101,11 +100,17 @@
     <Compile Include="Credits.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.vb">
+    <Compile Include="Download.Designer.vb">
+      <DependentUpon>Download.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Download.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="Main.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.vb">
+      <DependentUpon>Main.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Changelog.Designer.vb">
@@ -113,6 +118,11 @@
     </Compile>
     <Compile Include="Changelog.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mods-ver-164.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mods-ver-164.resx</DependentUpon>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -129,10 +139,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="mods-ver.Designer.vb">
+    <Compile Include="mods-ver-172.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>mods-ver.resx</DependentUpon>
+      <DependentUpon>mods-ver-172.resx</DependentUpon>
     </Compile>
     <Compile Include="Ver164.Designer.vb">
       <DependentUpon>Ver164.vb</DependentUpon>
@@ -157,8 +167,16 @@
     <EmbeddedResource Include="Credits.resx">
       <DependentUpon>Credits.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="Download.resx">
+      <DependentUpon>Download.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mods-ver-164.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>mods-ver-164.Designer.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -166,10 +184,10 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="mods-ver.resx">
+    <EmbeddedResource Include="mods-ver-172.resx">
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>mods-ver.Designer.vb</LastGenOutput>
+      <LastGenOutput>mods-ver-172.Designer.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Ver164.resx">
       <DependentUpon>Ver164.vb</DependentUpon>
@@ -179,6 +197,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="0.4.ico" />
     <Content Include="172voxel.bat">
       <CustomToolNamespace>172voxel.bat</CustomToolNamespace>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

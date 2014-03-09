@@ -26,7 +26,7 @@
 
     Private Sub Credits_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         Me.Hide()
-        Form1.Show()
+        Main.Show()
     End Sub
 
     Private Sub Credits_Load(sender As Object, e As EventArgs) Handles MyBase.Load

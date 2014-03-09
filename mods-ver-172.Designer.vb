@@ -25,7 +25,7 @@ Namespace My.Resources
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0"),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute()>  _
-    Friend Class mods_ver
+    Friend Class mods_ver_172
         
         Private Shared resourceMan As Global.System.Resources.ResourceManager
         
@@ -43,7 +43,7 @@ Namespace My.Resources
         Friend Shared ReadOnly Property ResourceManager() As Global.System.Resources.ResourceManager
             Get
                 If Object.ReferenceEquals(resourceMan, Nothing) Then
-                    Dim temp As Global.System.Resources.ResourceManager = New Global.System.Resources.ResourceManager("mod_kit.mods-ver", GetType(mods_ver).Assembly)
+                    Dim temp As Global.System.Resources.ResourceManager = New Global.System.Resources.ResourceManager("mod_kit.mods-ver-172", GetType(mods_ver_172).Assembly)
                     resourceMan = temp
                 End If
                 Return resourceMan

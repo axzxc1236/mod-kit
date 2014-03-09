@@ -1,7 +1,7 @@
 ﻿Public Class About
 
     Private Sub About_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
-        Form1.Show()
+        Main.Show()
     End Sub
 
     Private Sub About_Load(sender As Object, e As EventArgs) Handles MyBase.Load
