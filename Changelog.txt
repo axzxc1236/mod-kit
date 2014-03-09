@@ -1,5 +1,5 @@
-﻿  0.2:
-      新增Icon
-	  修改檔案描述
-	  新增Change log按鈕
-	  在方案裡刪除了我的舊檔案
+  0.2:
+      �s�WIcon
+      �ק��ɮ״y�z
+      �s�WChange log
+      �b��׸̧R���F�ڪ����ɮ�

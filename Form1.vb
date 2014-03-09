@@ -54,6 +54,7 @@
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
-        Shell("Changelog.txt")
+        Me.Hide()
+        Changelog.Show()
     End Sub
 End Class
