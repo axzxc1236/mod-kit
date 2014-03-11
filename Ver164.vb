@@ -137,6 +137,7 @@
         If CheckBox1.Checked = False Then
             ComboBox1.Enabled = False
             CheckBox2.Enabled = False
+            CheckBox3.Enabled = False
             CheckBox4.Enabled = False
             CheckBox5.Enabled = False
             CheckBox6.Enabled = False
@@ -145,6 +146,7 @@
             CheckBox9.Enabled = False
 
             CheckBox2.Checked = False
+            CheckBox3.Checked = False
             CheckBox4.Checked = False
             CheckBox5.Checked = False
             CheckBox6.Checked = False
@@ -154,6 +156,7 @@
         Else
             ComboBox1.Enabled = True
             CheckBox2.Enabled = True
+            CheckBox3.Enabled = False
             CheckBox4.Enabled = True
             CheckBox5.Enabled = True
             CheckBox9.Enabled = True
