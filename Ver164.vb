@@ -156,7 +156,7 @@
         Else
             ComboBox1.Enabled = True
             CheckBox2.Enabled = True
-            CheckBox3.Enabled = False
+            CheckBox3.Enabled = True
             CheckBox4.Enabled = True
             CheckBox5.Enabled = True
             CheckBox9.Enabled = True
