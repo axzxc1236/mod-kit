@@ -227,13 +227,14 @@
             Dim choose As SByte
             choose = MsgBox("偵測到選擇的Forge版本已存在，需要重新安裝Forge?", MsgBoxStyle.YesNo)
             If choose = 6 Then
-                My.Computer.FileSystem.DeleteDirectory(Main.TextBox1.Text & "\versions\1.7.2-Forge" & ComboBox1.Text, FileIO.DeleteDirectoryOption.DeleteAllContents)
-                My.Computer.FileSystem.DeleteDirectory(Main.TextBox1.Text & "\libraries\net\minecraftforge\minecraftforge\" & ComboBox1.Text, FileIO.DeleteDirectoryOption.DeleteAllContents)
+                If My.Computer.FileSystem.FileExists(Environment.CurrentDirectory & "\mod-kit\Forge.jar") Then My.Computer.FileSystem.DeleteFile(Environment.CurrentDirectory & "\mod-kit\Forge.jar")
+                If My.Computer.FileSystem.DirectoryExists(Environment.CurrentDirectory & "\mod-kit\Forge") Then My.Computer.FileSystem.DeleteDirectory(Environment.CurrentDirectory & "\mod-kit\Forge", FileIO.DeleteDirectoryOption.DeleteAllContents)
+                If My.Computer.FileSystem.DirectoryExists(Main.TextBox1.Text & "\versions\1.7.2-Forge" & ComboBox1.Text) Then My.Computer.FileSystem.DeleteDirectory(Main.TextBox1.Text & "\versions\1.7.2-Forge" & ComboBox1.Text, FileIO.DeleteDirectoryOption.DeleteAllContents)
+                If My.Computer.FileSystem.DirectoryExists(Main.TextBox1.Text & "\libraries\net\minecraftforge\minecraftforge\" & ComboBox1.Text) Then My.Computer.FileSystem.DeleteDirectory(Main.TextBox1.Text & "\libraries\net\minecraftforge\minecraftforge\" & ComboBox1.Text, FileIO.DeleteDirectoryOption.DeleteAllContents)
             End If
         End If
 
         Dim count, current As Short
-        current = 1
         If CheckBox1.Enabled = True And CheckBox1.Checked = True Then count += 1
         If CheckBox2.Enabled = True And CheckBox2.Checked = True Then count += 1
         If CheckBox3.Enabled = True And CheckBox3.Checked = True Then count += 1
@@ -262,71 +263,64 @@
             Me.Text = current & " of " & count & "-安裝Forge"
             My.Computer.FileSystem.CreateDirectory(Main.TextBox1.Text & "\versions\1.7.2-Forge" & ComboBox1.Text)
             My.Computer.Network.DownloadFile("http://s3.amazonaws.com/Minecraft.Download/versions/1.7.2/1.7.2.jar", Main.TextBox1.Text & "\versions\1.7.2-Forge" & ComboBox1.Text & "\1.7.2-Forge" & ComboBox1.Text & ".jar")
-            My.Computer.Network.DownloadFile("https://raw.github.com/MinecraftForge/FML/master/jsons/1.7.2.json", Main.TextBox1.Text & "\versions\1.7.2-Forge" & ComboBox1.Text & "\1.7.2-Forge" & ComboBox1.Text & ".json")
-            My.Computer.Network.DownloadFile("http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.7.2-" & ComboBox1.Text & "/forge-1.7.2-" & ComboBox1.Text & "-universal.jar", Main.TextBox1.Text & "\libraries\net\minecraftforge\minecraftforge\" & ComboBox1.Text & "\minecraftforge-" & ComboBox1.Text & ".jar", "", "", False, 100000, True)
+            My.Computer.Network.DownloadFile("http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.7.2-" & ComboBox1.Text & "/forge-1.7.2-" & ComboBox1.Text & "-installer.jar", Environment.CurrentDirectory & "\mod-kit\Forge.jar", "", "", False, 100000, True)
+            FileCopy("unzip.bat", Environment.CurrentDirectory & "\mod-kit\unzip.bat")
+            Shell("cmd /c mod-kit\unzip.bat", AppWinStyle.Hide, True)
+            My.Computer.FileSystem.MoveFile(Environment.CurrentDirectory & "\mod-kit\Forge\forge-1.7.2-" & ComboBox1.Text & "-universal.jar", Main.TextBox1.Text & "\libraries\net\minecraftforge\minecraftforge\" & ComboBox1.Text & "\minecraftforge-" & ComboBox1.Text & ".jar")
+            My.Computer.FileSystem.MoveFile(Environment.CurrentDirectory & "\mod-kit\Forge\install_profile.json", Main.TextBox1.Text & "\versions\1.7.2-Forge" & ComboBox1.Text & "\1.7.2-Forge" & ComboBox1.Text & ".json")
+
+            For i = 0 To 11
+                DeleteLine(Main.TextBox1.Text & "\versions\1.7.2-Forge" & ComboBox1.Text & "\1.7.2-Forge" & ComboBox1.Text & ".json", 1)
+            Next
+            DeleteLine(Main.TextBox1.Text & "\versions\1.7.2-Forge" & ComboBox1.Text & "\1.7.2-Forge" & ComboBox1.Text & ".json", 206)
+
             current += 1
         End If
 
         If CheckBox2.Enabled And CheckBox2.Checked = True Then
             Me.Text = current & " of " & count & "-安裝Inventory tweaks"
             If ComboBox2.Text = "latest" Then ComboBox2.Text = "1.57-dev-" & My.Resources.mods_ver_172.Invtweak172latest
-            My.Computer.Network.DownloadFile("http://build.technicpack.net/job/Inventory-Tweaks/" & Val(My.Resources.mods_ver_172.Invtweak172latest) & "/artifact/build/libs/InventoryTweaks-" & ComboBox2.Text & ".jar",
-                                              Main.TextBox1.Text & "\mods\" & "InventoryTweaks-" & ComboBox2.Text & ".jar", "", "", False, 100000, True)
-            current += 1
+            Call download("http://build.technicpack.net/job/Inventory-Tweaks/" & Val(My.Resources.mods_ver_172.Invtweak172latest) & "/artifact/build/libs/InventoryTweaks-" & ComboBox2.Text & ".jar", Main.TextBox1.Text & "\mods\" & "InventoryTweaks-" & ComboBox2.Text & ".jar", current)
         End If
 
         If CheckBox3.Enabled And CheckBox3.Checked = True Then
             Me.Text = current & " of " & count & "-安裝Voxelmap"
-            My.Computer.Network.DownloadFile("https://dl.dropboxusercontent.com/s/boitpzvszpbsqfx/voxelmap-1.7.2-1.0.jar?dl=1&token_hash=AAF1ZA2AhwjhslkjEfT9kSk_qqfxduqviI4JGhgtg7M9Bw",
-                                             Main.TextBox1.Text & "\mods\" & "voxelmap-1.7.2-1.0.jar", "", "", False, 100000, True)
-            current += 1
+            Call download("https://dl.dropboxusercontent.com/s/boitpzvszpbsqfx/voxelmap-1.7.2-1.0.jar?dl=1&token_hash=AAF1ZA2AhwjhslkjEfT9kSk_qqfxduqviI4JGhgtg7M9Bw", Main.TextBox1.Text & "\mods\" & "voxelmap-1.7.2-1.0.jar", current)
         End If
 
         If CheckBox4.Enabled And CheckBox4.Checked = True Then
             Me.Text = current & " of " & count & "-安裝Damage Indicators"
             If ComboBox4.Text = "latest" Then ComboBox4.Text = "3.0." & My.Resources.mods_ver_172.DI172latest
-            My.Computer.Network.DownloadFile("https://dl.dropboxusercontent.com/u/74770478/%5B1.7.2%5DDamageIndicatorsMod-" & ComboBox4.Text & ".jar",
-                                              Main.TextBox1.Text & "\mods\" & "[1.7.2]DamageIndicatorsMod-" & ComboBox4.Text & ".jar", "", "", False, 100000, True)
-            current += 1
+            Call download("https://dl.dropboxusercontent.com/u/74770478/%5B1.7.2%5DDamageIndicatorsMod-" & ComboBox4.Text & ".jar", Main.TextBox1.Text & "\mods\" & "[1.7.2]DamageIndicatorsMod-" & ComboBox4.Text & ".jar", current)
         End If
 
         If CheckBox5.Enabled And CheckBox5.Checked = True Then
             Me.Text = current & " of " & count & "-安裝bspkrsCore"
-            My.Computer.Network.DownloadFile("http://bspk.rs/MC/bspkrsCore/[1.7.2]bspkrsCore-universal-6.0(1.7.2).jar",
-                                              Main.TextBox1.Text & "\mods\[1.7.2]bspkrsCore-universal-6.0(1.7.2).jar", "", "", False, 100000, True)
-            current += 1
+            Call download("http://bspk.rs/MC/bspkrsCore/[1.7.2]bspkrsCore-universal-6.0(1.7.2).jar", Main.TextBox1.Text & "\mods\[1.7.2]bspkrsCore-universal-6.0(1.7.2).jar", current)
         End If
 
         If CheckBox6.Enabled And CheckBox6.Checked = True Then
             Me.Text = current & " of " & count & "-安裝ArmorStatusHUD"
             If ComboBox6.Text = "latest" Then ComboBox6.Text = "1." & My.Resources.mods_ver_172.ASHUD172latest
-            My.Computer.Network.DownloadFile("http://bspk.rs/MC/ArmorStatusHUD/[1.7.2]ArmorStatusHUD-client-" & ComboBox6.Text & "(1.7.2).jar",
-                                              Main.TextBox1.Text & "\mods\[1.7.2]ArmorStatusHUD-client-" & ComboBox6.Text & "(1.7.2).jar", "", "", False, 100000, True)
-            current += 1
+            Call download("http://bspk.rs/MC/ArmorStatusHUD/[1.7.2]ArmorStatusHUD-client-" & ComboBox6.Text & "(1.7.2).jar", Main.TextBox1.Text & "\mods\[1.7.2]ArmorStatusHUD-client-" & ComboBox6.Text & "(1.7.2).jar", current)
         End If
 
         If CheckBox7.Enabled And CheckBox7.Checked = True Then
             Me.Text = current & " of " & count & "-安裝DirectionHUD"
             If ComboBox7.Text = "latest" Then ComboBox7.Text = "1." & My.Resources.mods_ver_172.DHUD172latest
-            My.Computer.Network.DownloadFile("http://bspk.rs/MC/DirectionHUD/[1.7.2]DirectionHUD-client-" & ComboBox7.Text & "(1.7.2).jar",
-                                              Main.TextBox1.Text & "\mods\" & "[1.7.2]DirectionHUD-client-" & ComboBox7.Text & "(1.7.2).jar", "", "", False, 100000, True)
-            current += 1
+            Call download("http://bspk.rs/MC/DirectionHUD/[1.7.2]DirectionHUD-client-" & ComboBox7.Text & "(1.7.2).jar", Main.TextBox1.Text & "\mods\" & "[1.7.2]DirectionHUD-client-" & ComboBox7.Text & "(1.7.2).jar", current)
         End If
 
         If CheckBox8.Enabled And CheckBox8.Checked = True Then
             Me.Text = current & " of " & count & "-安裝StatusEffectHUD"
             If ComboBox8.Text = "latest" Then ComboBox8.Text = "1." & My.Resources.mods_ver_172.SEHUD172latest
-            My.Computer.Network.DownloadFile("http://bspk.rs/MC/StatusEffectHUD/[1.7.2]StatusEffectHUD-client-" & ComboBox8.Text & "(1.7.2).jar",
-                                              Main.TextBox1.Text & "\mods\" & "[1.7.2]StatusEffectHUD-client-" & ComboBox8.Text & "(1.7.2).jar", "", "", False, 100000, True)
-            current += 1
+            Call download("http://bspk.rs/MC/StatusEffectHUD/[1.7.2]StatusEffectHUD-client-" & ComboBox8.Text & "(1.7.2).jar", Main.TextBox1.Text & "\mods\" & "[1.7.2]StatusEffectHUD-client-" & ComboBox8.Text & "(1.7.2).jar", current)
         End If
 
         If CheckBox9.Enabled And CheckBox9.Checked = True Then
             Me.Text = current & " of " & count & "-安裝InGameInfoXML"
             If ComboBox9.Text = "latest" Then ComboBox9.Text = "2.6.0." & My.Resources.mods_ver_172.InGameInfo172latest
-            My.Computer.Network.DownloadFile("http://mc.lunatri.us/files/mods/forge/InGameInfoXML/[1.7.2]InGameInfoXML-" & ComboBox9.Text & ".jar",
-                                              Main.TextBox1.Text & "\mods\[1.7.2]InGameInfoXML-" & ComboBox9.Text & ".jar", "", "", False, 100000, True)
-            current += 1
+            Call download("http://mc.lunatri.us/files/mods/forge/InGameInfoXML/[1.7.2]InGameInfoXML-" & ComboBox9.Text & ".jar", Main.TextBox1.Text & "\mods\[1.7.2]InGameInfoXML-" & ComboBox9.Text & ".jar", current)
         End If
 
         MsgBox("Done!")
@@ -335,7 +329,7 @@
 
     Sub install_vanilla()
         My.Computer.Network.DownloadFile("http://s3.amazonaws.com/Minecraft.Download/versions/1.7.2/1.7.2.jar", Environment.CurrentDirectory & "\mod-kit\tmp.jar", "", "", False, 100000, True)
-        My.Computer.Network.DownloadFile("http://static.planetminecraft.com/files/resource_media/mod/1410/zanmap172j.zip", Environment.CurrentDirectory & "\mod-kit\mod.zip", "", "", False, 100000, True)
+        My.Computer.Network.DownloadFile("http://static.planetminecraft.com/files/resource_media/mod/1410/zanmap172k.zip", Environment.CurrentDirectory & "\mod-kit\mod.zip", "", "", False, 100000, True)
         FileCopy("172voxel.bat", Environment.CurrentDirectory & "\mod-kit\172voxel.bat")
         Shell("cmd /c mod-kit\172voxel.bat", AppWinStyle.Hide, True)
 
@@ -350,10 +344,35 @@
         My.Computer.FileSystem.CopyFile(Environment.CurrentDirectory & "\mod-kit\tmp.jar", Main.TextBox1.Text & "\versions\mod-kit\mod-kit.jar")
         My.Computer.Network.DownloadFile("http://s3.amazonaws.com/Minecraft.Download/versions/1.7.2/1.7.2.json", Main.TextBox1.Text & "\versions\mod-kit\mod-kit.json")
 
-        My.Computer.FileSystem.WriteAllText(Main.TextBox1.Text & "\versions\mod-kit\mod-kit.json", My.Computer.FileSystem.ReadAllText(Main.TextBox1.Text & "\versions\mod-kit\mod-kit.json").Replace("1.7.2", "mod-kit"), False)
+        My.Computer.FileSystem.WriteAllText(Main.TextBox1.Text & "\versions\mod-kit\mod-kit.json", My.Computer.FileSystem.ReadAllText(Main.TextBox1.Text & "\versions\mod-kit\mod-kit.json").Replace("""" & "id" & """" & ": " & """" & "1.7.2" & """", """" & "id" & """" & ": " & """" & "1.7.2-mod-kit" & """"), False)
+        My.Computer.FileSystem.WriteAllText(Main.TextBox1.Text & "\versions\mod-kit\mod-kit.json", My.Computer.FileSystem.ReadAllText(Main.TextBox1.Text & "\versions\mod-kit\mod-kit.json").Replace("  " & """" & "minimumLauncherVersion" & """" & ": 9," & Chr(10), ""), False)
+        My.Computer.FileSystem.WriteAllText(Main.TextBox1.Text & "\versions\mod-kit\mod-kit.json", My.Computer.FileSystem.ReadAllText(Main.TextBox1.Text & "\versions\mod-kit\mod-kit.json").Replace("Main" & """", "Main," & """" & vbCrLf & "  " & """" & "minimumLauncherVersion" & """" & ": 9"), False)
+        My.Computer.FileSystem.WriteAllText(Main.TextBox1.Text & "\versions\mod-kit\mod-kit.json", My.Computer.FileSystem.ReadAllText(Main.TextBox1.Text & "\versions\mod-kit\mod-kit.json").Replace("      " & """" & "natives" & """" & ": {" & Chr(10) & "        " & """" & "osx" & ": " & """" & "natives-osx" & """" & Chr(10) & "      " & "}," & Chr(10) & "      " & """" & "extract" & """" & ": {" & Chr(10) & "        " & """" & "exclude" & """" & ": [" & Chr(10) & "          " & """" & "META-INF/" & """" & Chr(10) & "        " & "]" & Chr(10) & "      " & "}," & Chr(10) & "      " & """" & "rules" & """" & ": [" & Chr(10) & "        " & "{" & Chr(10) & "          " & """" & "action" & """" & ": " & """" & "allow" & """" & "," & Chr(10) & "          " & """" & "os" & """" & ": {" & Chr(10) & "            " & """" & "name" & """" & ": " & """" & "osx" & """" & Chr(10) & "          " & "}" & Chr(10) & "        " & "}" & Chr(10) & "      " & "},",
+                                                                                                                                                                                                     """" & "rules" & """" & ": [" & Chr(10) & "        {" & Chr(10) & "          " & """" & "action" & """" & ": " & """" & "allow" & """" & "," & Chr(10) & "          " & """" & "os" & """" & ": {" & Chr(10) & "            " & """" & "name" & """" & ": " & """" & "osx" & """" & Chr(10) & "          " & "}" & Chr(10) & "        " & "}" & Chr(10) & "      " & "]," & Chr(10) & "      " & """" & "natives" & """" & ": {" & Chr(10) & "        " & """" & "osx" & """" & ": " & """" & "natives-osx" & """" & Chr(10) & "      " & "}," & Chr(10) & "      " & """" & "extract" & """" & ": {" & Chr(10) & "        " & """" & "exclude" & """" & ": [" & Chr(10) & "          " & """" & "META-INF/" & """" & Chr(10) & "        " & "]" & Chr(10) & "      " & "}"), False)
+
 
         MsgBox("Done!")
     End Sub
     
+    Sub download(ByVal address As String, ByVal path As String, ByVal current As SByte)
+        My.Computer.Network.DownloadFile(address, path, "", "", False, 100000, True)
+        current += 1
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        FileCopy("unzip.bat", Environment.CurrentDirectory & "\mod-kit\unzip.bat")
+        Shell("cmd /c mod-kit\unzip.bat", AppWinStyle.Hide, True)
+    End Sub
+
+    Public Sub DeleteLine(ByRef FileAddress As String, ByRef line As Integer)
+        'the code is a copy of the code here
+        'orginal:http://www.dreamincode.net/forums/topic/62488-code-for-delete-a-line-from-text-file/page__view__findpost__p__411311?s=b79e4c8d4e7a0e952d902dd2b02a551f
+        Dim TheFileLines As New List(Of String)
+        TheFileLines.AddRange(System.IO.File.ReadAllLines(FileAddress))
+        ' if line is beyond end of list the exit sub
+        If line >= TheFileLines.Count Then Exit Sub
+        TheFileLines.RemoveAt(line)
+        System.IO.File.WriteAllLines(FileAddress, TheFileLines.ToArray)
+    End Sub
 
 End Class

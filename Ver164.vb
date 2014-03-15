@@ -223,6 +223,22 @@
         If CheckBox9.Checked = False Then ComboBox9.Enabled = False
         If CheckBox9.Checked = True Then ComboBox9.Enabled = True
     End Sub
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        If CheckBox1.Checked = False And CheckBox2.Checked = False And CheckBox3.Checked = False And
+            CheckBox4.Checked = False And CheckBox5.Checked = False And CheckBox6.Checked = False And
+            CheckBox7.Checked = False And CheckBox8.Checked = False And CheckBox9.Checked = False Then
+            MsgBox("沒有選取任何東西")
+        Else
+                'forge
+                If My.Computer.FileSystem.DirectoryExists(Main.Text & "\mods") Then
+                    Dim choose As SByte
+                    choose = MsgBox("建議先刪除mods資料夾(避免崩潰)再繼續，要繼續嗎?", MsgBoxStyle.YesNo)
+                    If choose = 6 Then Call install()
+                Else
+                    Call install()
+                End If
+        End If
+    End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         CheckBox1.Checked = True
@@ -246,6 +262,10 @@
         CheckBox7.Checked = False
         CheckBox8.Checked = False
         CheckBox9.Checked = False
+
+    End Sub
+
+    Sub install()
 
     End Sub
 End Class
