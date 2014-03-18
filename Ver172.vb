@@ -21,10 +21,12 @@
 
         'mod2 - Inventory tweaks
         ComboBox2.Items.Add("latest")
+        ComboBox2.Items.Add("1.57-116")
         For i = Val(My.Resources.mods_ver_172.Invtweak172latest) To Val(My.Resources.mods_ver_172.Invtweak172min) Step -1
             ComboBox2.Items.Add("1.57-dev-" & i)
         Next
         ComboBox2.Items.Remove("1.57-dev-99")
+        ComboBox2.Items.Remove("1.57-dev-116")
         ComboBox2.Text = "latest"
 
         'mod3 - Voxelmap
@@ -33,7 +35,8 @@
 
         'mod4 - Damage Indicators
         ComboBox4.Items.Add("latest")
-        For i = Val(My.Resources.mods_ver_172.DI172latest) To Val(My.Resources.mods_ver_172.DI172min) Step -1
+        ComboBox4.Items.Add("3.1.0")
+        For i = 9 To Val(My.Resources.mods_ver_172.DI172min) Step -1
             ComboBox4.Items.Add("3.0." & i)
         Next
         ComboBox4.Items.Remove("3.0.1")
@@ -64,15 +67,22 @@
         Next
         ComboBox8.Text = "latest"
 
-        'mod9 - InGameInfoXML
+        'mod9 - LunatriusCore
         ComboBox9.Items.Add("latest")
+        ComboBox9.Items.Add("1.0.1." & My.Resources.mods_ver_172.LunaCore172latest)
+        ComboBox9.Items.Add("1.0.0.3")
+        ComboBox9.Items.Add("1.0.0." & My.Resources.mods_ver_172.LunaCore172min)
+        ComboBox9.Text = "latest"
+
+        'mod10 - InGameInfoXML
+        ComboBox10.Items.Add("latest")
         For i = Val(My.Resources.mods_ver_172.InGameInfo172latest) To 40 Step -1
-            ComboBox9.Items.Add("2.6.0." & i)
+            ComboBox10.Items.Add("2.6.0." & i)
         Next
         For i = 39 To Val(My.Resources.mods_ver_172.InGameInfo172min) Step -1
-            ComboBox9.Items.Add("2.5.1." & i)
+            ComboBox10.Items.Add("2.5.1." & i)
         Next
-        ComboBox9.Text = "latest"
+        ComboBox10.Text = "latest"
 
         ComboBox2.Enabled = False
         ComboBox4.Enabled = False
@@ -80,10 +90,12 @@
         ComboBox7.Enabled = False
         ComboBox8.Enabled = False
         ComboBox9.Enabled = False
+        ComboBox10.Enabled = False
 
         CheckBox6.Enabled = False
         CheckBox7.Enabled = False
         CheckBox8.Enabled = False
+        CheckBox10.Enabled = False
 
     End Sub
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
@@ -96,6 +108,7 @@
             CheckBox7.Enabled = False
             CheckBox8.Enabled = False
             CheckBox9.Enabled = False
+            CheckBox10.Enabled = False
 
             CheckBox2.Checked = False
             CheckBox4.Checked = False
@@ -104,6 +117,7 @@
             CheckBox7.Checked = False
             CheckBox8.Checked = False
             CheckBox9.Checked = False
+            CheckBox10.Checked = False
         Else
             ComboBox1.Enabled = True
             CheckBox2.Enabled = True
@@ -167,29 +181,46 @@
     End Sub
 
     Private Sub CheckBox9_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox9.CheckedChanged
-        If CheckBox9.Checked = False Then ComboBox9.Enabled = False
-        If CheckBox9.Checked = True Then ComboBox9.Enabled = True
+        If CheckBox9.Checked = False Then
+            ComboBox9.Enabled = False
+            CheckBox10.Enabled = False
+        Else
+            ComboBox9.Enabled = True
+            CheckBox10.Enabled = True
+        End If
+    End Sub
+
+    Private Sub CheckBox10_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox10.CheckedChanged
+        If CheckBox10.Checked = False Then ComboBox10.Enabled = False
+        If CheckBox10.Checked = True Then ComboBox10.Enabled = True
     End Sub
     Private Sub Button1_Click(ByVal sender As Object, ByVal e As EventArgs) Handles Button1.Click
-        If CheckBox1.Checked = False And CheckBox2.Checked = False And CheckBox3.Checked = False And
-            CheckBox4.Checked = False And CheckBox5.Checked = False And CheckBox6.Checked = False And
-            CheckBox7.Checked = False And CheckBox8.Checked = False And CheckBox9.Checked = False Then
-            MsgBox("沒有選取任何東西")
-        Else
-            If CheckBox1.Checked = True Then
-                'forge
-                If My.Computer.FileSystem.DirectoryExists(Main.Text & "\mods") Then
-                    Dim choose As SByte
-                    choose = MsgBox("建議先刪除mods資料夾(避免崩潰)再繼續，要繼續嗎?", MsgBoxStyle.YesNo)
-                    If choose = 6 Then Call install()
-                Else
-                    Call install()
-                End If
+        Try
+
+            If CheckBox1.Checked = False And CheckBox2.Checked = False And CheckBox3.Checked = False And
+                CheckBox4.Checked = False And CheckBox5.Checked = False And CheckBox6.Checked = False And
+                CheckBox7.Checked = False And CheckBox8.Checked = False And CheckBox9.Checked = False And
+                CheckBox10.Checked = False Then
+                MsgBox("沒有選取任何東西")
             Else
-                'vanilla
-                Call install_vanilla()
+                If CheckBox1.Checked = True Then
+                    'forge
+                    If My.Computer.FileSystem.DirectoryExists(Main.Text & "\mods") Then
+                        Dim choose As SByte
+                        choose = MsgBox("建議先刪除mods資料夾(避免崩潰)再繼續，要繼續嗎?", MsgBoxStyle.YesNo)
+                        If choose = 6 Then Call install()
+                    Else
+                        Call install()
+                    End If
+                Else
+                    'vanilla
+                    Call install_vanilla()
+                End If
             End If
-        End If
+
+        Catch ex As System.Net.WebException
+            MsgBox("無法下載到需要的檔案，程序中止，請稍後重試", 16, "錯誤")
+        End Try
 
     End Sub
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
@@ -202,6 +233,7 @@
         CheckBox7.Checked = True
         CheckBox8.Checked = True
         CheckBox9.Checked = True
+        CheckBox10.Checked = True
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
@@ -214,6 +246,7 @@
         CheckBox7.Checked = False
         CheckBox8.Checked = False
         CheckBox9.Checked = False
+        CheckBox10.Checked = False
 
     End Sub
 
@@ -235,6 +268,7 @@
         End If
 
         Dim count, current As Short
+        current += 1
         If CheckBox1.Enabled = True And CheckBox1.Checked = True Then count += 1
         If CheckBox2.Enabled = True And CheckBox2.Checked = True Then count += 1
         If CheckBox3.Enabled = True And CheckBox3.Checked = True Then count += 1
@@ -243,9 +277,10 @@
         If CheckBox6.Enabled = True And CheckBox6.Checked = True Then count += 1
         If CheckBox7.Enabled = True And CheckBox7.Checked = True Then count += 1
         If CheckBox8.Enabled = True And CheckBox8.Checked = True Then count += 1
+        If CheckBox9.Enabled = True And CheckBox9.Checked = True Then count += 1
+        If CheckBox10.Enabled = True And CheckBox10.Checked = True Then count += 1
         If Not My.Computer.FileSystem.FileExists(Main.TextBox1.Text & "\libraries\org\scala-lang\scala-compiler\2.10.2\scala-compiler-2.10.2.jar") Then count += 1
         If Not My.Computer.FileSystem.FileExists(Main.TextBox1.Text & "\libraries\org\scala-lang\scala-library\2.10.2\scala-library-2.10.2.jar") Then count += 1
-        If Not My.Computer.FileSystem.FileExists(Main.TextBox1.Text & "\libraries\net\minecraftforge\minecraftforge\" & ComboBox1.Text & "\minecraftforge-" & ComboBox1.Text & ".jar") Then count += 1
 
         If Not My.Computer.FileSystem.FileExists(Main.TextBox1.Text & "\libraries\org\scala-lang\scala-compiler\2.10.2\scala-compiler-2.10.2.jar") Then
             Me.Text = current & " of " & count & "-安裝scala-compiler"
@@ -274,12 +309,30 @@
             Next
             DeleteLine(Main.TextBox1.Text & "\versions\1.7.2-Forge" & ComboBox1.Text & "\1.7.2-Forge" & ComboBox1.Text & ".json", 206)
 
+            'replace_json("1.7.2-Forge" & ComboBox1.Text, "", "")
+            replace_json("1.7.2-Forge" & ComboBox1.Text, "  ", "    ")
+            replace_json("1.7.2-Forge" & ComboBox1.Text, "    ", "	")
+            replace_json("1.7.2-Forge" & ComboBox1.Text, """" & "serverreq" & """" & ":true", """" & "serverreq" & """" & ": true")
+            replace_json("1.7.2-Forge" & ComboBox1.Text, """" & "clientreq" & """" & ":true", """" & "clientreq" & """" & ": true")
+            replace_json("1.7.2-Forge" & ComboBox1.Text, """" & "comment" & """" & " :", """" & "comment" & """" & ":")
+            replace_json("1.7.2-Forge" & ComboBox1.Text, """" & "url" & """" & " :", """" & "url" & """" & ":")
+            replace_json("1.7.2-Forge" & ComboBox1.Text, """" & "checksums" & """" & " : [ " & """" & "6ba65d12cd09d441083262d6f73d2257fec7c663" & """" & ", " & """" & "65de4339eaed1c3675485fb03a3532fecfd8e8cd" & """" & " ],",
+                         """" & "checksums" & """" & ": [" & Chr(10) & "				" & """" & "6ba65d12cd09d441083262d6f73d2257fec7c663" & """" & "," & Chr(10) & "				" & """" & "65de4339eaed1c3675485fb03a3532fecfd8e8cd" & """" & Chr(10) & "			" & "],")
+            replace_json("1.7.2-Forge" & ComboBox1.Text, """" & "checksums" & """" & " : [ " & """" & "64c8b1380cc53d6850823d6e4e7ae984aa44ef9c" & """" & ", " & """" & "99fd0ffb66f3088b0cd1071315fd5eb2b2b070ff" & """" & " ],",
+                         """" & "checksums" & """" & ": [" & Chr(10) & "				" & """" & "64c8b1380cc53d6850823d6e4e7ae984aa44ef9c" & """" & "," & Chr(10) & "				" & """" & "99fd0ffb66f3088b0cd1071315fd5eb2b2b070ff" & """" & Chr(10) & "			" & "],")
+            replace_json("1.7.2-Forge" & ComboBox1.Text, Chr(10) & "}" & Chr(10), Chr(10) & "}")
+
+
+            Shell("mod-kit\encode_converter.exe " & Main.TextBox1.Text & "\versions\1.7.2-Forge" & ComboBox1.Text & "\1.7.2-Forge" & ComboBox1.Text & ".json", AppWinStyle.Hide, True)
+
+
+
             current += 1
         End If
 
         If CheckBox2.Enabled And CheckBox2.Checked = True Then
             Me.Text = current & " of " & count & "-安裝Inventory tweaks"
-            If ComboBox2.Text = "latest" Then ComboBox2.Text = "1.57-dev-" & My.Resources.mods_ver_172.Invtweak172latest
+            If ComboBox2.Text = "latest" Then ComboBox2.Text = "1.57-" & My.Resources.mods_ver_172.Invtweak172latest
             Call download("http://build.technicpack.net/job/Inventory-Tweaks/" & Val(My.Resources.mods_ver_172.Invtweak172latest) & "/artifact/build/libs/InventoryTweaks-" & ComboBox2.Text & ".jar", Main.TextBox1.Text & "\mods\" & "InventoryTweaks-" & ComboBox2.Text & ".jar", current)
         End If
 
@@ -290,7 +343,7 @@
 
         If CheckBox4.Enabled And CheckBox4.Checked = True Then
             Me.Text = current & " of " & count & "-安裝Damage Indicators"
-            If ComboBox4.Text = "latest" Then ComboBox4.Text = "3.0." & My.Resources.mods_ver_172.DI172latest
+            If ComboBox4.Text = "latest" Then ComboBox4.Text = "3.1.0"
             Call download("https://dl.dropboxusercontent.com/u/74770478/%5B1.7.2%5DDamageIndicatorsMod-" & ComboBox4.Text & ".jar", Main.TextBox1.Text & "\mods\" & "[1.7.2]DamageIndicatorsMod-" & ComboBox4.Text & ".jar", current)
         End If
 
@@ -318,9 +371,15 @@
         End If
 
         If CheckBox9.Enabled And CheckBox9.Checked = True Then
+            Me.Text = current & " of " & count & "-安裝LunatriusCore"
+            If ComboBox9.Text = "latest" Then ComboBox9.Text = "1.0.1." & My.Resources.mods_ver_172.LunaCore172latest
+            Call download("http://mc.lunatri.us/files/mods/forge/LunatriusCore/[1.7.2]LunatriusCore-universal-" & ComboBox9.Text & ".jar", Main.TextBox1.Text & "\mods\" & "[1.7.2]LunatriusCore-universal-" & ComboBox9.Text & ".jar", current)
+        End If
+
+        If CheckBox10.Enabled And CheckBox10.Checked = True Then
             Me.Text = current & " of " & count & "-安裝InGameInfoXML"
-            If ComboBox9.Text = "latest" Then ComboBox9.Text = "2.6.0." & My.Resources.mods_ver_172.InGameInfo172latest
-            Call download("http://mc.lunatri.us/files/mods/forge/InGameInfoXML/[1.7.2]InGameInfoXML-" & ComboBox9.Text & ".jar", Main.TextBox1.Text & "\mods\[1.7.2]InGameInfoXML-" & ComboBox9.Text & ".jar", current)
+            If ComboBox10.Text = "latest" Then ComboBox10.Text = "2.6.0." & My.Resources.mods_ver_172.InGameInfo172latest
+            Call download("http://mc.lunatri.us/files/mods/forge/InGameInfoXML/[1.7.2]InGameInfoXML-" & ComboBox10.Text & ".jar", Main.TextBox1.Text & "\mods\[1.7.2]InGameInfoXML-" & ComboBox10.Text & ".jar", current)
         End If
 
         MsgBox("Done!")
@@ -333,32 +392,22 @@
         FileCopy("172voxel.bat", Environment.CurrentDirectory & "\mod-kit\172voxel.bat")
         Shell("cmd /c mod-kit\172voxel.bat", AppWinStyle.Hide, True)
 
-        'the code below doesn't work,I don't know why!
-
-        'Shell(Environment.CurrentDirectory & "\mod-kit\7za.exe -y d " & Environment.CurrentDirectory & "\mod-kit\tmp.jar META-INF\*", AppWinStyle.Hide, True)
-        'Shell(Environment.CurrentDirectory & "\mod-kit\7za.exe -y x " & Environment.CurrentDirectory & "\mod-kit\mod.zip -o" & Environment.CurrentDirectory & "\tmp", AppWinStyle.Hide, True)
-        'Shell(Environment.CurrentDirectory & "\mod-kit\7za.exe -y a " & Environment.CurrentDirectory & "\mod-kit\tmp.jar tmp\*.*", AppWinStyle.Hide, True)
-
         If My.Computer.FileSystem.DirectoryExists(Main.TextBox1.Text & "\versions\1.7.2-mod-kit\") Then My.Computer.FileSystem.DeleteDirectory(Main.TextBox1.Text & "\versions\1.7.2-mod-kit\", FileIO.DeleteDirectoryOption.DeleteAllContents)
 
         My.Computer.FileSystem.CopyFile(Environment.CurrentDirectory & "\mod-kit\tmp.jar", Main.TextBox1.Text & "\versions\1.7.2-mod-kit\1.7.2-mod-kit.jar")
         My.Computer.Network.DownloadFile("http://s3.amazonaws.com/Minecraft.Download/versions/1.7.2/1.7.2.json", Main.TextBox1.Text & "\versions\1.7.2-mod-kit\1.7.2-mod-kit.json")
 
-        My.Computer.FileSystem.WriteAllText(Main.TextBox1.Text & "\versions\1.7.2-mod-kit\1.7.2-mod-kit.json", My.Computer.FileSystem.ReadAllText(Main.TextBox1.Text & "\versions\1.7.2-mod-kit\1.7.2-mod-kit.json").Replace("""" & "id" & """" & ": " & """" & "1.7.2" & """", """" & "id" & """" & ": " & """" & "1.7.2-mod-kit" & """"), False)
-        My.Computer.FileSystem.WriteAllText(Main.TextBox1.Text & "\versions\1.7.2-mod-kit\1.7.2-mod-kit.json", My.Computer.FileSystem.ReadAllText(Main.TextBox1.Text & "\versions\1.7.2-mod-kit\1.7.2-mod-kit.json").Replace("  " & """" & "minimumLauncherVersion" & """" & ": 9," & Chr(10), ""), False)
-        My.Computer.FileSystem.WriteAllText(Main.TextBox1.Text & "\versions\1.7.2-mod-kit\1.7.2-mod-kit.json", My.Computer.FileSystem.ReadAllText(Main.TextBox1.Text & "\versions\1.7.2-mod-kit\1.7.2-mod-kit.json").Replace("Main" & """",
-                                                                                                                                                                                                     "Main" & """" & "," & Chr(10) & "  " & """" & "minimumLauncherVersion" & """" & ": 9"), False)
-        My.Computer.FileSystem.WriteAllText(Main.TextBox1.Text & "\versions\1.7.2-mod-kit\1.7.2-mod-kit.json", My.Computer.FileSystem.ReadAllText(Main.TextBox1.Text & "\versions\1.7.2-mod-kit\1.7.2-mod-kit.json").Replace("      " & """" & "natives" & """" & ": {" & Chr(10) & "        " & """" & "linux" & """" & ": " & """" & "natives-linux" & """" & "," & Chr(10) & "        " & """" & "windows" & """" & ": " & """" & "natives-windows" & """" & Chr(10) & "      " & "}," & Chr(10) & "      " & """" & "extract" & """" & ": {" & Chr(10) & "        " & """" & "exclude" & """" & ": [" & Chr(10) & "          " & """" & "META-INF/" & """" & Chr(10) & "        " & "]" & Chr(10) & "      " & "}," & Chr(10) & "      " & """" & "rules" & """" & ": [" & Chr(10) & "        " & "{" & Chr(10) & "          " & """" & "action" & """" & ": " & """" & "allow" & """" & Chr(10) & "        " & "}," & Chr(10) & "        " & "{" & Chr(10) & "          " & """" & "action" & """" & ": " & """" & "disallow" & """" & "," & Chr(10) & "          " & """" & "os" & """" & ": {" & Chr(10) & "            " & """" & "name" & """" & ": " & """" & "osx" & """" & Chr(10) & "          " & "}" & Chr(10) & "        " & "}" & Chr(10) & "      " & "]",
-                                                                                                                                                                                                     "      " & """" & "rules" & """" & ": [" & Chr(10) & "        " & "{" & Chr(10) & "          " & """" & "action" & """" & ": " & """" & "allow" & """" & Chr(10) & "        " & "}," & Chr(10) & "        " & "{" & Chr(10) & "          " & """" & "action" & """" & ": " & """" & "disallow" & """" & "," & Chr(10) & "          " & """" & "os" & """" & ": {" & Chr(10) & "            " & """" & "name" & """" & ": " & """" & "osx" & """" & Chr(10) & "          " & "}" & Chr(10) & "        " & "}" & Chr(10) & "      " & "]," & Chr(10) & "      " & """" & "natives" & """" & ": {" & Chr(10) & "        " & """" & "linux" & """" & ": " & """" & "natives-linux" & """" & "," & Chr(10) & "        " & """" & "windows" & """" & ": " & """" & "natives-windows" & """" & Chr(10) & "      " & "}," & Chr(10) & "      " & """" & "extract" & """" & ": {" & Chr(10) & "        " & """" & "exclude" & """" & ": [" & Chr(10) & "          " & """" & "META-INF/" & """" & Chr(10) & "        " & "]" & Chr(10) & "      " & "}"), False)
-
-        My.Computer.FileSystem.WriteAllText(Main.TextBox1.Text & "\versions\1.7.2-mod-kit\1.7.2-mod-kit.json", My.Computer.FileSystem.ReadAllText(Main.TextBox1.Text & "\versions\1.7.2-mod-kit\1.7.2-mod-kit.json").Replace("      " & """" & "natives" & """" & ": {" & Chr(10) & "        " & """" & "osx" & """" & ": " & """" & "natives-osx" & """" & Chr(10) & "      " & "}," & Chr(10) & "      " & """" & "extract" & """" & ": {" & Chr(10) & "        " & """" & "exclude" & """" & ": [" & Chr(10) & "          " & """" & "META-INF/" & """" & Chr(10) & "        " & "]" & Chr(10) & "      " & "}," & Chr(10) & "      " & """" & "rules" & """" & ": [" & Chr(10) & "        " & "{" & Chr(10) & "          " & """" & "action" & """" & ": " & """" & "allow" & """" & "," & Chr(10) & "          " & """" & "os" & """" & ": {" & Chr(10) & "            " & """" & "name" & """" & ": " & """" & "osx" & """" & Chr(10) & "          " & "}" & Chr(10) & "        " & "}" & Chr(10) & "      " & "]",
-                                                                                                                                                                                                     "      " & """" & "rules" & """" & ": [" & Chr(10) & "        " & "{" & Chr(10) & "          " & """" & "action" & """" & ": " & """" & "allow" & """" & "," & Chr(10) & "          " & """" & "os" & """" & ": {" & Chr(10) & "            " & """" & "name" & """" & ": " & """" & "osx" & """" & Chr(10) & "          " & "}" & Chr(10) & "        " & "}" & Chr(10) & "      " & "]," & Chr(10) & "      " & """" & "natives" & """" & ": {" & Chr(10) & "        " & """" & "osx" & """" & ": " & """" & "natives-osx" & """" & Chr(10) & "      " & "}," & Chr(10) & "      " & """" & "extract" & """" & ": {" & Chr(10) & "        " & """" & "exclude" & """" & ": [" & Chr(10) & "          " & """" & "META-INF/" & """" & Chr(10) & "        " & "]" & Chr(10) & "      " & "}"), False)
-        My.Computer.FileSystem.WriteAllText(Main.TextBox1.Text & "\versions\1.7.2-mod-kit\1.7.2-mod-kit.json", My.Computer.FileSystem.ReadAllText(Main.TextBox1.Text & "\versions\1.7.2-mod-kit\1.7.2-mod-kit.json").Replace("--" & Chr(10) & "assetsDir", "--assetsDir"), False)
-        My.Computer.FileSystem.WriteAllText(Main.TextBox1.Text & "\versions\1.7.2-mod-kit\1.7.2-mod-kit.json", My.Computer.FileSystem.ReadAllText(Main.TextBox1.Text & "\versions\1.7.2-mod-kit\1.7.2-mod-kit.json").Replace("org.lwjgl.lwjgl:lwjgl-platform:2.9.1-" & Chr(10) & Chr(10), "org.lwjgl.lwjgl:lwjgl-platform:2.9.1-"), False)
-
-
-        My.Computer.FileSystem.WriteAllText(Main.TextBox1.Text & "\versions\1.7.2-mod-kit\1.7.2-mod-kit.json", My.Computer.FileSystem.ReadAllText(Main.TextBox1.Text & "\versions\1.7.2-mod-kit\1.7.2-mod-kit.json").Replace(": 9" & Chr(10) & "}" & Chr(10), ": 9" & Chr(10) & "}"), False)
-
+        replace_json("1.7.2-mod-kit", """" & "id" & """" & ": " & """" & "1.7.2" & """", """" & "id" & """" & ": " & """" & "1.7.2-mod-kit" & """")
+        replace_json("1.7.2-mod-kit", "  " & """" & "minimumLauncherVersion" & """" & ": 9," & Chr(10), "")
+        replace_json("1.7.2-mod-kit", "Main" & """", "Main" & """" & "," & Chr(10) & "  " & """" & "minimumLauncherVersion" & """" & ": 9")
+        replace_json("1.7.2-mod-kit", "      " & """" & "natives" & """" & ": {" & Chr(10) & "        " & """" & "linux" & """" & ": " & """" & "natives-linux" & """" & "," & Chr(10) & "        " & """" & "windows" & """" & ": " & """" & "natives-windows" & """" & Chr(10) & "      " & "}," & Chr(10) & "      " & """" & "extract" & """" & ": {" & Chr(10) & "        " & """" & "exclude" & """" & ": [" & Chr(10) & "          " & """" & "META-INF/" & """" & Chr(10) & "        " & "]" & Chr(10) & "      " & "}," & Chr(10) & "      " & """" & "rules" & """" & ": [" & Chr(10) & "        " & "{" & Chr(10) & "          " & """" & "action" & """" & ": " & """" & "allow" & """" & Chr(10) & "        " & "}," & Chr(10) & "        " & "{" & Chr(10) & "          " & """" & "action" & """" & ": " & """" & "disallow" & """" & "," & Chr(10) & "          " & """" & "os" & """" & ": {" & Chr(10) & "            " & """" & "name" & """" & ": " & """" & "osx" & """" & Chr(10) & "          " & "}" & Chr(10) & "        " & "}" & Chr(10) & "      " & "]",
+                                                                                                                                                                                                     "      " & """" & "rules" & """" & ": [" & Chr(10) & "        " & "{" & Chr(10) & "          " & """" & "action" & """" & ": " & """" & "allow" & """" & Chr(10) & "        " & "}," & Chr(10) & "        " & "{" & Chr(10) & "          " & """" & "action" & """" & ": " & """" & "disallow" & """" & "," & Chr(10) & "          " & """" & "os" & """" & ": {" & Chr(10) & "            " & """" & "name" & """" & ": " & """" & "osx" & """" & Chr(10) & "          " & "}" & Chr(10) & "        " & "}" & Chr(10) & "      " & "]," & Chr(10) & "      " & """" & "natives" & """" & ": {" & Chr(10) & "        " & """" & "linux" & """" & ": " & """" & "natives-linux" & """" & "," & Chr(10) & "        " & """" & "windows" & """" & ": " & """" & "natives-windows" & """" & Chr(10) & "      " & "}," & Chr(10) & "      " & """" & "extract" & """" & ": {" & Chr(10) & "        " & """" & "exclude" & """" & ": [" & Chr(10) & "          " & """" & "META-INF/" & """" & Chr(10) & "        " & "]" & Chr(10) & "      " & "}")
+        replace_json("1.7.2-mod-kit", "      " & """" & "natives" & """" & ": {" & Chr(10) & "        " & """" & "osx" & """" & ": " & """" & "natives-osx" & """" & Chr(10) & "      " & "}," & Chr(10) & "      " & """" & "extract" & """" & ": {" & Chr(10) & "        " & """" & "exclude" & """" & ": [" & Chr(10) & "          " & """" & "META-INF/" & """" & Chr(10) & "        " & "]" & Chr(10) & "      " & "}," & Chr(10) & "      " & """" & "rules" & """" & ": [" & Chr(10) & "        " & "{" & Chr(10) & "          " & """" & "action" & """" & ": " & """" & "allow" & """" & "," & Chr(10) & "          " & """" & "os" & """" & ": {" & Chr(10) & "            " & """" & "name" & """" & ": " & """" & "osx" & """" & Chr(10) & "          " & "}" & Chr(10) & "        " & "}" & Chr(10) & "      " & "]",
+                                                                                                                                                                                                     "      " & """" & "rules" & """" & ": [" & Chr(10) & "        " & "{" & Chr(10) & "          " & """" & "action" & """" & ": " & """" & "allow" & """" & "," & Chr(10) & "          " & """" & "os" & """" & ": {" & Chr(10) & "            " & """" & "name" & """" & ": " & """" & "osx" & """" & Chr(10) & "          " & "}" & Chr(10) & "        " & "}" & Chr(10) & "      " & "]," & Chr(10) & "      " & """" & "natives" & """" & ": {" & Chr(10) & "        " & """" & "osx" & """" & ": " & """" & "natives-osx" & """" & Chr(10) & "      " & "}," & Chr(10) & "      " & """" & "extract" & """" & ": {" & Chr(10) & "        " & """" & "exclude" & """" & ": [" & Chr(10) & "          " & """" & "META-INF/" & """" & Chr(10) & "        " & "]" & Chr(10) & "      " & "}")
+        replace_json("1.7.2-mod-kit", "--" & Chr(10) & "assetsDir", "--assetsDir")
+        replace_json("1.7.2-mod-kit", "org.lwjgl.lwjgl:lwjgl-platform:2.9.1-" & Chr(10) & Chr(10), "org.lwjgl.lwjgl:lwjgl-platform:2.9.1-")
+        replace_json("1.7.2-mod-kit", ": 9" & Chr(10) & "}" & Chr(10), ": 9" & Chr(10) & "}")
+        
         Shell("mod-kit\encode_converter.exe " & Main.TextBox1.Text & "\versions\1.7.2-mod-kit\1.7.2-mod-kit.json", AppWinStyle.Hide, True)
 
         MsgBox("Done!")
@@ -367,9 +416,6 @@
     Sub download(ByVal address As String, ByVal path As String, ByVal current As SByte)
         My.Computer.Network.DownloadFile(address, path, "", "", False, 100000, True)
         current += 1
-    End Sub
-
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
     End Sub
 
     Public Sub DeleteLine(ByRef FileAddress As String, ByRef line As Integer)
@@ -383,4 +429,10 @@
         TheFileLines.RemoveAt(line)
         System.IO.File.WriteAllLines(FileAddress, TheFileLines.ToArray)
     End Sub
+
+    Sub replace_json(ByRef json_name As String, ByRef replace1 As String, ByRef replace2 As String)
+        My.Computer.FileSystem.WriteAllText(Main.TextBox1.Text & "\versions\" & json_name & "\" & json_name & ".json", My.Computer.FileSystem.ReadAllText(Main.TextBox1.Text & "\versions\" & json_name & "\" & json_name & ".json").Replace(replace1, replace2), False)
+    End Sub
+
+
 End Class

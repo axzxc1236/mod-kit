@@ -101,7 +101,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  查詢類似 8 的當地語系化字串。
+        '''  查詢類似 10 的當地語系化字串。
         '''</summary>
         Friend Shared ReadOnly Property DI172latest() As String
             Get
@@ -119,7 +119,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  查詢類似 1046 的當地語系化字串。
+        '''  查詢類似 1047 的當地語系化字串。
         '''</summary>
         Friend Shared ReadOnly Property forge172latest() As String
             Get
@@ -164,7 +164,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  查詢類似 113 的當地語系化字串。
+        '''  查詢類似 116 的當地語系化字串。
         '''</summary>
         Friend Shared ReadOnly Property Invtweak172latest() As String
             Get
@@ -178,6 +178,24 @@ Namespace My.Resources
         Friend Shared ReadOnly Property Invtweak172min() As String
             Get
                 Return ResourceManager.GetString("Invtweak172min", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  查詢類似 4 的當地語系化字串。
+        '''</summary>
+        Friend Shared ReadOnly Property LunaCore172latest() As String
+            Get
+                Return ResourceManager.GetString("LunaCore172latest", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  查詢類似 2 的當地語系化字串。
+        '''</summary>
+        Friend Shared ReadOnly Property LunaCore172min() As String
+            Get
+                Return ResourceManager.GetString("LunaCore172min", resourceCulture)
             End Get
         End Property
         

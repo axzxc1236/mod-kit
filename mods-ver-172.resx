@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="forge172latest" xml:space="preserve">
-    <value>1046</value>
+    <value>1047</value>
   </data>
   <data name="forge172min" xml:space="preserve">
     <value>967</value>
@@ -127,13 +127,13 @@
     <value>1024</value>
   </data>
   <data name="Invtweak172latest" xml:space="preserve">
-    <value>113</value>
+    <value>116</value>
   </data>
   <data name="Invtweak172min" xml:space="preserve">
     <value>97</value>
   </data>
   <data name="DI172latest" xml:space="preserve">
-    <value>8</value>
+    <value>10</value>
   </data>
   <data name="DI172min" xml:space="preserve">
     <value>0</value>
@@ -161,5 +161,11 @@
   </data>
   <data name="InGameInfo172min" xml:space="preserve">
     <value>36</value>
+  </data>
+  <data name="LunaCore172latest" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="LunaCore172min" xml:space="preserve">
+    <value>2</value>
   </data>
 </root>
