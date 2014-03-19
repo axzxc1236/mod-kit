@@ -170,7 +170,7 @@ Partial Class Main
         Me.Controls.Add(Me.Button1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Main"
-        Me.Text = "mod-kit v0.3"
+        Me.Text = "mod-kit v0.4"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
