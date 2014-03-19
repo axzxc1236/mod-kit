@@ -224,11 +224,14 @@
         If CheckBox9.Checked = True Then ComboBox9.Enabled = True
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        If CheckBox1.Checked = False And CheckBox2.Checked = False And CheckBox3.Checked = False And
-            CheckBox4.Checked = False And CheckBox5.Checked = False And CheckBox6.Checked = False And
-            CheckBox7.Checked = False And CheckBox8.Checked = False And CheckBox9.Checked = False Then
-            MsgBox("沒有選取任何東西")
-        Else
+
+        Try
+
+            If CheckBox1.Checked = False And CheckBox2.Checked = False And CheckBox3.Checked = False And
+                CheckBox4.Checked = False And CheckBox5.Checked = False And CheckBox6.Checked = False And
+                CheckBox7.Checked = False And CheckBox8.Checked = False And CheckBox9.Checked = False Then
+                MsgBox("沒有選取任何東西")
+            Else
                 'forge
                 If My.Computer.FileSystem.DirectoryExists(Main.Text & "\mods") Then
                     Dim choose As SByte
@@ -237,7 +240,11 @@
                 Else
                     Call install()
                 End If
-        End If
+            End If
+
+        Catch ex As System.Net.WebException
+            MsgBox("無法下載到需要的檔案，程序中止，請稍後重試", 16, "錯誤")
+        End Try
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
@@ -294,7 +301,6 @@
         If Not My.Computer.FileSystem.FileExists(Main.TextBox1.Text & "\libraries\org\scala-lang\scala-compiler\2.10.2\scala-compiler-2.10.2.jar") Then count += 1
         If Not My.Computer.FileSystem.FileExists(Main.TextBox1.Text & "\libraries\org\scala-lang\scala-library\2.10.2\scala-library-2.10.2.jar") Then count += 1
 
-        count -= 1
 
         If Not My.Computer.FileSystem.FileExists(Main.TextBox1.Text & "\libraries\org\scala-lang\scala-compiler\2.10.2\scala-compiler-2.10.2.jar") Then
             Me.Text = current & " of " & count & "-安裝scala-compiler"
@@ -314,13 +320,30 @@
             My.Computer.Network.DownloadFile("http://s3.amazonaws.com/Minecraft.Download/versions/1.6.4/1.6.4.jar", Main.TextBox1.Text & "\versions\1.6.4-Forge" & ComboBox1.Text & "\1.6.4-Forge" & ComboBox1.Text & ".jar")
             My.Computer.Network.DownloadFile("http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.6.4-" & ComboBox1.Text & "/forge-1.6.4-" & ComboBox1.Text & "-installer.jar", Environment.CurrentDirectory & "\mod-kit\Forge.jar", "", "", False, 100000, True)
             Shell("cmd /c mod-kit\unzip.bat", AppWinStyle.Hide, True)
-            My.Computer.FileSystem.MoveFile(Environment.CurrentDirectory & "\mod-kit\Forge\forge-1.6.4-" & ComboBox1.Text & "-universal.jar", Main.TextBox1.Text & "\libraries\net\minecraftforge\minecraftforge\" & ComboBox1.Text & "\minecraftforge-" & ComboBox1.Text & ".jar")
+            My.Computer.FileSystem.MoveFile(Environment.CurrentDirectory & "\mod-kit\Forge\minecraftforge-universal-1.6.4-" & ComboBox1.Text & "-v164-pregradle.jar", Main.TextBox1.Text & "\libraries\net\minecraftforge\minecraftforge\" & ComboBox1.Text & "\minecraftforge-" & ComboBox1.Text & ".jar")
             My.Computer.FileSystem.MoveFile(Environment.CurrentDirectory & "\mod-kit\Forge\install_profile.json", Main.TextBox1.Text & "\versions\1.6.4-Forge" & ComboBox1.Text & "\1.6.4-Forge" & ComboBox1.Text & ".json")
 
+            replace_json("1.6.4-Forge" & ComboBox1.Text, "    ", "	")
+            DeleteLine(Main.TextBox1.Text & "\versions\1.6.4-Forge" & ComboBox1.Text & "\1.6.4-Forge" & ComboBox1.Text & ".json", 1)
+            replace_json("1.6.4-Forge" & ComboBox1.Text, "							", "@7")
+            replace_json("1.6.4-Forge" & ComboBox1.Text, "						", "@6")
+            replace_json("1.6.4-Forge" & ComboBox1.Text, "					", "@5")
+            replace_json("1.6.4-Forge" & ComboBox1.Text, "				", "@4")
+            replace_json("1.6.4-Forge" & ComboBox1.Text, "			", "@3")
+            replace_json("1.6.4-Forge" & ComboBox1.Text, "		", "@2")
+            replace_json("1.6.4-Forge" & ComboBox1.Text, "	", "")
+            replace_json("1.6.4-Forge" & ComboBox1.Text, "@2", "	")
+            replace_json("1.6.4-Forge" & ComboBox1.Text, "@3", "		")
+            replace_json("1.6.4-Forge" & ComboBox1.Text, "@4", "			")
+            replace_json("1.6.4-Forge" & ComboBox1.Text, "@5", "				")
+            replace_json("1.6.4-Forge" & ComboBox1.Text, "@6", "					")
+            replace_json("1.6.4-Forge" & ComboBox1.Text, "@7", "						")
+
+            For i = 207 To 218
+                DeleteLine(Main.TextBox1.Text & "\versions\1.6.4-Forge" & ComboBox1.Text & "\1.6.4-Forge" & ComboBox1.Text & ".json", 207)
+            Next
 
             Shell("mod-kit\encode_converter.exe " & Main.TextBox1.Text & "\versions\1.6.4-Forge" & ComboBox1.Text & "\1.6.4-Forge" & ComboBox1.Text & ".json", AppWinStyle.Hide, True)
-
-
 
             current += 1
         End If
@@ -347,7 +370,7 @@
 
         If CheckBox5.Enabled And CheckBox5.Checked = True Then
             Me.Text = current & " of " & count & "-安裝bspkrsCore"
-            If ComboBox4.Text = "latest" Then ComboBox5.Text = "5.3"
+            If ComboBox5.Text = "latest" Then ComboBox5.Text = "5.3"
             Call download("http://bspk.rs/MC/bspkrsCore/[1.6.4]bspkrsCorev" & ComboBox5.Text & ".zip", Main.TextBox1.Text & "\mods\[1.6.4]bspkrsCorev" & ComboBox5.Text & ".zip")
             current += 1
         End If
@@ -375,7 +398,7 @@
 
         If CheckBox9.Enabled And CheckBox9.Checked = True Then
             Me.Text = current & " of " & count & "-安裝InGameInfoXML"
-            If CheckBox9.Text = "latest" Then ComboBox9.Text = "2.5.1.36"
+            If ComboBox9.Text = "latest" Then ComboBox9.Text = "2.5.1.36"
             Call download("http://mc.lunatri.us/files/mods/forge/InGameInfoXML/[1.6.4]InGameInfoXML-" & ComboBox9.Text & ".jar", Main.TextBox1.Text & "\mods\[1.6.4]InGameInfoXML-" & CheckBox9.Text & ".jar")
             current += 1
         End If
