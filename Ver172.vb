@@ -334,7 +334,7 @@
         If CheckBox2.Enabled And CheckBox2.Checked = True Then
             Me.Text = current & " of " & count & "-安裝Inventory tweaks"
             If ComboBox2.Text = "latest" Then ComboBox2.Text = "1.57-" & My.Resources.mods_ver_172.Invtweak172latest
-            Call download("http://build.technicpack.net/job/Inventory-Tweaks/" & ComboBox2.Text & "/artifact/build/libs/InventoryTweaks-" & ComboBox2.Text & ".jar", Main.TextBox1.Text & "\mods\" & "InventoryTweaks-" & ComboBox2.Text & ".jar")
+            Call download("http://build.technicpack.net/job/Inventory-Tweaks/" & ComboBox2.Text(ComboBox2.Text.Length - 2) & "/artifact/build/libs/InventoryTweaks-" & ComboBox2.Text & ".jar", Main.TextBox1.Text & "\mods\" & "InventoryTweaks-" & ComboBox2.Text & ".jar")
             current += 1
         End If
 

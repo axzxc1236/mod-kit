@@ -328,7 +328,7 @@
         If CheckBox2.Enabled And CheckBox2.Checked = True Then
             Me.Text = current & " of " & count & "-安裝Inventory tweaks"
             If ComboBox2.Text = "latest" Then ComboBox2.Text = "1.57-dev-95"
-            Call download("http://build.technicpack.net/job/Inventory-Tweaks/" & ComboBox2.Text(ComboBox2.Text.Length - 2) & "/artifact/build/libs/InventoryTweaks-" & ComboBox2.Text & ".jar", Main.TextBox1.Text & "\mods\" & "InventoryTweaks-" & ComboBox2.Text & ".jar")
+            Call download("http://build.technicpack.net/job/Inventory-Tweaks/" & ComboBox2.Text.Substring(ComboBox2.Text.Length - 2) & "/artifact/build/libs/InventoryTweaks-" & ComboBox2.Text & ".jar", Main.TextBox1.Text & "\mods\" & "InventoryTweaks-" & ComboBox2.Text & ".jar")
             current += 1
         End If
 
@@ -341,7 +341,7 @@
         If CheckBox4.Enabled And CheckBox4.Checked = True Then
             Me.Text = current & " of " & count & "-安裝Damage Indicators"
             If ComboBox4.Text = "latest" Then ComboBox4.Text = "2.9.2.3"
-            Call download("https://dl.dropboxusercontent.com/u/74770478/%5B1.6.4%5DDamageIndicatorsMod-" & ComboBox4.Text & ".zip", Main.TextBox1.Text & "\mods\" & "[1.6.4]DamageIndicatorsMod-" & ComboBox4.Text & ".zip")
+            Call download("https://dl.dropboxusercontent.com/u/74770478/1.6.4%20DamageIndicatorsv" & ComboBox4.Text & ".zip", Main.TextBox1.Text & "\mods\" & "[1.6.4]DamageIndicatorsMod-" & ComboBox4.Text & ".zip")
             current += 1
         End If
 
@@ -375,8 +375,8 @@
 
         If CheckBox9.Enabled And CheckBox9.Checked = True Then
             Me.Text = current & " of " & count & "-安裝InGameInfoXML"
-            If CheckBox9.Text = "latest" Then CheckBox9.Text = "2.5.1.36"
-            Call download("http://mc.lunatri.us/files/mods/forge/InGameInfoXML/[1.6.4]InGameInfoXML-" & CheckBox9.Text & ".jar", Main.TextBox1.Text & "\mods\[1.6.4]InGameInfoXML-" & CheckBox9.Text & ".jar")
+            If CheckBox9.Text = "latest" Then ComboBox9.Text = "2.5.1.36"
+            Call download("http://mc.lunatri.us/files/mods/forge/InGameInfoXML/[1.6.4]InGameInfoXML-" & ComboBox9.Text & ".jar", Main.TextBox1.Text & "\mods\[1.6.4]InGameInfoXML-" & CheckBox9.Text & ".jar")
             current += 1
         End If
 
