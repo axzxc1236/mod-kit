@@ -320,7 +320,8 @@
             My.Computer.Network.DownloadFile("http://s3.amazonaws.com/Minecraft.Download/versions/1.6.4/1.6.4.jar", Main.TextBox1.Text & "\versions\1.6.4-Forge" & ComboBox1.Text & "\1.6.4-Forge" & ComboBox1.Text & ".jar")
             My.Computer.Network.DownloadFile("http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.6.4-" & ComboBox1.Text & "/forge-1.6.4-" & ComboBox1.Text & "-installer.jar", Environment.CurrentDirectory & "\mod-kit\Forge.jar", "", "", False, 100000, True)
             Shell("cmd /c mod-kit\unzip.bat", AppWinStyle.Hide, True)
-            My.Computer.FileSystem.MoveFile(Environment.CurrentDirectory & "\mod-kit\Forge\minecraftforge-universal-1.6.4-" & ComboBox1.Text & "-v164-pregradle.jar", Main.TextBox1.Text & "\libraries\net\minecraftforge\minecraftforge\" & ComboBox1.Text & "\minecraftforge-" & ComboBox1.Text & ".jar")
+            If ComboBox1.Text.Substring(ComboBox1.Text.Length - 3) >= 960 Then My.Computer.FileSystem.MoveFile(Environment.CurrentDirectory & "\mod-kit\Forge\minecraftforge-universal-1.6.4-" & ComboBox1.Text & "-v164-pregradle.jar", Main.TextBox1.Text & "\libraries\net\minecraftforge\minecraftforge\" & ComboBox1.Text & "\minecraftforge-" & ComboBox1.Text & ".jar")
+            If ComboBox1.Text.Substring(ComboBox1.Text.Length - 3) <= 953 Then My.Computer.FileSystem.MoveFile(Environment.CurrentDirectory & "\mod-kit\Forge\minecraftforge-universal-1.6.4-" & ComboBox1.Text & ".jar", Main.TextBox1.Text & "\libraries\net\minecraftforge\minecraftforge\" & ComboBox1.Text & "\minecraftforge-" & ComboBox1.Text & ".jar")
             My.Computer.FileSystem.MoveFile(Environment.CurrentDirectory & "\mod-kit\Forge\install_profile.json", Main.TextBox1.Text & "\versions\1.6.4-Forge" & ComboBox1.Text & "\1.6.4-Forge" & ComboBox1.Text & ".json")
 
             replace_json("1.6.4-Forge" & ComboBox1.Text, "    ", "	")
