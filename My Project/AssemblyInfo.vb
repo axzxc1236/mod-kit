@@ -9,10 +9,10 @@ Imports System.Runtime.InteropServices
 ' 檢閱組件屬性的值
 
 <Assembly: AssemblyTitle("mod-kit")> 
-<Assembly: AssemblyDescription("A creation of 21")> 
+<Assembly: AssemblyDescription("A creation of 21. It's under GNU GPL License!")> 
 <Assembly: AssemblyCompany("")> 
 <Assembly: AssemblyProduct("mod-kit")> 
-<Assembly: AssemblyCopyright("Copyright ©  2014")> 
+<Assembly: AssemblyCopyright("")> 
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)>
