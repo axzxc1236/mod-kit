@@ -282,6 +282,8 @@
         If Not My.Computer.FileSystem.FileExists(Main.TextBox1.Text & "\libraries\org\scala-lang\scala-compiler\2.10.2\scala-compiler-2.10.2.jar") Then count += 1
         If Not My.Computer.FileSystem.FileExists(Main.TextBox1.Text & "\libraries\org\scala-lang\scala-library\2.10.2\scala-library-2.10.2.jar") Then count += 1
 
+        count -= 1
+
         If Not My.Computer.FileSystem.FileExists(Main.TextBox1.Text & "\libraries\org\scala-lang\scala-compiler\2.10.2\scala-compiler-2.10.2.jar") Then
             Me.Text = current & " of " & count & "-安裝scala-compiler"
             My.Computer.Network.DownloadFile("http://repo.maven.apache.org/maven2/org/scala-lang/scala-compiler/2.10.2/scala-compiler-2.10.2.jar", Main.TextBox1.Text & "\libraries\org\scala-lang\scala-compiler\2.10.2\scala-compiler-2.10.2.jar")
@@ -299,7 +301,6 @@
             My.Computer.FileSystem.CreateDirectory(Main.TextBox1.Text & "\versions\1.7.2-Forge" & ComboBox1.Text)
             My.Computer.Network.DownloadFile("http://s3.amazonaws.com/Minecraft.Download/versions/1.7.2/1.7.2.jar", Main.TextBox1.Text & "\versions\1.7.2-Forge" & ComboBox1.Text & "\1.7.2-Forge" & ComboBox1.Text & ".jar")
             My.Computer.Network.DownloadFile("http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.7.2-" & ComboBox1.Text & "/forge-1.7.2-" & ComboBox1.Text & "-installer.jar", Environment.CurrentDirectory & "\mod-kit\Forge.jar", "", "", False, 100000, True)
-            FileCopy("unzip.bat", Environment.CurrentDirectory & "\mod-kit\unzip.bat")
             Shell("cmd /c mod-kit\unzip.bat", AppWinStyle.Hide, True)
             My.Computer.FileSystem.MoveFile(Environment.CurrentDirectory & "\mod-kit\Forge\forge-1.7.2-" & ComboBox1.Text & "-universal.jar", Main.TextBox1.Text & "\libraries\net\minecraftforge\minecraftforge\" & ComboBox1.Text & "\minecraftforge-" & ComboBox1.Text & ".jar")
             My.Computer.FileSystem.MoveFile(Environment.CurrentDirectory & "\mod-kit\Forge\install_profile.json", Main.TextBox1.Text & "\versions\1.7.2-Forge" & ComboBox1.Text & "\1.7.2-Forge" & ComboBox1.Text & ".json")
@@ -333,53 +334,62 @@
         If CheckBox2.Enabled And CheckBox2.Checked = True Then
             Me.Text = current & " of " & count & "-安裝Inventory tweaks"
             If ComboBox2.Text = "latest" Then ComboBox2.Text = "1.57-" & My.Resources.mods_ver_172.Invtweak172latest
-            Call download("http://build.technicpack.net/job/Inventory-Tweaks/" & Val(My.Resources.mods_ver_172.Invtweak172latest) & "/artifact/build/libs/InventoryTweaks-" & ComboBox2.Text & ".jar", Main.TextBox1.Text & "\mods\" & "InventoryTweaks-" & ComboBox2.Text & ".jar", current)
+            Call download("http://build.technicpack.net/job/Inventory-Tweaks/" & Val(My.Resources.mods_ver_172.Invtweak172latest) & "/artifact/build/libs/InventoryTweaks-" & ComboBox2.Text & ".jar", Main.TextBox1.Text & "\mods\" & "InventoryTweaks-" & ComboBox2.Text & ".jar")
+            current += 1
         End If
 
         If CheckBox3.Enabled And CheckBox3.Checked = True Then
             Me.Text = current & " of " & count & "-安裝Voxelmap"
-            Call download("https://dl.dropboxusercontent.com/s/boitpzvszpbsqfx/voxelmap-1.7.2-1.0.jar?dl=1&token_hash=AAF1ZA2AhwjhslkjEfT9kSk_qqfxduqviI4JGhgtg7M9Bw", Main.TextBox1.Text & "\mods\" & "voxelmap-1.7.2-1.0.jar", current)
+            Call download("https://dl.dropboxusercontent.com/s/boitpzvszpbsqfx/voxelmap-1.7.2-1.0.jar", Main.TextBox1.Text & "\mods\" & "voxelmap-1.7.2-1.0.jar")
+            current += 1
         End If
 
         If CheckBox4.Enabled And CheckBox4.Checked = True Then
             Me.Text = current & " of " & count & "-安裝Damage Indicators"
             If ComboBox4.Text = "latest" Then ComboBox4.Text = "3.1.0"
-            Call download("https://dl.dropboxusercontent.com/u/74770478/%5B1.7.2%5DDamageIndicatorsMod-" & ComboBox4.Text & ".jar", Main.TextBox1.Text & "\mods\" & "[1.7.2]DamageIndicatorsMod-" & ComboBox4.Text & ".jar", current)
+            Call download("https://dl.dropboxusercontent.com/u/74770478/%5B1.7.2%5DDamageIndicatorsMod-" & ComboBox4.Text & ".jar", Main.TextBox1.Text & "\mods\" & "[1.7.2]DamageIndicatorsMod-" & ComboBox4.Text & ".jar")
+            current += 1
         End If
 
         If CheckBox5.Enabled And CheckBox5.Checked = True Then
             Me.Text = current & " of " & count & "-安裝bspkrsCore"
-            Call download("http://bspk.rs/MC/bspkrsCore/[1.7.2]bspkrsCore-universal-6.0(1.7.2).jar", Main.TextBox1.Text & "\mods\[1.7.2]bspkrsCore-universal-6.0(1.7.2).jar", current)
+            Call download("http://bspk.rs/MC/bspkrsCore/[1.7.2]bspkrsCore-universal-6.0(1.7.2).jar", Main.TextBox1.Text & "\mods\[1.7.2]bspkrsCore-universal-6.0(1.7.2).jar")
+            current += 1
         End If
 
         If CheckBox6.Enabled And CheckBox6.Checked = True Then
             Me.Text = current & " of " & count & "-安裝ArmorStatusHUD"
             If ComboBox6.Text = "latest" Then ComboBox6.Text = "1." & My.Resources.mods_ver_172.ASHUD172latest
-            Call download("http://bspk.rs/MC/ArmorStatusHUD/[1.7.2]ArmorStatusHUD-client-" & ComboBox6.Text & "(1.7.2).jar", Main.TextBox1.Text & "\mods\[1.7.2]ArmorStatusHUD-client-" & ComboBox6.Text & "(1.7.2).jar", current)
+            Call download("http://bspk.rs/MC/ArmorStatusHUD/[1.7.2]ArmorStatusHUD-client-" & ComboBox6.Text & "(1.7.2).jar", Main.TextBox1.Text & "\mods\[1.7.2]ArmorStatusHUD-client-" & ComboBox6.Text & "(1.7.2).jar")
+            current += 1
         End If
 
         If CheckBox7.Enabled And CheckBox7.Checked = True Then
             Me.Text = current & " of " & count & "-安裝DirectionHUD"
             If ComboBox7.Text = "latest" Then ComboBox7.Text = "1." & My.Resources.mods_ver_172.DHUD172latest
-            Call download("http://bspk.rs/MC/DirectionHUD/[1.7.2]DirectionHUD-client-" & ComboBox7.Text & "(1.7.2).jar", Main.TextBox1.Text & "\mods\" & "[1.7.2]DirectionHUD-client-" & ComboBox7.Text & "(1.7.2).jar", current)
+            Call download("http://bspk.rs/MC/DirectionHUD/[1.7.2]DirectionHUD-client-" & ComboBox7.Text & "(1.7.2).jar", Main.TextBox1.Text & "\mods\" & "[1.7.2]DirectionHUD-client-" & ComboBox7.Text & "(1.7.2).jar")
+            current += 1
         End If
 
         If CheckBox8.Enabled And CheckBox8.Checked = True Then
             Me.Text = current & " of " & count & "-安裝StatusEffectHUD"
             If ComboBox8.Text = "latest" Then ComboBox8.Text = "1." & My.Resources.mods_ver_172.SEHUD172latest
-            Call download("http://bspk.rs/MC/StatusEffectHUD/[1.7.2]StatusEffectHUD-client-" & ComboBox8.Text & "(1.7.2).jar", Main.TextBox1.Text & "\mods\" & "[1.7.2]StatusEffectHUD-client-" & ComboBox8.Text & "(1.7.2).jar", current)
+            Call download("http://bspk.rs/MC/StatusEffectHUD/[1.7.2]StatusEffectHUD-client-" & ComboBox8.Text & "(1.7.2).jar", Main.TextBox1.Text & "\mods\" & "[1.7.2]StatusEffectHUD-client-" & ComboBox8.Text & "(1.7.2).jar")
+            current += 1
         End If
 
         If CheckBox9.Enabled And CheckBox9.Checked = True Then
             Me.Text = current & " of " & count & "-安裝LunatriusCore"
             If ComboBox9.Text = "latest" Then ComboBox9.Text = "1.0.1." & My.Resources.mods_ver_172.LunaCore172latest
-            Call download("http://mc.lunatri.us/files/mods/forge/LunatriusCore/[1.7.2]LunatriusCore-universal-" & ComboBox9.Text & ".jar", Main.TextBox1.Text & "\mods\" & "[1.7.2]LunatriusCore-universal-" & ComboBox9.Text & ".jar", current)
+            Call download("http://mc.lunatri.us/files/mods/forge/LunatriusCore/[1.7.2]LunatriusCore-universal-" & ComboBox9.Text & ".jar", Main.TextBox1.Text & "\mods\" & "[1.7.2]LunatriusCore-universal-" & ComboBox9.Text & ".jar")
+            current += 1
         End If
 
         If CheckBox10.Enabled And CheckBox10.Checked = True Then
             Me.Text = current & " of " & count & "-安裝InGameInfoXML"
             If ComboBox10.Text = "latest" Then ComboBox10.Text = "2.6.0." & My.Resources.mods_ver_172.InGameInfo172latest
-            Call download("http://mc.lunatri.us/files/mods/forge/InGameInfoXML/[1.7.2]InGameInfoXML-" & ComboBox10.Text & ".jar", Main.TextBox1.Text & "\mods\[1.7.2]InGameInfoXML-" & ComboBox10.Text & ".jar", current)
+            Call download("http://mc.lunatri.us/files/mods/forge/InGameInfoXML/[1.7.2]InGameInfoXML-" & ComboBox10.Text & ".jar", Main.TextBox1.Text & "\mods\[1.7.2]InGameInfoXML-" & ComboBox10.Text & ".jar")
+            current += 1
         End If
 
         MsgBox("Done!")
@@ -389,7 +399,6 @@
     Sub install_vanilla()
         My.Computer.Network.DownloadFile("http://s3.amazonaws.com/Minecraft.Download/versions/1.7.2/1.7.2.jar", Environment.CurrentDirectory & "\mod-kit\tmp.jar", "", "", False, 100000, True)
         My.Computer.Network.DownloadFile("http://static.planetminecraft.com/files/resource_media/mod/1410/zanmap172k.zip", Environment.CurrentDirectory & "\mod-kit\mod.zip", "", "", False, 100000, True)
-        FileCopy("172voxel.bat", Environment.CurrentDirectory & "\mod-kit\172voxel.bat")
         Shell("cmd /c mod-kit\172voxel.bat", AppWinStyle.Hide, True)
 
         If My.Computer.FileSystem.DirectoryExists(Main.TextBox1.Text & "\versions\1.7.2-mod-kit\") Then My.Computer.FileSystem.DeleteDirectory(Main.TextBox1.Text & "\versions\1.7.2-mod-kit\", FileIO.DeleteDirectoryOption.DeleteAllContents)
@@ -413,9 +422,8 @@
         MsgBox("Done!")
     End Sub
     
-    Sub download(ByVal address As String, ByVal path As String, ByVal current As SByte)
+    Sub download(ByVal address As String, ByVal path As String)
         My.Computer.Network.DownloadFile(address, path, "", "", False, 100000, True)
-        current += 1
     End Sub
 
     Public Sub DeleteLine(ByRef FileAddress As String, ByRef line As Integer)
