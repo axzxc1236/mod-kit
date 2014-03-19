@@ -1,5 +1,14 @@
 ﻿Public Class Download
     Private Sub Download_shown(sender As Object, e As EventArgs) Handles MyBase.Load
+        
+        Timer1.Start()
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        Label2.Text = ""
+        Label3.Text = ""
+        Label4.Text = ""
+
         'create mod-kit dictionary
         If Not My.Computer.FileSystem.DirectoryExists(My.Computer.FileSystem.CurrentDirectory & "\mod-kit") Then My.Computer.FileSystem.CreateDirectory(My.Computer.FileSystem.CurrentDirectory & "\mod-kit")
         '172voxel.bat
@@ -37,12 +46,6 @@
         Loop
         Label4.Text = "偵測到encode converter"
 
-
-
-        Timer1.Start()
-    End Sub
-
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         Timer1.Stop()
         Me.Hide()
         Main.Show()
