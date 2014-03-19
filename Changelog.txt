@@ -4,6 +4,7 @@
        修復Forge1.7.2安裝問題、Voxelmap非Forge版1.7.2安裝問題 (修改json)
        完善1.7.2、1.6.4安裝
        新增沒有下載到檔案(Error 404)的提示視窗
+       增加License視窗
    
    0.3(沒對外公布):
        新增InGameInfo 1.7.2
