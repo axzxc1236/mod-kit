@@ -394,6 +394,8 @@
 
         MsgBox("Done!")
 
+        Me.Name = "Ver172"
+
     End Sub
 
     Sub install_vanilla()
