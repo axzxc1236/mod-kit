@@ -207,7 +207,7 @@ Partial Class Ver164
         'Button3
         '
         Me.Button3.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Button3.Location = New System.Drawing.Point(174, 224)
+        Me.Button3.Location = New System.Drawing.Point(174, 277)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(75, 23)
         Me.Button3.TabIndex = 46
@@ -217,7 +217,7 @@ Partial Class Ver164
         'Button2
         '
         Me.Button2.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Button2.Location = New System.Drawing.Point(93, 224)
+        Me.Button2.Location = New System.Drawing.Point(93, 277)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
         Me.Button2.TabIndex = 45
@@ -227,7 +227,7 @@ Partial Class Ver164
         'Button1
         '
         Me.Button1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Button1.Location = New System.Drawing.Point(12, 224)
+        Me.Button1.Location = New System.Drawing.Point(12, 277)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 44
@@ -360,7 +360,7 @@ Partial Class Ver164
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(284, 262)
+        Me.ClientSize = New System.Drawing.Size(284, 312)
         Me.Controls.Add(Me.ComboBox9)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.CheckBox9)
