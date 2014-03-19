@@ -266,6 +266,142 @@
     End Sub
 
     Sub install()
+        If ComboBox1.Text = "latest" Then ComboBox1.Text = "9.11.1.965"
+        If ComboBox1.Text = "Recommand" Then ComboBox1.Text = "9.11.1.965"
 
+        If My.Computer.FileSystem.DirectoryExists(Main.TextBox1.Text & "\versions\1.6.4-Forge" & ComboBox1.Text) Then
+            Dim choose As SByte
+            choose = MsgBox("偵測到選擇的Forge版本已存在，需要重新安裝Forge?", MsgBoxStyle.YesNo)
+            If choose = 6 Then
+                If My.Computer.FileSystem.FileExists(Environment.CurrentDirectory & "\mod-kit\Forge.jar") Then My.Computer.FileSystem.DeleteFile(Environment.CurrentDirectory & "\mod-kit\Forge.jar")
+                If My.Computer.FileSystem.DirectoryExists(Environment.CurrentDirectory & "\mod-kit\Forge") Then My.Computer.FileSystem.DeleteDirectory(Environment.CurrentDirectory & "\mod-kit\Forge", FileIO.DeleteDirectoryOption.DeleteAllContents)
+                If My.Computer.FileSystem.DirectoryExists(Main.TextBox1.Text & "\versions\1.6.4-Forge" & ComboBox1.Text) Then My.Computer.FileSystem.DeleteDirectory(Main.TextBox1.Text & "\versions\1.6.4-Forge" & ComboBox1.Text, FileIO.DeleteDirectoryOption.DeleteAllContents)
+                If My.Computer.FileSystem.DirectoryExists(Main.TextBox1.Text & "\libraries\net\minecraftforge\minecraftforge\" & ComboBox1.Text) Then My.Computer.FileSystem.DeleteDirectory(Main.TextBox1.Text & "\libraries\net\minecraftforge\minecraftforge\" & ComboBox1.Text, FileIO.DeleteDirectoryOption.DeleteAllContents)
+            End If
+        End If
+
+        Dim count, current As Short
+        current += 1
+        If CheckBox1.Enabled = True And CheckBox1.Checked = True Then count += 1
+        If CheckBox2.Enabled = True And CheckBox2.Checked = True Then count += 1
+        If CheckBox3.Enabled = True And CheckBox3.Checked = True Then count += 1
+        If CheckBox4.Enabled = True And CheckBox4.Checked = True Then count += 1
+        If CheckBox5.Enabled = True And CheckBox5.Checked = True Then count += 1
+        If CheckBox6.Enabled = True And CheckBox6.Checked = True Then count += 1
+        If CheckBox7.Enabled = True And CheckBox7.Checked = True Then count += 1
+        If CheckBox8.Enabled = True And CheckBox8.Checked = True Then count += 1
+        If CheckBox9.Enabled = True And CheckBox9.Checked = True Then count += 1
+        If Not My.Computer.FileSystem.FileExists(Main.TextBox1.Text & "\libraries\org\scala-lang\scala-compiler\2.10.2\scala-compiler-2.10.2.jar") Then count += 1
+        If Not My.Computer.FileSystem.FileExists(Main.TextBox1.Text & "\libraries\org\scala-lang\scala-library\2.10.2\scala-library-2.10.2.jar") Then count += 1
+
+        count -= 1
+
+        If Not My.Computer.FileSystem.FileExists(Main.TextBox1.Text & "\libraries\org\scala-lang\scala-compiler\2.10.2\scala-compiler-2.10.2.jar") Then
+            Me.Text = current & " of " & count & "-安裝scala-compiler"
+            My.Computer.Network.DownloadFile("http://repo.maven.apache.org/maven2/org/scala-lang/scala-compiler/2.10.2/scala-compiler-2.10.2.jar", Main.TextBox1.Text & "\libraries\org\scala-lang\scala-compiler\2.10.2\scala-compiler-2.10.2.jar")
+            current += 1
+        End If
+
+        If Not My.Computer.FileSystem.FileExists(Main.TextBox1.Text & "\libraries\org\scala-lang\scala-library\2.10.2\scala-library-2.10.2.jar") Then
+            Me.Text = current & " of " & count & "-安裝scala-library"
+            My.Computer.Network.DownloadFile("http://repo.maven.apache.org/maven2/org/scala-lang/scala-library/2.10.2/scala-library-2.10.2.jar", Main.TextBox1.Text & "\libraries\org\scala-lang\scala-compiler\2.10.2\scala-compiler-2.10.2.jar")
+            current += 1
+        End If
+
+        If CheckBox1.Enabled = True And Not My.Computer.FileSystem.DirectoryExists(Main.TextBox1.Text & "\versions\1.6.4-Forge" & ComboBox1.Text) Then
+            Me.Text = current & " of " & count & "-安裝Forge"
+            My.Computer.FileSystem.CreateDirectory(Main.TextBox1.Text & "\versions\1.6.4-Forge" & ComboBox1.Text)
+            My.Computer.Network.DownloadFile("http://s3.amazonaws.com/Minecraft.Download/versions/1.6.4/1.6.4.jar", Main.TextBox1.Text & "\versions\1.6.4-Forge" & ComboBox1.Text & "\1.6.4-Forge" & ComboBox1.Text & ".jar")
+            My.Computer.Network.DownloadFile("http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.6.4-" & ComboBox1.Text & "/forge-1.6.4-" & ComboBox1.Text & "-installer.jar", Environment.CurrentDirectory & "\mod-kit\Forge.jar", "", "", False, 100000, True)
+            Shell("cmd /c mod-kit\unzip.bat", AppWinStyle.Hide, True)
+            My.Computer.FileSystem.MoveFile(Environment.CurrentDirectory & "\mod-kit\Forge\forge-1.6.4-" & ComboBox1.Text & "-universal.jar", Main.TextBox1.Text & "\libraries\net\minecraftforge\minecraftforge\" & ComboBox1.Text & "\minecraftforge-" & ComboBox1.Text & ".jar")
+            My.Computer.FileSystem.MoveFile(Environment.CurrentDirectory & "\mod-kit\Forge\install_profile.json", Main.TextBox1.Text & "\versions\1.6.4-Forge" & ComboBox1.Text & "\1.6.4-Forge" & ComboBox1.Text & ".json")
+
+
+            Shell("mod-kit\encode_converter.exe " & Main.TextBox1.Text & "\versions\1.6.4-Forge" & ComboBox1.Text & "\1.6.4-Forge" & ComboBox1.Text & ".json", AppWinStyle.Hide, True)
+
+
+
+            current += 1
+        End If
+
+        If CheckBox2.Enabled And CheckBox2.Checked = True Then
+            Me.Text = current & " of " & count & "-安裝Inventory tweaks"
+            If ComboBox2.Text = "latest" Then ComboBox2.Text = "1.57-dev-95"
+            Call download("http://build.technicpack.net/job/Inventory-Tweaks/" & ComboBox2.Text(ComboBox2.Text.Length - 2) & "/artifact/build/libs/InventoryTweaks-" & ComboBox2.Text & ".jar", Main.TextBox1.Text & "\mods\" & "InventoryTweaks-" & ComboBox2.Text & ".jar")
+            current += 1
+        End If
+
+        If CheckBox3.Enabled And CheckBox3.Checked = True Then
+            Me.Text = current & " of " & count & "-安裝Voxelmap"
+            Call download("https://dl.dropboxusercontent.com/s/c0ch778cnd9xmb1/ZansMinimap1.6.4.zip", Main.TextBox1.Text & "\mods\" & "ZansMinimap1.6.4.zip")
+            current += 1
+        End If
+
+        If CheckBox4.Enabled And CheckBox4.Checked = True Then
+            Me.Text = current & " of " & count & "-安裝Damage Indicators"
+            If ComboBox4.Text = "latest" Then ComboBox4.Text = "2.9.2.3"
+            Call download("https://dl.dropboxusercontent.com/u/74770478/%5B1.6.4%5DDamageIndicatorsMod-" & ComboBox4.Text & ".zip", Main.TextBox1.Text & "\mods\" & "[1.6.4]DamageIndicatorsMod-" & ComboBox4.Text & ".zip")
+            current += 1
+        End If
+
+        If CheckBox5.Enabled And CheckBox5.Checked = True Then
+            Me.Text = current & " of " & count & "-安裝bspkrsCore"
+            If ComboBox4.Text = "latest" Then ComboBox5.Text = "5.3"
+            Call download("http://bspk.rs/MC/bspkrsCore/[1.6.4]bspkrsCorev" & ComboBox5.Text & ".zip", Main.TextBox1.Text & "\mods\[1.6.4]bspkrsCorev" & ComboBox5.Text & ".zip")
+            current += 1
+        End If
+
+        If CheckBox6.Enabled And CheckBox6.Checked = True Then
+            Me.Text = current & " of " & count & "-安裝ArmorStatusHUD"
+            If ComboBox6.Text = "latest" Then ComboBox6.Text = "1.15"
+            Call download("http://bspk.rs/MC/ArmorStatusHUD/[1.6.4]ArmorStatusHUDv" & ComboBox6.Text & ".zip", Main.TextBox1.Text & "\mods\[1.6.4]ArmorStatusHUDv" & ComboBox6.Text & ".zip")
+            current += 1
+        End If
+
+        If CheckBox7.Enabled And CheckBox7.Checked = True Then
+            Me.Text = current & " of " & count & "-安裝DirectionHUD"
+            If ComboBox7.Text = "latest" Then ComboBox7.Text = "1.16"
+            Call download("http://bspk.rs/MC/DirectionHUD/[1.6.4]DirectionHUDv" & ComboBox7.Text & ".zip", Main.TextBox1.Text & "\mods\" & "[1.6.4]DirectionHUDv" & ComboBox7.Text & ".zip")
+            current += 1
+        End If
+
+        If CheckBox8.Enabled And CheckBox8.Checked = True Then
+            Me.Text = current & " of " & count & "-安裝StatusEffectHUD"
+            If ComboBox8.Text = "latest" Then ComboBox8.Text = "1.19"
+            Call download("http://bspk.rs/MC/StatusEffectHUD/[1.6.4]StatusEffectHUDv" & ComboBox8.Text & ".zip", Main.TextBox1.Text & "\mods\" & "[1.6.4]StatusEffectHUDv" & ComboBox8.Text & ".zip")
+            current += 1
+        End If
+
+        If CheckBox9.Enabled And CheckBox9.Checked = True Then
+            Me.Text = current & " of " & count & "-安裝InGameInfoXML"
+            If CheckBox9.Text = "latest" Then CheckBox9.Text = "2.5.1.36"
+            Call download("http://mc.lunatri.us/files/mods/forge/InGameInfoXML/[1.6.4]InGameInfoXML-" & CheckBox9.Text & ".jar", Main.TextBox1.Text & "\mods\[1.6.4]InGameInfoXML-" & CheckBox9.Text & ".jar")
+            current += 1
+        End If
+
+        MsgBox("Done!")
+
+        Me.Name = "Ver164"
+    End Sub
+
+    Sub download(ByVal address As String, ByVal path As String)
+        My.Computer.Network.DownloadFile(address, path, "", "", False, 100000, True)
+    End Sub
+
+    Public Sub DeleteLine(ByRef FileAddress As String, ByRef line As Integer)
+        'the code is a copy of the code here
+        'orginal:http://www.dreamincode.net/forums/topic/62488-code-for-delete-a-line-from-text-file/page__view__findpost__p__411311?s=b79e4c8d4e7a0e952d902dd2b02a551f
+
+        Dim TheFileLines As New List(Of String)
+        TheFileLines.AddRange(System.IO.File.ReadAllLines(FileAddress))
+        ' if line is beyond end of list the exit sub
+        If line >= TheFileLines.Count Then Exit Sub
+        TheFileLines.RemoveAt(line)
+        System.IO.File.WriteAllLines(FileAddress, TheFileLines.ToArray)
+    End Sub
+
+    Sub replace_json(ByRef json_name As String, ByRef replace1 As String, ByRef replace2 As String)
+        My.Computer.FileSystem.WriteAllText(Main.TextBox1.Text & "\versions\" & json_name & "\" & json_name & ".json", My.Computer.FileSystem.ReadAllText(Main.TextBox1.Text & "\versions\" & json_name & "\" & json_name & ".json").Replace(replace1, replace2), False)
     End Sub
 End Class
