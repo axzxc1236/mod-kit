@@ -45,6 +45,11 @@
         Changelog.Show()
     End Sub
 
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        Me.Hide()
+        License.Show()
+    End Sub
+
     Public Sub detect()
         'detect .minecraft
         If My.Computer.FileSystem.DirectoryExists(TextBox1.Text) Then
