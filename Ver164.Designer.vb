@@ -52,14 +52,13 @@ Partial Class Ver164
         Me.CheckBox3 = New System.Windows.Forms.CheckBox()
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.Button4 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'ComboBox9
         '
         Me.ComboBox9.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox9.FormattingEnabled = True
-        Me.ComboBox9.Location = New System.Drawing.Point(157, 185)
+        Me.ComboBox9.Location = New System.Drawing.Point(165, 185)
         Me.ComboBox9.Name = "ComboBox9"
         Me.ComboBox9.Size = New System.Drawing.Size(115, 20)
         Me.ComboBox9.TabIndex = 61
@@ -68,7 +67,7 @@ Partial Class Ver164
         '
         Me.Label9.AutoSize = True
         Me.Label9.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label9.Location = New System.Drawing.Point(122, 188)
+        Me.Label9.Location = New System.Drawing.Point(130, 188)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(29, 12)
         Me.Label9.TabIndex = 60
@@ -80,16 +79,16 @@ Partial Class Ver164
         Me.CheckBox9.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.CheckBox9.Location = New System.Drawing.Point(12, 187)
         Me.CheckBox9.Name = "CheckBox9"
-        Me.CheckBox9.Size = New System.Drawing.Size(106, 16)
+        Me.CheckBox9.Size = New System.Drawing.Size(112, 16)
         Me.CheckBox9.TabIndex = 59
-        Me.CheckBox9.Text = "InGameInfoXML"
+        Me.CheckBox9.Text = "InGame Info XML"
         Me.CheckBox9.UseVisualStyleBackColor = True
         '
         'ComboBox8
         '
         Me.ComboBox8.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox8.FormattingEnabled = True
-        Me.ComboBox8.Location = New System.Drawing.Point(157, 163)
+        Me.ComboBox8.Location = New System.Drawing.Point(165, 163)
         Me.ComboBox8.Name = "ComboBox8"
         Me.ComboBox8.Size = New System.Drawing.Size(115, 20)
         Me.ComboBox8.TabIndex = 58
@@ -98,7 +97,7 @@ Partial Class Ver164
         '
         Me.Label8.AutoSize = True
         Me.Label8.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label8.Location = New System.Drawing.Point(122, 166)
+        Me.Label8.Location = New System.Drawing.Point(130, 166)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(29, 12)
         Me.Label8.TabIndex = 57
@@ -119,7 +118,7 @@ Partial Class Ver164
         '
         Me.ComboBox7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox7.FormattingEnabled = True
-        Me.ComboBox7.Location = New System.Drawing.Point(157, 141)
+        Me.ComboBox7.Location = New System.Drawing.Point(165, 141)
         Me.ComboBox7.Name = "ComboBox7"
         Me.ComboBox7.Size = New System.Drawing.Size(115, 20)
         Me.ComboBox7.TabIndex = 55
@@ -128,7 +127,7 @@ Partial Class Ver164
         '
         Me.Label7.AutoSize = True
         Me.Label7.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label7.Location = New System.Drawing.Point(122, 144)
+        Me.Label7.Location = New System.Drawing.Point(130, 144)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(29, 12)
         Me.Label7.TabIndex = 54
@@ -149,7 +148,7 @@ Partial Class Ver164
         '
         Me.ComboBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox6.FormattingEnabled = True
-        Me.ComboBox6.Location = New System.Drawing.Point(157, 119)
+        Me.ComboBox6.Location = New System.Drawing.Point(165, 119)
         Me.ComboBox6.Name = "ComboBox6"
         Me.ComboBox6.Size = New System.Drawing.Size(115, 20)
         Me.ComboBox6.TabIndex = 52
@@ -158,7 +157,7 @@ Partial Class Ver164
         '
         Me.Label6.AutoSize = True
         Me.Label6.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label6.Location = New System.Drawing.Point(122, 122)
+        Me.Label6.Location = New System.Drawing.Point(130, 122)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(29, 12)
         Me.Label6.TabIndex = 51
@@ -179,7 +178,7 @@ Partial Class Ver164
         '
         Me.ComboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox5.FormattingEnabled = True
-        Me.ComboBox5.Location = New System.Drawing.Point(157, 98)
+        Me.ComboBox5.Location = New System.Drawing.Point(165, 98)
         Me.ComboBox5.Name = "ComboBox5"
         Me.ComboBox5.Size = New System.Drawing.Size(115, 20)
         Me.ComboBox5.TabIndex = 49
@@ -188,7 +187,7 @@ Partial Class Ver164
         '
         Me.Label5.AutoSize = True
         Me.Label5.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label5.Location = New System.Drawing.Point(122, 101)
+        Me.Label5.Location = New System.Drawing.Point(130, 101)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(29, 12)
         Me.Label5.TabIndex = 48
@@ -239,7 +238,7 @@ Partial Class Ver164
         '
         Me.ComboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox4.FormattingEnabled = True
-        Me.ComboBox4.Location = New System.Drawing.Point(157, 76)
+        Me.ComboBox4.Location = New System.Drawing.Point(165, 76)
         Me.ComboBox4.Name = "ComboBox4"
         Me.ComboBox4.Size = New System.Drawing.Size(115, 20)
         Me.ComboBox4.TabIndex = 43
@@ -248,7 +247,7 @@ Partial Class Ver164
         '
         Me.ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Location = New System.Drawing.Point(157, 54)
+        Me.ComboBox3.Location = New System.Drawing.Point(165, 54)
         Me.ComboBox3.Name = "ComboBox3"
         Me.ComboBox3.Size = New System.Drawing.Size(115, 20)
         Me.ComboBox3.TabIndex = 42
@@ -257,7 +256,7 @@ Partial Class Ver164
         '
         Me.Label4.AutoSize = True
         Me.Label4.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label4.Location = New System.Drawing.Point(122, 79)
+        Me.Label4.Location = New System.Drawing.Point(130, 79)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(29, 12)
         Me.Label4.TabIndex = 41
@@ -267,7 +266,7 @@ Partial Class Ver164
         '
         Me.Label3.AutoSize = True
         Me.Label3.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label3.Location = New System.Drawing.Point(122, 57)
+        Me.Label3.Location = New System.Drawing.Point(130, 57)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(29, 12)
         Me.Label3.TabIndex = 40
@@ -277,7 +276,7 @@ Partial Class Ver164
         '
         Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(157, 32)
+        Me.ComboBox2.Location = New System.Drawing.Point(165, 32)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(115, 20)
         Me.ComboBox2.TabIndex = 39
@@ -286,7 +285,7 @@ Partial Class Ver164
         '
         Me.Label2.AutoSize = True
         Me.Label2.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label2.Location = New System.Drawing.Point(122, 35)
+        Me.Label2.Location = New System.Drawing.Point(130, 35)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(29, 12)
         Me.Label2.TabIndex = 38
@@ -296,7 +295,7 @@ Partial Class Ver164
         '
         Me.Label1.AutoSize = True
         Me.Label1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label1.Location = New System.Drawing.Point(122, 13)
+        Me.Label1.Location = New System.Drawing.Point(130, 13)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(29, 12)
         Me.Label1.TabIndex = 37
@@ -306,7 +305,7 @@ Partial Class Ver164
         '
         Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(157, 10)
+        Me.ComboBox1.Location = New System.Drawing.Point(165, 10)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(115, 20)
         Me.ComboBox1.TabIndex = 36
@@ -357,21 +356,11 @@ Partial Class Ver164
         Me.CheckBox1.Text = "Forge"
         Me.CheckBox1.UseVisualStyleBackColor = True
         '
-        'Button4
-        '
-        Me.Button4.Location = New System.Drawing.Point(205, 248)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(75, 23)
-        Me.Button4.TabIndex = 62
-        Me.Button4.Text = "Button4"
-        Me.Button4.UseVisualStyleBackColor = True
-        '
         'Ver164
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(284, 312)
-        Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.ComboBox9)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.CheckBox9)
@@ -438,5 +427,4 @@ Partial Class Ver164
     Friend WithEvents CheckBox3 As System.Windows.Forms.CheckBox
     Friend WithEvents CheckBox2 As System.Windows.Forms.CheckBox
     Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
-    Friend WithEvents Button4 As System.Windows.Forms.Button
 End Class

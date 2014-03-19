@@ -30,6 +30,7 @@ Partial Class Credits
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Button5 = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -46,7 +47,7 @@ Partial Class Credits
         '
         Me.Button1.Location = New System.Drawing.Point(12, 28)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(560, 23)
+        Me.Button1.Size = New System.Drawing.Size(432, 23)
         Me.Button1.TabIndex = 1
         Me.Button1.Text = "bspkrs的模組(ArmorStatusHUD、bspkrsCore、DirectionHUD、StatusEffectHUD)"
         Me.Button1.UseVisualStyleBackColor = True
@@ -90,7 +91,7 @@ Partial Class Credits
         'LinkLabel1
         '
         Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.Location = New System.Drawing.Point(307, 62)
+        Me.LinkLabel1.Location = New System.Drawing.Point(385, 13)
         Me.LinkLabel1.Name = "LinkLabel1"
         Me.LinkLabel1.Size = New System.Drawing.Size(59, 12)
         Me.LinkLabel1.TabIndex = 6
@@ -106,11 +107,21 @@ Partial Class Credits
         Me.Label2.TabIndex = 7
         Me.Label2.Text = "Label2"
         '
+        'Button5
+        '
+        Me.Button5.Location = New System.Drawing.Point(307, 57)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(270, 23)
+        Me.Button5.TabIndex = 8
+        Me.Button5.Text = "Lunatrius的模組(LunatriusCore、InGame Info XML)"
+        Me.Button5.UseVisualStyleBackColor = True
+        '
         'Credits
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(825, 562)
+        Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.LinkLabel1)
         Me.Controls.Add(Me.PictureBox1)
@@ -134,4 +145,5 @@ Partial Class Credits
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents LinkLabel1 As System.Windows.Forms.LinkLabel
     Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents Button5 As System.Windows.Forms.Button
 End Class

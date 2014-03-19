@@ -117,12 +117,12 @@ Partial Class Main
         Me.TextBox1.Location = New System.Drawing.Point(12, 121)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.ReadOnly = True
-        Me.TextBox1.Size = New System.Drawing.Size(239, 22)
+        Me.TextBox1.Size = New System.Drawing.Size(290, 22)
         Me.TextBox1.TabIndex = 9
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(257, 119)
+        Me.Button4.Location = New System.Drawing.Point(308, 119)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(23, 23)
         Me.Button4.TabIndex = 10

@@ -24,6 +24,12 @@
         PictureBox1.Image = New System.Drawing.Bitmap(New IO.MemoryStream(New System.Net.WebClient().DownloadData("http://i.minus.com/iksG8cCA7romb.jpg")))
     End Sub
 
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        LinkLabel1.Text = "Lunatrius的模組文章原文"
+        Label2.Text = "http://www.minecraftforum.net/topic/1296949-"
+        PictureBox1.Image = New System.Drawing.Bitmap(New IO.MemoryStream(New System.Net.WebClient().DownloadData("http://i.minus.com/jsMldYNHfiuf8.png")))
+    End Sub
+
     Private Sub Credits_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         Me.Hide()
         Main.Show()
