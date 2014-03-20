@@ -1,3 +1,7 @@
+   0.5:
+       在credits新增Lunatrius的模組
+       
+
    0.4:
        把代碼整理、排序
        新增Lunatrius core(1.7.2)

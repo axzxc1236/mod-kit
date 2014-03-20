@@ -334,67 +334,70 @@
         If CheckBox2.Enabled And CheckBox2.Checked = True Then
             Me.Text = current & " of " & count & "-安裝Inventory tweaks"
             If ComboBox2.Text = "latest" Then ComboBox2.Text = "1.57-" & My.Resources.mods_ver_172.Invtweak172latest
-            Call download("http://build.technicpack.net/job/Inventory-Tweaks/" & ComboBox2.Text(ComboBox2.Text.Length - 2) & "/artifact/build/libs/InventoryTweaks-" & ComboBox2.Text & ".jar", Main.TextBox1.Text & "\mods\" & "InventoryTweaks-" & ComboBox2.Text & ".jar")
+            Dim ver As SByte
+            If ComboBox2.Text.Length = 8 Then ver = ComboBox2.Text.Substring(ComboBox2.Text.Length - 3)
+            If ComboBox2.Text.Length = 7 Then ver = ComboBox2.Text.Substring(ComboBox2.Text.Length - 2)
+            Call download("http://build.technicpack.net/job/Inventory-Tweaks/" & ver & "/artifact/build/libs/InventoryTweaks-" & ComboBox2.Text & ".jar", Main.TextBox1.Text & "\mods\" & "InventoryTweaks-" & ComboBox2.Text & ".jar")
             current += 1
         End If
 
-        If CheckBox3.Enabled And CheckBox3.Checked = True Then
-            Me.Text = current & " of " & count & "-安裝Voxelmap"
-            Call download("https://dl.dropboxusercontent.com/s/boitpzvszpbsqfx/voxelmap-1.7.2-1.0.jar", Main.TextBox1.Text & "\mods\" & "voxelmap-1.7.2-1.0.jar")
-            current += 1
-        End If
+            If CheckBox3.Enabled And CheckBox3.Checked = True Then
+                Me.Text = current & " of " & count & "-安裝Voxelmap"
+                Call download("https://dl.dropboxusercontent.com/s/boitpzvszpbsqfx/voxelmap-1.7.2-1.0.jar", Main.TextBox1.Text & "\mods\" & "voxelmap-1.7.2-1.0.jar")
+                current += 1
+            End If
 
-        If CheckBox4.Enabled And CheckBox4.Checked = True Then
-            Me.Text = current & " of " & count & "-安裝Damage Indicators"
-            If ComboBox4.Text = "latest" Then ComboBox4.Text = "3.1.0"
-            Call download("https://dl.dropboxusercontent.com/u/74770478/%5B1.7.2%5DDamageIndicatorsMod-" & ComboBox4.Text & ".jar", Main.TextBox1.Text & "\mods\" & "[1.7.2]DamageIndicatorsMod-" & ComboBox4.Text & ".jar")
-            current += 1
-        End If
+            If CheckBox4.Enabled And CheckBox4.Checked = True Then
+                Me.Text = current & " of " & count & "-安裝Damage Indicators"
+                If ComboBox4.Text = "latest" Then ComboBox4.Text = "3.1.0"
+                Call download("https://dl.dropboxusercontent.com/u/74770478/%5B1.7.2%5DDamageIndicatorsMod-" & ComboBox4.Text & ".jar", Main.TextBox1.Text & "\mods\" & "[1.7.2]DamageIndicatorsMod-" & ComboBox4.Text & ".jar")
+                current += 1
+            End If
 
-        If CheckBox5.Enabled And CheckBox5.Checked = True Then
-            Me.Text = current & " of " & count & "-安裝bspkrsCore"
-            Call download("http://bspk.rs/MC/bspkrsCore/[1.7.2]bspkrsCore-universal-6.0(1.7.2).jar", Main.TextBox1.Text & "\mods\[1.7.2]bspkrsCore-universal-6.0(1.7.2).jar")
-            current += 1
-        End If
+            If CheckBox5.Enabled And CheckBox5.Checked = True Then
+                Me.Text = current & " of " & count & "-安裝bspkrsCore"
+                Call download("http://bspk.rs/MC/bspkrsCore/[1.7.2]bspkrsCore-universal-6.0(1.7.2).jar", Main.TextBox1.Text & "\mods\[1.7.2]bspkrsCore-universal-6.0(1.7.2).jar")
+                current += 1
+            End If
 
-        If CheckBox6.Enabled And CheckBox6.Checked = True Then
-            Me.Text = current & " of " & count & "-安裝ArmorStatusHUD"
-            If ComboBox6.Text = "latest" Then ComboBox6.Text = "1." & My.Resources.mods_ver_172.ASHUD172latest
-            Call download("http://bspk.rs/MC/ArmorStatusHUD/[1.7.2]ArmorStatusHUD-client-" & ComboBox6.Text & "(1.7.2).jar", Main.TextBox1.Text & "\mods\[1.7.2]ArmorStatusHUD-client-" & ComboBox6.Text & "(1.7.2).jar")
-            current += 1
-        End If
+            If CheckBox6.Enabled And CheckBox6.Checked = True Then
+                Me.Text = current & " of " & count & "-安裝ArmorStatusHUD"
+                If ComboBox6.Text = "latest" Then ComboBox6.Text = "1." & My.Resources.mods_ver_172.ASHUD172latest
+                Call download("http://bspk.rs/MC/ArmorStatusHUD/[1.7.2]ArmorStatusHUD-client-" & ComboBox6.Text & "(1.7.2).jar", Main.TextBox1.Text & "\mods\[1.7.2]ArmorStatusHUD-client-" & ComboBox6.Text & "(1.7.2).jar")
+                current += 1
+            End If
 
-        If CheckBox7.Enabled And CheckBox7.Checked = True Then
-            Me.Text = current & " of " & count & "-安裝DirectionHUD"
-            If ComboBox7.Text = "latest" Then ComboBox7.Text = "1." & My.Resources.mods_ver_172.DHUD172latest
-            Call download("http://bspk.rs/MC/DirectionHUD/[1.7.2]DirectionHUD-client-" & ComboBox7.Text & "(1.7.2).jar", Main.TextBox1.Text & "\mods\" & "[1.7.2]DirectionHUD-client-" & ComboBox7.Text & "(1.7.2).jar")
-            current += 1
-        End If
+            If CheckBox7.Enabled And CheckBox7.Checked = True Then
+                Me.Text = current & " of " & count & "-安裝DirectionHUD"
+                If ComboBox7.Text = "latest" Then ComboBox7.Text = "1." & My.Resources.mods_ver_172.DHUD172latest
+                Call download("http://bspk.rs/MC/DirectionHUD/[1.7.2]DirectionHUD-client-" & ComboBox7.Text & "(1.7.2).jar", Main.TextBox1.Text & "\mods\" & "[1.7.2]DirectionHUD-client-" & ComboBox7.Text & "(1.7.2).jar")
+                current += 1
+            End If
 
-        If CheckBox8.Enabled And CheckBox8.Checked = True Then
-            Me.Text = current & " of " & count & "-安裝StatusEffectHUD"
-            If ComboBox8.Text = "latest" Then ComboBox8.Text = "1." & My.Resources.mods_ver_172.SEHUD172latest
-            Call download("http://bspk.rs/MC/StatusEffectHUD/[1.7.2]StatusEffectHUD-client-" & ComboBox8.Text & "(1.7.2).jar", Main.TextBox1.Text & "\mods\" & "[1.7.2]StatusEffectHUD-client-" & ComboBox8.Text & "(1.7.2).jar")
-            current += 1
-        End If
+            If CheckBox8.Enabled And CheckBox8.Checked = True Then
+                Me.Text = current & " of " & count & "-安裝StatusEffectHUD"
+                If ComboBox8.Text = "latest" Then ComboBox8.Text = "1." & My.Resources.mods_ver_172.SEHUD172latest
+                Call download("http://bspk.rs/MC/StatusEffectHUD/[1.7.2]StatusEffectHUD-client-" & ComboBox8.Text & "(1.7.2).jar", Main.TextBox1.Text & "\mods\" & "[1.7.2]StatusEffectHUD-client-" & ComboBox8.Text & "(1.7.2).jar")
+                current += 1
+            End If
 
-        If CheckBox9.Enabled And CheckBox9.Checked = True Then
-            Me.Text = current & " of " & count & "-安裝LunatriusCore"
-            If ComboBox9.Text = "latest" Then ComboBox9.Text = "1.0.1." & My.Resources.mods_ver_172.LunaCore172latest
-            Call download("http://mc.lunatri.us/files/mods/forge/LunatriusCore/[1.7.2]LunatriusCore-universal-" & ComboBox9.Text & ".jar", Main.TextBox1.Text & "\mods\" & "[1.7.2]LunatriusCore-universal-" & ComboBox9.Text & ".jar")
-            current += 1
-        End If
+            If CheckBox9.Enabled And CheckBox9.Checked = True Then
+                Me.Text = current & " of " & count & "-安裝LunatriusCore"
+                If ComboBox9.Text = "latest" Then ComboBox9.Text = "1.0.1." & My.Resources.mods_ver_172.LunaCore172latest
+                Call download("http://mc.lunatri.us/files/mods/forge/LunatriusCore/[1.7.2]LunatriusCore-universal-" & ComboBox9.Text & ".jar", Main.TextBox1.Text & "\mods\" & "[1.7.2]LunatriusCore-universal-" & ComboBox9.Text & ".jar")
+                current += 1
+            End If
 
-        If CheckBox10.Enabled And CheckBox10.Checked = True Then
-            Me.Text = current & " of " & count & "-安裝InGameInfoXML"
-            If ComboBox10.Text = "latest" Then ComboBox10.Text = "2.6.0." & My.Resources.mods_ver_172.InGameInfo172latest
-            Call download("http://mc.lunatri.us/files/mods/forge/InGameInfoXML/[1.7.2]InGameInfoXML-" & ComboBox10.Text & ".jar", Main.TextBox1.Text & "\mods\[1.7.2]InGameInfoXML-" & ComboBox10.Text & ".jar")
-            current += 1
-        End If
+            If CheckBox10.Enabled And CheckBox10.Checked = True Then
+                Me.Text = current & " of " & count & "-安裝InGameInfoXML"
+                If ComboBox10.Text = "latest" Then ComboBox10.Text = "2.6.0." & My.Resources.mods_ver_172.InGameInfo172latest
+                Call download("http://mc.lunatri.us/files/mods/forge/InGameInfoXML/[1.7.2]InGameInfoXML-" & ComboBox10.Text & ".jar", Main.TextBox1.Text & "\mods\[1.7.2]InGameInfoXML-" & ComboBox10.Text & ".jar")
+                current += 1
+            End If
 
-        MsgBox("Done!")
+            MsgBox("Done!")
 
-        Me.Name = "Ver172"
+            Me.Name = "Ver172"
 
     End Sub
 
