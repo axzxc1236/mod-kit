@@ -286,7 +286,7 @@
 
         Dim count, current As Short
         current += 1
-        If CheckBox1.Enabled = True And CheckBox1.Checked = True Then count += 1
+        If CheckBox1.Enabled = True And CheckBox1.Checked = True And Not My.Computer.FileSystem.DirectoryExists(Main.TextBox1.Text & "\versions\1.7.2-Forge" & ComboBox1.Text) Then count += 1
         If CheckBox2.Enabled = True And CheckBox2.Checked = True Then count += 1
         If CheckBox3.Enabled = True And CheckBox3.Checked = True Then count += 1
         If CheckBox4.Enabled = True And CheckBox4.Checked = True Then count += 1
@@ -296,10 +296,10 @@
         If CheckBox8.Enabled = True And CheckBox8.Checked = True Then count += 1
         If CheckBox9.Enabled = True And CheckBox9.Checked = True Then count += 1
         If CheckBox10.Enabled = True And CheckBox10.Checked = True Then count += 1
+        If CheckBox11.Enabled = True And CheckBox11.Checked = True Then count += 1
+        If CheckBox12.Enabled = True And CheckBox12.Checked = True Then count += 1
         If Not My.Computer.FileSystem.FileExists(Main.TextBox1.Text & "\libraries\org\scala-lang\scala-compiler\2.10.2\scala-compiler-2.10.2.jar") Then count += 1
         If Not My.Computer.FileSystem.FileExists(Main.TextBox1.Text & "\libraries\org\scala-lang\scala-library\2.10.2\scala-library-2.10.2.jar") Then count += 1
-
-        count -= 1
 
         If Not My.Computer.FileSystem.FileExists(Main.TextBox1.Text & "\libraries\org\scala-lang\scala-compiler\2.10.2\scala-compiler-2.10.2.jar") Then
             Me.Text = current & " of " & count & "-安裝scala-compiler"
@@ -313,7 +313,7 @@
             current += 1
         End If
 
-        If CheckBox1.Enabled = True And Not My.Computer.FileSystem.DirectoryExists(Main.TextBox1.Text & "\versions\1.7.2-Forge" & ComboBox1.Text) Then
+        If CheckBox1.Checked = True And Not My.Computer.FileSystem.DirectoryExists(Main.TextBox1.Text & "\versions\1.7.2-Forge" & ComboBox1.Text) Then
             Me.Text = current & " of " & count & "-安裝Forge"
             My.Computer.FileSystem.CreateDirectory(Main.TextBox1.Text & "\versions\1.7.2-Forge" & ComboBox1.Text)
             My.Computer.Network.DownloadFile("http://s3.amazonaws.com/Minecraft.Download/versions/1.7.2/1.7.2.jar", Main.TextBox1.Text & "\versions\1.7.2-Forge" & ComboBox1.Text & "\1.7.2-Forge" & ComboBox1.Text & ".jar")
@@ -409,12 +409,24 @@
                 Me.Text = current & " of " & count & "-安裝InGameInfoXML"
                 If ComboBox10.Text = "latest" Then ComboBox10.Text = "2.6.0." & My.Resources.mods_ver_172.InGameInfo172latest
                 Call download("http://mc.lunatri.us/files/mods/forge/InGameInfoXML/[1.7.2]InGameInfoXML-" & ComboBox10.Text & ".jar", Main.TextBox1.Text & "\mods\[1.7.2]InGameInfoXML-" & ComboBox10.Text & ".jar")
-                current += 1
-            End If
+            current += 1
+        End If
 
-            MsgBox("Done!")
+        If CheckBox11.Enabled And CheckBox11.Checked = True Then
+            Me.Text = current & " of " & count & "-安裝Waila"
+            Call download("http://addons.cursecdn.com/files/771/381/Waila_1.4.5.zip", Main.TextBox1.Text & "\mods\Waila-1.4.5_1.7.2.jar")
+            current += 1
+        End If
 
-            Me.Name = "Ver172"
+        If CheckBox12.Enabled And CheckBox12.Checked = True Then
+            Me.Text = current & " of " & count & "-安裝CraftGuide"
+            Call download("http://addons.cursecdn.com/files/778/185/CraftGuide-1.6.7.5.zip", Main.TextBox1.Text & "\mods\CraftGuide-1.6.7.5.zip")
+            current += 1
+        End If
+
+        MsgBox("Done!")
+
+        Me.Name = "Ver172"
 
     End Sub
 
