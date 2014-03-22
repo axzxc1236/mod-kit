@@ -84,6 +84,14 @@
         Next
         ComboBox10.Text = "latest"
 
+        'mod11 - Waila
+        Label11.Visible = False
+        ComboBox11.Visible = False
+
+        'mod12 - Craftguide
+        Label12.Visible = False
+        ComboBox12.Visible = False
+
         ComboBox2.Enabled = False
         ComboBox4.Enabled = False
         ComboBox6.Enabled = False
@@ -109,6 +117,8 @@
             CheckBox8.Enabled = False
             CheckBox9.Enabled = False
             CheckBox10.Enabled = False
+            CheckBox11.Enabled = False
+            CheckBox12.Enabled = False
 
             CheckBox2.Checked = False
             CheckBox4.Checked = False
@@ -118,12 +128,16 @@
             CheckBox8.Checked = False
             CheckBox9.Checked = False
             CheckBox10.Checked = False
+            CheckBox11.Checked = False
+            CheckBox12.Checked = False
         Else
             ComboBox1.Enabled = True
             CheckBox2.Enabled = True
             CheckBox4.Enabled = True
             CheckBox5.Enabled = True
             CheckBox9.Enabled = True
+            CheckBox11.Enabled = True
+            CheckBox12.Enabled = True
         End If
     End Sub
     Private Sub CheckBox2_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox2.CheckedChanged
@@ -234,6 +248,8 @@
         CheckBox8.Checked = True
         CheckBox9.Checked = True
         CheckBox10.Checked = True
+        CheckBox11.Checked = True
+        CheckBox12.Checked = True
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
@@ -247,7 +263,8 @@
         CheckBox8.Checked = False
         CheckBox9.Checked = False
         CheckBox10.Checked = False
-
+        CheckBox11.Checked = False
+        CheckBox12.Checked = False
     End Sub
 
 

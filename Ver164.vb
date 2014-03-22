@@ -120,6 +120,59 @@
         Next
         ComboBox9.Text = "latest"
 
+        'mod10 - Rei's minimap
+        Label10.Visible = False
+        ComboBox10.Visible = False
+
+        'mod11 - CraftGuide
+        ComboBox11.Items.Add("latest")
+        For i = 5 To 3 Step -1
+            ComboBox11.Items.Add("1.6.7." & i)
+        Next
+        ComboBox11.Text = "latest"
+
+        'mod12 - iChun Util
+        ComboBox12.Items.Add("latest")
+        ComboBox12.Items.Add("2.4.0")
+        ComboBox12.Items.Add("2.3.0")
+        ComboBox12.Items.Add("2.2.0")
+        ComboBox12.Items.Add("2.1.0")
+        ComboBox12.Items.Add("2.0.0")
+        ComboBox12.Text = "latest"
+
+        'mod13 - Mob Amputation
+        ComboBox13.Items.Add("latest")
+        ComboBox13.Items.Add("2.0.1")
+        ComboBox13.Items.Add("2.0.0")
+        ComboBox13.Text = "latest"
+
+        'mod14 - Mob Dismemberment
+        Label14.Visible = False
+        ComboBox14.Visible = False
+
+        'mod15 - CodeChickenCore
+        ComboBox15.Items.Add("latest")
+        For i = 9 To 6 Step -1
+            ComboBox15.Items.Add("0.9.0." & i)
+        Next
+        ComboBox15.Text = "latest"
+
+        'mod16 - Not Enough Items
+        ComboBox16.Items.Add("latest")
+        ComboBox16.Items.Add("1.6.1.9")
+        ComboBox16.Items.Add("1.6.1.8")
+        ComboBox16.Items.Add("1.6.1.5")
+        ComboBox16.Text = "latest"
+
+        'mod17 - Waila
+        ComboBox17.Items.Add("latest")
+        ComboBox17.Items.Add("1.5.1a")
+        ComboBox17.Items.Add("1.5.1")
+        ComboBox17.Items.Add("1.5.0")
+        ComboBox17.Items.Add("1.4.5a")
+        ComboBox17.Items.Add("1.4.5")
+        ComboBox17.Text = "latest"
+
         ComboBox2.Enabled = False
         ComboBox4.Enabled = False
         ComboBox5.Enabled = False
@@ -127,10 +180,22 @@
         ComboBox7.Enabled = False
         ComboBox8.Enabled = False
         ComboBox9.Enabled = False
+        ComboBox10.Enabled = False
+        ComboBox11.Enabled = False
+        ComboBox12.Enabled = False
+        ComboBox13.Enabled = False
+        ComboBox14.Enabled = False
+        ComboBox15.Enabled = False
+        ComboBox16.Enabled = False
+        ComboBox17.Enabled = False
 
         CheckBox6.Enabled = False
         CheckBox7.Enabled = False
         CheckBox8.Enabled = False
+        CheckBox13.Enabled = False
+        CheckBox14.Enabled = False
+        CheckBox16.Enabled = False
+        CheckBox17.Enabled = False
     End Sub
 
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
@@ -144,6 +209,14 @@
             CheckBox7.Enabled = False
             CheckBox8.Enabled = False
             CheckBox9.Enabled = False
+            CheckBox10.Enabled = False
+            CheckBox11.Enabled = False
+            CheckBox12.Enabled = False
+            CheckBox13.Enabled = False
+            CheckBox14.Enabled = False
+            CheckBox15.Enabled = False
+            CheckBox16.Enabled = False
+            CheckBox17.Enabled = False
 
             CheckBox2.Checked = False
             CheckBox3.Checked = False
@@ -153,6 +226,13 @@
             CheckBox7.Checked = False
             CheckBox8.Checked = False
             CheckBox9.Checked = False
+            CheckBox11.Checked = False
+            CheckBox12.Checked = False
+            CheckBox13.Checked = False
+            CheckBox14.Checked = False
+            CheckBox15.Checked = False
+            CheckBox16.Checked = False
+            CheckBox17.Checked = False
         Else
             ComboBox1.Enabled = True
             CheckBox2.Enabled = True
@@ -160,6 +240,10 @@
             CheckBox4.Enabled = True
             CheckBox5.Enabled = True
             CheckBox9.Enabled = True
+            CheckBox10.Enabled = True
+            CheckBox11.Enabled = True
+            CheckBox12.Enabled = True
+            CheckBox15.Enabled = True
         End If
     End Sub
     Private Sub CheckBox2_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox2.CheckedChanged
@@ -223,6 +307,70 @@
         If CheckBox9.Checked = False Then ComboBox9.Enabled = False
         If CheckBox9.Checked = True Then ComboBox9.Enabled = True
     End Sub
+
+    Private Sub CheckBox10_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox10.CheckedChanged
+        If CheckBox10.Checked = False Then ComboBox10.Enabled = False
+        If CheckBox10.Checked = True Then ComboBox10.Enabled = True
+    End Sub
+
+    Private Sub CheckBox11_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox11.CheckedChanged
+        If CheckBox11.Checked = False Then ComboBox11.Enabled = False
+        If CheckBox11.Checked = True Then ComboBox11.Enabled = True
+    End Sub
+
+    Private Sub CheckBox12_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox12.CheckedChanged
+        If CheckBox12.Checked = False Then
+            ComboBox12.Enabled = False
+            CheckBox13.Enabled = False
+            CheckBox14.Enabled = False
+        End If
+
+        If CheckBox12.Checked = True Then
+            ComboBox12.Enabled = True
+            CheckBox13.Enabled = True
+            CheckBox14.Enabled = True
+        End If
+
+    End Sub
+
+    Private Sub CheckBox13_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox13.CheckedChanged
+        If CheckBox13.Checked = False Then ComboBox13.Enabled = False
+        If CheckBox13.Checked = True Then ComboBox13.Enabled = True
+    End Sub
+
+    Private Sub CheckBox14_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox14.CheckedChanged
+        If CheckBox14.Checked = False Then ComboBox14.Enabled = False
+        If CheckBox14.Checked = True Then ComboBox14.Enabled = True
+    End Sub
+
+    Private Sub CheckBox15_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox15.CheckedChanged
+        If CheckBox15.Checked = False Then
+            ComboBox15.Enabled = False
+            CheckBox16.Enabled = False
+        End If
+
+        If CheckBox15.Checked = True Then
+            ComboBox15.Enabled = True
+            CheckBox16.Enabled = True
+        End If
+    End Sub
+
+    Private Sub CheckBox16_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox16.CheckedChanged
+        If CheckBox16.Checked = False Then
+            ComboBox16.Enabled = False
+            CheckBox17.Enabled = False
+        End If
+
+        If CheckBox16.Checked = True Then
+            ComboBox16.Enabled = True
+            CheckBox17.Enabled = True
+        End If
+    End Sub
+
+    Private Sub CheckBox17_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox17.CheckedChanged
+        If CheckBox17.Checked = False Then ComboBox17.Enabled = False
+        If CheckBox17.Checked = True Then ComboBox17.Enabled = True
+    End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
         Try
@@ -257,6 +405,14 @@
         CheckBox7.Checked = True
         CheckBox8.Checked = True
         CheckBox9.Checked = True
+        CheckBox10.Checked = True
+        CheckBox11.Checked = True
+        CheckBox12.Checked = True
+        CheckBox13.Checked = True
+        CheckBox14.Checked = True
+        CheckBox15.Checked = True
+        CheckBox16.Checked = True
+        CheckBox17.Checked = True
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
@@ -269,6 +425,14 @@
         CheckBox7.Checked = False
         CheckBox8.Checked = False
         CheckBox9.Checked = False
+        CheckBox10.Checked = False
+        CheckBox11.Checked = False
+        CheckBox12.Checked = False
+        CheckBox13.Checked = False
+        CheckBox14.Checked = False
+        CheckBox15.Checked = False
+        CheckBox16.Checked = False
+        CheckBox17.Checked = False
 
     End Sub
 

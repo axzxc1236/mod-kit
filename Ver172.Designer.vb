@@ -62,15 +62,6 @@ Partial Class Ver172
         Me.ComboBox12 = New System.Windows.Forms.ComboBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.CheckBox12 = New System.Windows.Forms.CheckBox()
-        Me.ComboBox13 = New System.Windows.Forms.ComboBox()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.CheckBox13 = New System.Windows.Forms.CheckBox()
-        Me.ComboBox14 = New System.Windows.Forms.ComboBox()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.CheckBox14 = New System.Windows.Forms.CheckBox()
-        Me.ComboBox15 = New System.Windows.Forms.ComboBox()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.CheckBox15 = New System.Windows.Forms.CheckBox()
         Me.SuspendLayout()
         '
         'CheckBox1
@@ -309,73 +300,10 @@ Partial Class Ver172
         Me.CheckBox12.Name = "CheckBox12"
         Me.CheckBox12.UseVisualStyleBackColor = True
         '
-        'ComboBox13
-        '
-        Me.ComboBox13.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox13.FormattingEnabled = True
-        resources.ApplyResources(Me.ComboBox13, "ComboBox13")
-        Me.ComboBox13.Name = "ComboBox13"
-        '
-        'Label13
-        '
-        resources.ApplyResources(Me.Label13, "Label13")
-        Me.Label13.Name = "Label13"
-        '
-        'CheckBox13
-        '
-        resources.ApplyResources(Me.CheckBox13, "CheckBox13")
-        Me.CheckBox13.Name = "CheckBox13"
-        Me.CheckBox13.UseVisualStyleBackColor = True
-        '
-        'ComboBox14
-        '
-        Me.ComboBox14.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox14.FormattingEnabled = True
-        resources.ApplyResources(Me.ComboBox14, "ComboBox14")
-        Me.ComboBox14.Name = "ComboBox14"
-        '
-        'Label14
-        '
-        resources.ApplyResources(Me.Label14, "Label14")
-        Me.Label14.Name = "Label14"
-        '
-        'CheckBox14
-        '
-        resources.ApplyResources(Me.CheckBox14, "CheckBox14")
-        Me.CheckBox14.Name = "CheckBox14"
-        Me.CheckBox14.UseVisualStyleBackColor = True
-        '
-        'ComboBox15
-        '
-        Me.ComboBox15.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox15.FormattingEnabled = True
-        resources.ApplyResources(Me.ComboBox15, "ComboBox15")
-        Me.ComboBox15.Name = "ComboBox15"
-        '
-        'Label15
-        '
-        resources.ApplyResources(Me.Label15, "Label15")
-        Me.Label15.Name = "Label15"
-        '
-        'CheckBox15
-        '
-        resources.ApplyResources(Me.CheckBox15, "CheckBox15")
-        Me.CheckBox15.Name = "CheckBox15"
-        Me.CheckBox15.UseVisualStyleBackColor = True
-        '
         'Ver172
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.ComboBox15)
-        Me.Controls.Add(Me.Label15)
-        Me.Controls.Add(Me.CheckBox15)
-        Me.Controls.Add(Me.ComboBox14)
-        Me.Controls.Add(Me.Label14)
-        Me.Controls.Add(Me.CheckBox14)
-        Me.Controls.Add(Me.ComboBox13)
-        Me.Controls.Add(Me.Label13)
-        Me.Controls.Add(Me.CheckBox13)
         Me.Controls.Add(Me.ComboBox12)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.CheckBox12)
@@ -459,13 +387,4 @@ Partial Class Ver172
     Friend WithEvents ComboBox12 As System.Windows.Forms.ComboBox
     Friend WithEvents Label12 As System.Windows.Forms.Label
     Friend WithEvents CheckBox12 As System.Windows.Forms.CheckBox
-    Friend WithEvents ComboBox13 As System.Windows.Forms.ComboBox
-    Friend WithEvents Label13 As System.Windows.Forms.Label
-    Friend WithEvents CheckBox13 As System.Windows.Forms.CheckBox
-    Friend WithEvents ComboBox14 As System.Windows.Forms.ComboBox
-    Friend WithEvents Label14 As System.Windows.Forms.Label
-    Friend WithEvents CheckBox14 As System.Windows.Forms.CheckBox
-    Friend WithEvents ComboBox15 As System.Windows.Forms.ComboBox
-    Friend WithEvents Label15 As System.Windows.Forms.Label
-    Friend WithEvents CheckBox15 As System.Windows.Forms.CheckBox
 End Class

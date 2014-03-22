@@ -52,30 +52,30 @@ Partial Class Ver164
         Me.CheckBox3 = New System.Windows.Forms.CheckBox()
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.ComboBox17 = New System.Windows.Forms.ComboBox()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.CheckBox17 = New System.Windows.Forms.CheckBox()
         Me.ComboBox10 = New System.Windows.Forms.ComboBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.CheckBox10 = New System.Windows.Forms.CheckBox()
         Me.ComboBox11 = New System.Windows.Forms.ComboBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.CheckBox11 = New System.Windows.Forms.CheckBox()
-        Me.ComboBox12 = New System.Windows.Forms.ComboBox()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.CheckBox12 = New System.Windows.Forms.CheckBox()
-        Me.ComboBox15 = New System.Windows.Forms.ComboBox()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.CheckBox15 = New System.Windows.Forms.CheckBox()
         Me.ComboBox14 = New System.Windows.Forms.ComboBox()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.CheckBox14 = New System.Windows.Forms.CheckBox()
         Me.ComboBox13 = New System.Windows.Forms.ComboBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.CheckBox13 = New System.Windows.Forms.CheckBox()
+        Me.ComboBox12 = New System.Windows.Forms.ComboBox()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.CheckBox12 = New System.Windows.Forms.CheckBox()
+        Me.ComboBox15 = New System.Windows.Forms.ComboBox()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.CheckBox15 = New System.Windows.Forms.CheckBox()
         Me.ComboBox16 = New System.Windows.Forms.ComboBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.CheckBox16 = New System.Windows.Forms.CheckBox()
-        Me.ComboBox17 = New System.Windows.Forms.ComboBox()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.CheckBox17 = New System.Windows.Forms.CheckBox()
         Me.SuspendLayout()
         '
         'ComboBox9
@@ -380,6 +380,36 @@ Partial Class Ver164
         Me.CheckBox1.Text = "Forge"
         Me.CheckBox1.UseVisualStyleBackColor = True
         '
+        'ComboBox17
+        '
+        Me.ComboBox17.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox17.FormattingEnabled = True
+        Me.ComboBox17.Location = New System.Drawing.Point(449, 119)
+        Me.ComboBox17.Name = "ComboBox17"
+        Me.ComboBox17.Size = New System.Drawing.Size(115, 20)
+        Me.ComboBox17.TabIndex = 64
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.Label17.Location = New System.Drawing.Point(414, 122)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(29, 12)
+        Me.Label17.TabIndex = 63
+        Me.Label17.Text = "版本"
+        '
+        'CheckBox17
+        '
+        Me.CheckBox17.AutoSize = True
+        Me.CheckBox17.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.CheckBox17.Location = New System.Drawing.Point(291, 121)
+        Me.CheckBox17.Name = "CheckBox17"
+        Me.CheckBox17.Size = New System.Drawing.Size(51, 16)
+        Me.CheckBox17.TabIndex = 62
+        Me.CheckBox17.Text = "Waila"
+        Me.CheckBox17.UseVisualStyleBackColor = True
+        '
         'ComboBox10
         '
         Me.ComboBox10.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
@@ -387,7 +417,7 @@ Partial Class Ver164
         Me.ComboBox10.Location = New System.Drawing.Point(170, 207)
         Me.ComboBox10.Name = "ComboBox10"
         Me.ComboBox10.Size = New System.Drawing.Size(115, 20)
-        Me.ComboBox10.TabIndex = 64
+        Me.ComboBox10.TabIndex = 67
         '
         'Label10
         '
@@ -396,7 +426,7 @@ Partial Class Ver164
         Me.Label10.Location = New System.Drawing.Point(135, 210)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(29, 12)
-        Me.Label10.TabIndex = 63
+        Me.Label10.TabIndex = 66
         Me.Label10.Text = "版本"
         '
         'CheckBox10
@@ -405,9 +435,9 @@ Partial Class Ver164
         Me.CheckBox10.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.CheckBox10.Location = New System.Drawing.Point(12, 209)
         Me.CheckBox10.Name = "CheckBox10"
-        Me.CheckBox10.Size = New System.Drawing.Size(51, 16)
-        Me.CheckBox10.TabIndex = 62
-        Me.CheckBox10.Text = "Waila"
+        Me.CheckBox10.Size = New System.Drawing.Size(90, 16)
+        Me.CheckBox10.TabIndex = 65
+        Me.CheckBox10.Text = "Rei's minimap"
         Me.CheckBox10.UseVisualStyleBackColor = True
         '
         'ComboBox11
@@ -417,7 +447,7 @@ Partial Class Ver164
         Me.ComboBox11.Location = New System.Drawing.Point(170, 229)
         Me.ComboBox11.Name = "ComboBox11"
         Me.ComboBox11.Size = New System.Drawing.Size(115, 20)
-        Me.ComboBox11.TabIndex = 67
+        Me.ComboBox11.TabIndex = 70
         '
         'Label11
         '
@@ -426,7 +456,7 @@ Partial Class Ver164
         Me.Label11.Location = New System.Drawing.Point(135, 232)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(29, 12)
-        Me.Label11.TabIndex = 66
+        Me.Label11.TabIndex = 69
         Me.Label11.Text = "版本"
         '
         'CheckBox11
@@ -435,199 +465,166 @@ Partial Class Ver164
         Me.CheckBox11.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.CheckBox11.Location = New System.Drawing.Point(12, 231)
         Me.CheckBox11.Name = "CheckBox11"
-        Me.CheckBox11.Size = New System.Drawing.Size(90, 16)
-        Me.CheckBox11.TabIndex = 65
-        Me.CheckBox11.Text = "Rei's minimap"
+        Me.CheckBox11.Size = New System.Drawing.Size(76, 16)
+        Me.CheckBox11.TabIndex = 68
+        Me.CheckBox11.Text = "CraftGuide"
         Me.CheckBox11.UseVisualStyleBackColor = True
-        '
-        'ComboBox12
-        '
-        Me.ComboBox12.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox12.FormattingEnabled = True
-        Me.ComboBox12.Location = New System.Drawing.Point(170, 251)
-        Me.ComboBox12.Name = "ComboBox12"
-        Me.ComboBox12.Size = New System.Drawing.Size(115, 20)
-        Me.ComboBox12.TabIndex = 70
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label12.Location = New System.Drawing.Point(135, 254)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(29, 12)
-        Me.Label12.TabIndex = 69
-        Me.Label12.Text = "版本"
-        '
-        'CheckBox12
-        '
-        Me.CheckBox12.AutoSize = True
-        Me.CheckBox12.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.CheckBox12.Location = New System.Drawing.Point(12, 253)
-        Me.CheckBox12.Name = "CheckBox12"
-        Me.CheckBox12.Size = New System.Drawing.Size(76, 16)
-        Me.CheckBox12.TabIndex = 68
-        Me.CheckBox12.Text = "CraftGuide"
-        Me.CheckBox12.UseVisualStyleBackColor = True
-        '
-        'ComboBox15
-        '
-        Me.ComboBox15.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox15.FormattingEnabled = True
-        Me.ComboBox15.Location = New System.Drawing.Point(449, 54)
-        Me.ComboBox15.Name = "ComboBox15"
-        Me.ComboBox15.Size = New System.Drawing.Size(115, 20)
-        Me.ComboBox15.TabIndex = 79
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label15.Location = New System.Drawing.Point(414, 57)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(29, 12)
-        Me.Label15.TabIndex = 78
-        Me.Label15.Text = "版本"
-        '
-        'CheckBox15
-        '
-        Me.CheckBox15.AutoSize = True
-        Me.CheckBox15.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.CheckBox15.Location = New System.Drawing.Point(291, 56)
-        Me.CheckBox15.Name = "CheckBox15"
-        Me.CheckBox15.Size = New System.Drawing.Size(125, 16)
-        Me.CheckBox15.TabIndex = 77
-        Me.CheckBox15.Text = "Mob Dismemberment"
-        Me.CheckBox15.UseVisualStyleBackColor = True
         '
         'ComboBox14
         '
         Me.ComboBox14.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox14.FormattingEnabled = True
-        Me.ComboBox14.Location = New System.Drawing.Point(449, 32)
+        Me.ComboBox14.Location = New System.Drawing.Point(449, 54)
         Me.ComboBox14.Name = "ComboBox14"
         Me.ComboBox14.Size = New System.Drawing.Size(115, 20)
-        Me.ComboBox14.TabIndex = 76
+        Me.ComboBox14.TabIndex = 79
         '
         'Label14
         '
         Me.Label14.AutoSize = True
         Me.Label14.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label14.Location = New System.Drawing.Point(414, 35)
+        Me.Label14.Location = New System.Drawing.Point(414, 57)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(29, 12)
-        Me.Label14.TabIndex = 75
+        Me.Label14.TabIndex = 78
         Me.Label14.Text = "版本"
         '
         'CheckBox14
         '
         Me.CheckBox14.AutoSize = True
         Me.CheckBox14.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.CheckBox14.Location = New System.Drawing.Point(291, 34)
+        Me.CheckBox14.Location = New System.Drawing.Point(291, 56)
         Me.CheckBox14.Name = "CheckBox14"
-        Me.CheckBox14.Size = New System.Drawing.Size(104, 16)
-        Me.CheckBox14.TabIndex = 74
-        Me.CheckBox14.Text = "Mob Amputation"
+        Me.CheckBox14.Size = New System.Drawing.Size(125, 16)
+        Me.CheckBox14.TabIndex = 77
+        Me.CheckBox14.Text = "Mob Dismemberment"
         Me.CheckBox14.UseVisualStyleBackColor = True
         '
         'ComboBox13
         '
         Me.ComboBox13.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox13.FormattingEnabled = True
-        Me.ComboBox13.Location = New System.Drawing.Point(449, 10)
+        Me.ComboBox13.Location = New System.Drawing.Point(449, 32)
         Me.ComboBox13.Name = "ComboBox13"
         Me.ComboBox13.Size = New System.Drawing.Size(115, 20)
-        Me.ComboBox13.TabIndex = 73
+        Me.ComboBox13.TabIndex = 76
         '
         'Label13
         '
         Me.Label13.AutoSize = True
         Me.Label13.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label13.Location = New System.Drawing.Point(414, 13)
+        Me.Label13.Location = New System.Drawing.Point(414, 35)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(29, 12)
-        Me.Label13.TabIndex = 72
+        Me.Label13.TabIndex = 75
         Me.Label13.Text = "版本"
         '
         'CheckBox13
         '
         Me.CheckBox13.AutoSize = True
         Me.CheckBox13.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.CheckBox13.Location = New System.Drawing.Point(291, 12)
+        Me.CheckBox13.Location = New System.Drawing.Point(291, 34)
         Me.CheckBox13.Name = "CheckBox13"
-        Me.CheckBox13.Size = New System.Drawing.Size(73, 16)
-        Me.CheckBox13.TabIndex = 71
-        Me.CheckBox13.Text = "iChun Util"
+        Me.CheckBox13.Size = New System.Drawing.Size(104, 16)
+        Me.CheckBox13.TabIndex = 74
+        Me.CheckBox13.Text = "Mob Amputation"
         Me.CheckBox13.UseVisualStyleBackColor = True
+        '
+        'ComboBox12
+        '
+        Me.ComboBox12.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox12.FormattingEnabled = True
+        Me.ComboBox12.Location = New System.Drawing.Point(449, 10)
+        Me.ComboBox12.Name = "ComboBox12"
+        Me.ComboBox12.Size = New System.Drawing.Size(115, 20)
+        Me.ComboBox12.TabIndex = 73
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.Label12.Location = New System.Drawing.Point(414, 13)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(29, 12)
+        Me.Label12.TabIndex = 72
+        Me.Label12.Text = "版本"
+        '
+        'CheckBox12
+        '
+        Me.CheckBox12.AutoSize = True
+        Me.CheckBox12.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.CheckBox12.Location = New System.Drawing.Point(291, 12)
+        Me.CheckBox12.Name = "CheckBox12"
+        Me.CheckBox12.Size = New System.Drawing.Size(73, 16)
+        Me.CheckBox12.TabIndex = 71
+        Me.CheckBox12.Text = "iChun Util"
+        Me.CheckBox12.UseVisualStyleBackColor = True
+        '
+        'ComboBox15
+        '
+        Me.ComboBox15.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox15.FormattingEnabled = True
+        Me.ComboBox15.Location = New System.Drawing.Point(449, 76)
+        Me.ComboBox15.Name = "ComboBox15"
+        Me.ComboBox15.Size = New System.Drawing.Size(115, 20)
+        Me.ComboBox15.TabIndex = 82
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.Label15.Location = New System.Drawing.Point(414, 79)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(29, 12)
+        Me.Label15.TabIndex = 81
+        Me.Label15.Text = "版本"
+        '
+        'CheckBox15
+        '
+        Me.CheckBox15.AutoSize = True
+        Me.CheckBox15.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.CheckBox15.Location = New System.Drawing.Point(291, 78)
+        Me.CheckBox15.Name = "CheckBox15"
+        Me.CheckBox15.Size = New System.Drawing.Size(111, 16)
+        Me.CheckBox15.TabIndex = 80
+        Me.CheckBox15.Text = "CodeChickenCore"
+        Me.CheckBox15.UseVisualStyleBackColor = True
         '
         'ComboBox16
         '
         Me.ComboBox16.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox16.FormattingEnabled = True
-        Me.ComboBox16.Location = New System.Drawing.Point(449, 76)
+        Me.ComboBox16.Location = New System.Drawing.Point(449, 98)
         Me.ComboBox16.Name = "ComboBox16"
         Me.ComboBox16.Size = New System.Drawing.Size(115, 20)
-        Me.ComboBox16.TabIndex = 82
+        Me.ComboBox16.TabIndex = 85
         '
         'Label16
         '
         Me.Label16.AutoSize = True
         Me.Label16.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label16.Location = New System.Drawing.Point(414, 79)
+        Me.Label16.Location = New System.Drawing.Point(414, 101)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(29, 12)
-        Me.Label16.TabIndex = 81
+        Me.Label16.TabIndex = 84
         Me.Label16.Text = "版本"
         '
         'CheckBox16
         '
         Me.CheckBox16.AutoSize = True
         Me.CheckBox16.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.CheckBox16.Location = New System.Drawing.Point(291, 78)
+        Me.CheckBox16.Location = New System.Drawing.Point(291, 100)
         Me.CheckBox16.Name = "CheckBox16"
-        Me.CheckBox16.Size = New System.Drawing.Size(111, 16)
-        Me.CheckBox16.TabIndex = 80
-        Me.CheckBox16.Text = "CodeChickenCore"
+        Me.CheckBox16.Size = New System.Drawing.Size(109, 16)
+        Me.CheckBox16.TabIndex = 83
+        Me.CheckBox16.Text = "Not Enough Items"
         Me.CheckBox16.UseVisualStyleBackColor = True
-        '
-        'ComboBox17
-        '
-        Me.ComboBox17.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox17.FormattingEnabled = True
-        Me.ComboBox17.Location = New System.Drawing.Point(449, 98)
-        Me.ComboBox17.Name = "ComboBox17"
-        Me.ComboBox17.Size = New System.Drawing.Size(115, 20)
-        Me.ComboBox17.TabIndex = 85
-        '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label17.Location = New System.Drawing.Point(414, 101)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(29, 12)
-        Me.Label17.TabIndex = 84
-        Me.Label17.Text = "版本"
-        '
-        'CheckBox17
-        '
-        Me.CheckBox17.AutoSize = True
-        Me.CheckBox17.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.CheckBox17.Location = New System.Drawing.Point(291, 100)
-        Me.CheckBox17.Name = "CheckBox17"
-        Me.CheckBox17.Size = New System.Drawing.Size(109, 16)
-        Me.CheckBox17.TabIndex = 83
-        Me.CheckBox17.Text = "Not Enough Items"
-        Me.CheckBox17.UseVisualStyleBackColor = True
         '
         'Ver164
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(584, 312)
-        Me.Controls.Add(Me.ComboBox17)
-        Me.Controls.Add(Me.Label17)
-        Me.Controls.Add(Me.CheckBox17)
         Me.Controls.Add(Me.ComboBox16)
         Me.Controls.Add(Me.Label16)
         Me.Controls.Add(Me.CheckBox16)
@@ -649,6 +646,9 @@ Partial Class Ver164
         Me.Controls.Add(Me.ComboBox10)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.CheckBox10)
+        Me.Controls.Add(Me.ComboBox17)
+        Me.Controls.Add(Me.Label17)
+        Me.Controls.Add(Me.CheckBox17)
         Me.Controls.Add(Me.ComboBox9)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.CheckBox9)
@@ -715,28 +715,28 @@ Partial Class Ver164
     Friend WithEvents CheckBox3 As System.Windows.Forms.CheckBox
     Friend WithEvents CheckBox2 As System.Windows.Forms.CheckBox
     Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
+    Friend WithEvents ComboBox17 As System.Windows.Forms.ComboBox
+    Friend WithEvents Label17 As System.Windows.Forms.Label
+    Friend WithEvents CheckBox17 As System.Windows.Forms.CheckBox
     Friend WithEvents ComboBox10 As System.Windows.Forms.ComboBox
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents CheckBox10 As System.Windows.Forms.CheckBox
     Friend WithEvents ComboBox11 As System.Windows.Forms.ComboBox
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents CheckBox11 As System.Windows.Forms.CheckBox
-    Friend WithEvents ComboBox12 As System.Windows.Forms.ComboBox
-    Friend WithEvents Label12 As System.Windows.Forms.Label
-    Friend WithEvents CheckBox12 As System.Windows.Forms.CheckBox
-    Friend WithEvents ComboBox15 As System.Windows.Forms.ComboBox
-    Friend WithEvents Label15 As System.Windows.Forms.Label
-    Friend WithEvents CheckBox15 As System.Windows.Forms.CheckBox
     Friend WithEvents ComboBox14 As System.Windows.Forms.ComboBox
     Friend WithEvents Label14 As System.Windows.Forms.Label
     Friend WithEvents CheckBox14 As System.Windows.Forms.CheckBox
     Friend WithEvents ComboBox13 As System.Windows.Forms.ComboBox
     Friend WithEvents Label13 As System.Windows.Forms.Label
     Friend WithEvents CheckBox13 As System.Windows.Forms.CheckBox
+    Friend WithEvents ComboBox12 As System.Windows.Forms.ComboBox
+    Friend WithEvents Label12 As System.Windows.Forms.Label
+    Friend WithEvents CheckBox12 As System.Windows.Forms.CheckBox
+    Friend WithEvents ComboBox15 As System.Windows.Forms.ComboBox
+    Friend WithEvents Label15 As System.Windows.Forms.Label
+    Friend WithEvents CheckBox15 As System.Windows.Forms.CheckBox
     Friend WithEvents ComboBox16 As System.Windows.Forms.ComboBox
     Friend WithEvents Label16 As System.Windows.Forms.Label
     Friend WithEvents CheckBox16 As System.Windows.Forms.CheckBox
-    Friend WithEvents ComboBox17 As System.Windows.Forms.ComboBox
-    Friend WithEvents Label17 As System.Windows.Forms.Label
-    Friend WithEvents CheckBox17 As System.Windows.Forms.CheckBox
 End Class
