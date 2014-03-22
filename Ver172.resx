@@ -144,7 +144,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;CheckBox1.ZOrder" xml:space="preserve">
-    <value>32</value>
+    <value>47</value>
   </data>
   <data name="CheckBox2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -171,7 +171,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;CheckBox2.ZOrder" xml:space="preserve">
-    <value>31</value>
+    <value>46</value>
   </data>
   <data name="CheckBox3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -198,7 +198,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;CheckBox3.ZOrder" xml:space="preserve">
-    <value>30</value>
+    <value>45</value>
   </data>
   <data name="CheckBox4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -225,10 +225,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;CheckBox4.ZOrder" xml:space="preserve">
-    <value>29</value>
+    <value>44</value>
   </data>
   <data name="ComboBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>157, 10</value>
+    <value>170, 10</value>
   </data>
   <data name="ComboBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>115, 20</value>
@@ -246,13 +246,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ComboBox1.ZOrder" xml:space="preserve">
-    <value>28</value>
+    <value>43</value>
   </data>
   <data name="Label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="Label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>122, 13</value>
+    <value>135, 13</value>
   </data>
   <data name="Label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>29, 12</value>
@@ -273,13 +273,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label1.ZOrder" xml:space="preserve">
-    <value>27</value>
+    <value>42</value>
   </data>
   <data name="Label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="Label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>122, 35</value>
+    <value>135, 35</value>
   </data>
   <data name="Label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>29, 12</value>
@@ -300,10 +300,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label2.ZOrder" xml:space="preserve">
-    <value>26</value>
+    <value>41</value>
   </data>
   <data name="ComboBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>157, 32</value>
+    <value>170, 32</value>
   </data>
   <data name="ComboBox2.Size" type="System.Drawing.Size, System.Drawing">
     <value>115, 20</value>
@@ -321,13 +321,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ComboBox2.ZOrder" xml:space="preserve">
-    <value>25</value>
+    <value>40</value>
   </data>
   <data name="Label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="Label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>122, 57</value>
+    <value>135, 57</value>
   </data>
   <data name="Label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>29, 12</value>
@@ -348,13 +348,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label3.ZOrder" xml:space="preserve">
-    <value>24</value>
+    <value>39</value>
   </data>
   <data name="Label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="Label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>122, 79</value>
+    <value>135, 79</value>
   </data>
   <data name="Label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>29, 12</value>
@@ -375,10 +375,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label4.ZOrder" xml:space="preserve">
-    <value>23</value>
+    <value>38</value>
   </data>
   <data name="ComboBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>157, 54</value>
+    <value>170, 54</value>
   </data>
   <data name="ComboBox3.Size" type="System.Drawing.Size, System.Drawing">
     <value>115, 20</value>
@@ -396,10 +396,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ComboBox3.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>37</value>
   </data>
   <data name="ComboBox4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>157, 76</value>
+    <value>170, 76</value>
   </data>
   <data name="ComboBox4.Size" type="System.Drawing.Size, System.Drawing">
     <value>115, 20</value>
@@ -417,7 +417,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ComboBox4.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>36</value>
   </data>
   <data name="Button1.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 277</value>
@@ -441,7 +441,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Button1.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>35</value>
   </data>
   <data name="Button2.Location" type="System.Drawing.Point, System.Drawing">
     <value>93, 277</value>
@@ -465,7 +465,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Button2.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>34</value>
   </data>
   <data name="Button3.Location" type="System.Drawing.Point, System.Drawing">
     <value>174, 277</value>
@@ -489,10 +489,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Button3.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>33</value>
   </data>
   <data name="ComboBox5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>157, 98</value>
+    <value>170, 98</value>
   </data>
   <data name="ComboBox5.Size" type="System.Drawing.Size, System.Drawing">
     <value>115, 20</value>
@@ -510,13 +510,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ComboBox5.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>30</value>
   </data>
   <data name="Label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="Label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>122, 101</value>
+    <value>135, 101</value>
   </data>
   <data name="Label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>29, 12</value>
@@ -537,7 +537,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label5.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>31</value>
   </data>
   <data name="CheckBox5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -564,10 +564,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;CheckBox5.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>32</value>
   </data>
   <data name="ComboBox6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>157, 119</value>
+    <value>170, 119</value>
   </data>
   <data name="ComboBox6.Size" type="System.Drawing.Size, System.Drawing">
     <value>115, 20</value>
@@ -585,7 +585,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ComboBox6.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>27</value>
   </data>
   <data name="Label6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -595,7 +595,7 @@
     <value>NoControl</value>
   </data>
   <data name="Label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>122, 122</value>
+    <value>135, 122</value>
   </data>
   <data name="Label6.Size" type="System.Drawing.Size, System.Drawing">
     <value>29, 12</value>
@@ -616,7 +616,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label6.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>28</value>
   </data>
   <data name="CheckBox6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -646,10 +646,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;CheckBox6.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>29</value>
   </data>
   <data name="ComboBox7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>157, 141</value>
+    <value>170, 141</value>
   </data>
   <data name="ComboBox7.Size" type="System.Drawing.Size, System.Drawing">
     <value>115, 20</value>
@@ -667,7 +667,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ComboBox7.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>24</value>
   </data>
   <data name="Label7.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -676,7 +676,7 @@
     <value>NoControl</value>
   </data>
   <data name="Label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>122, 144</value>
+    <value>135, 144</value>
   </data>
   <data name="Label7.Size" type="System.Drawing.Size, System.Drawing">
     <value>29, 12</value>
@@ -697,7 +697,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label7.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>25</value>
   </data>
   <data name="CheckBox7.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -727,10 +727,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;CheckBox7.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>26</value>
   </data>
   <data name="ComboBox8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>157, 163</value>
+    <value>170, 163</value>
   </data>
   <data name="ComboBox8.Size" type="System.Drawing.Size, System.Drawing">
     <value>115, 20</value>
@@ -748,7 +748,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ComboBox8.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>21</value>
   </data>
   <data name="Label8.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -757,7 +757,7 @@
     <value>NoControl</value>
   </data>
   <data name="Label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>122, 166</value>
+    <value>135, 166</value>
   </data>
   <data name="Label8.Size" type="System.Drawing.Size, System.Drawing">
     <value>29, 12</value>
@@ -778,7 +778,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label8.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>22</value>
   </data>
   <data name="CheckBox8.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -808,10 +808,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;CheckBox8.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>23</value>
   </data>
   <data name="ComboBox10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>157, 207</value>
+    <value>170, 207</value>
   </data>
   <data name="ComboBox10.Size" type="System.Drawing.Size, System.Drawing">
     <value>115, 20</value>
@@ -829,7 +829,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ComboBox10.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>18</value>
   </data>
   <data name="Label10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -838,7 +838,7 @@
     <value>NoControl</value>
   </data>
   <data name="Label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>122, 210</value>
+    <value>135, 210</value>
   </data>
   <data name="Label10.Size" type="System.Drawing.Size, System.Drawing">
     <value>29, 12</value>
@@ -859,7 +859,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label10.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>19</value>
   </data>
   <data name="CheckBox10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -889,10 +889,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;CheckBox10.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>20</value>
   </data>
   <data name="ComboBox9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>157, 185</value>
+    <value>170, 185</value>
   </data>
   <data name="ComboBox9.Size" type="System.Drawing.Size, System.Drawing">
     <value>115, 20</value>
@@ -910,7 +910,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ComboBox9.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>15</value>
   </data>
   <data name="Label9.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -919,7 +919,7 @@
     <value>NoControl</value>
   </data>
   <data name="Label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>122, 188</value>
+    <value>135, 188</value>
   </data>
   <data name="Label9.Size" type="System.Drawing.Size, System.Drawing">
     <value>29, 12</value>
@@ -940,7 +940,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label9.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>16</value>
   </data>
   <data name="CheckBox9.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -970,6 +970,411 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;CheckBox9.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="ComboBox11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>170, 229</value>
+  </data>
+  <data name="ComboBox11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>115, 20</value>
+  </data>
+  <data name="ComboBox11.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="&gt;&gt;ComboBox11.Name" xml:space="preserve">
+    <value>ComboBox11</value>
+  </data>
+  <data name="&gt;&gt;ComboBox11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ComboBox11.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ComboBox11.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="Label11.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label11.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>135, 232</value>
+  </data>
+  <data name="Label11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 12</value>
+  </data>
+  <data name="Label11.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
+  <data name="Label11.Text" xml:space="preserve">
+    <value>版本</value>
+  </data>
+  <data name="&gt;&gt;Label11.Name" xml:space="preserve">
+    <value>Label11</value>
+  </data>
+  <data name="&gt;&gt;Label11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label11.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Label11.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="CheckBox11.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CheckBox11.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CheckBox11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 231</value>
+  </data>
+  <data name="CheckBox11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 16</value>
+  </data>
+  <data name="CheckBox11.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="CheckBox11.Text" xml:space="preserve">
+    <value>Waila</value>
+  </data>
+  <data name="&gt;&gt;CheckBox11.Name" xml:space="preserve">
+    <value>CheckBox11</value>
+  </data>
+  <data name="&gt;&gt;CheckBox11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CheckBox11.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;CheckBox11.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="ComboBox12.Location" type="System.Drawing.Point, System.Drawing">
+    <value>170, 251</value>
+  </data>
+  <data name="ComboBox12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>115, 20</value>
+  </data>
+  <data name="ComboBox12.TabIndex" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="&gt;&gt;ComboBox12.Name" xml:space="preserve">
+    <value>ComboBox12</value>
+  </data>
+  <data name="&gt;&gt;ComboBox12.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ComboBox12.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ComboBox12.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="Label12.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label12.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label12.Location" type="System.Drawing.Point, System.Drawing">
+    <value>135, 254</value>
+  </data>
+  <data name="Label12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 12</value>
+  </data>
+  <data name="Label12.TabIndex" type="System.Int32, mscorlib">
+    <value>39</value>
+  </data>
+  <data name="Label12.Text" xml:space="preserve">
+    <value>版本</value>
+  </data>
+  <data name="&gt;&gt;Label12.Name" xml:space="preserve">
+    <value>Label12</value>
+  </data>
+  <data name="&gt;&gt;Label12.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label12.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Label12.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="CheckBox12.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CheckBox12.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CheckBox12.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 253</value>
+  </data>
+  <data name="CheckBox12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 16</value>
+  </data>
+  <data name="CheckBox12.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="CheckBox12.Text" xml:space="preserve">
+    <value>CraftGuide</value>
+  </data>
+  <data name="&gt;&gt;CheckBox12.Name" xml:space="preserve">
+    <value>CheckBox12</value>
+  </data>
+  <data name="&gt;&gt;CheckBox12.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CheckBox12.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;CheckBox12.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="ComboBox13.Location" type="System.Drawing.Point, System.Drawing">
+    <value>449, 10</value>
+  </data>
+  <data name="ComboBox13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>115, 20</value>
+  </data>
+  <data name="ComboBox13.TabIndex" type="System.Int32, mscorlib">
+    <value>43</value>
+  </data>
+  <data name="&gt;&gt;ComboBox13.Name" xml:space="preserve">
+    <value>ComboBox13</value>
+  </data>
+  <data name="&gt;&gt;ComboBox13.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ComboBox13.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ComboBox13.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="Label13.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label13.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label13.Location" type="System.Drawing.Point, System.Drawing">
+    <value>414, 13</value>
+  </data>
+  <data name="Label13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 12</value>
+  </data>
+  <data name="Label13.TabIndex" type="System.Int32, mscorlib">
+    <value>42</value>
+  </data>
+  <data name="Label13.Text" xml:space="preserve">
+    <value>版本</value>
+  </data>
+  <data name="&gt;&gt;Label13.Name" xml:space="preserve">
+    <value>Label13</value>
+  </data>
+  <data name="&gt;&gt;Label13.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label13.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Label13.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="CheckBox13.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CheckBox13.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CheckBox13.Location" type="System.Drawing.Point, System.Drawing">
+    <value>291, 12</value>
+  </data>
+  <data name="CheckBox13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 16</value>
+  </data>
+  <data name="CheckBox13.TabIndex" type="System.Int32, mscorlib">
+    <value>41</value>
+  </data>
+  <data name="CheckBox13.Text" xml:space="preserve">
+    <value>iChun Util</value>
+  </data>
+  <data name="&gt;&gt;CheckBox13.Name" xml:space="preserve">
+    <value>CheckBox13</value>
+  </data>
+  <data name="&gt;&gt;CheckBox13.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CheckBox13.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;CheckBox13.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="ComboBox14.Location" type="System.Drawing.Point, System.Drawing">
+    <value>449, 32</value>
+  </data>
+  <data name="ComboBox14.Size" type="System.Drawing.Size, System.Drawing">
+    <value>115, 20</value>
+  </data>
+  <data name="ComboBox14.TabIndex" type="System.Int32, mscorlib">
+    <value>46</value>
+  </data>
+  <data name="&gt;&gt;ComboBox14.Name" xml:space="preserve">
+    <value>ComboBox14</value>
+  </data>
+  <data name="&gt;&gt;ComboBox14.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ComboBox14.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ComboBox14.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="Label14.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label14.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label14.Location" type="System.Drawing.Point, System.Drawing">
+    <value>414, 35</value>
+  </data>
+  <data name="Label14.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 12</value>
+  </data>
+  <data name="Label14.TabIndex" type="System.Int32, mscorlib">
+    <value>45</value>
+  </data>
+  <data name="Label14.Text" xml:space="preserve">
+    <value>版本</value>
+  </data>
+  <data name="&gt;&gt;Label14.Name" xml:space="preserve">
+    <value>Label14</value>
+  </data>
+  <data name="&gt;&gt;Label14.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label14.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Label14.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="CheckBox14.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CheckBox14.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CheckBox14.Location" type="System.Drawing.Point, System.Drawing">
+    <value>291, 34</value>
+  </data>
+  <data name="CheckBox14.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 16</value>
+  </data>
+  <data name="CheckBox14.TabIndex" type="System.Int32, mscorlib">
+    <value>44</value>
+  </data>
+  <data name="CheckBox14.Text" xml:space="preserve">
+    <value>Mob Amputation</value>
+  </data>
+  <data name="&gt;&gt;CheckBox14.Name" xml:space="preserve">
+    <value>CheckBox14</value>
+  </data>
+  <data name="&gt;&gt;CheckBox14.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CheckBox14.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;CheckBox14.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="ComboBox15.Location" type="System.Drawing.Point, System.Drawing">
+    <value>449, 54</value>
+  </data>
+  <data name="ComboBox15.Size" type="System.Drawing.Size, System.Drawing">
+    <value>115, 20</value>
+  </data>
+  <data name="ComboBox15.TabIndex" type="System.Int32, mscorlib">
+    <value>49</value>
+  </data>
+  <data name="&gt;&gt;ComboBox15.Name" xml:space="preserve">
+    <value>ComboBox15</value>
+  </data>
+  <data name="&gt;&gt;ComboBox15.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ComboBox15.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ComboBox15.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Label15.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label15.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label15.Location" type="System.Drawing.Point, System.Drawing">
+    <value>414, 57</value>
+  </data>
+  <data name="Label15.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 12</value>
+  </data>
+  <data name="Label15.TabIndex" type="System.Int32, mscorlib">
+    <value>48</value>
+  </data>
+  <data name="Label15.Text" xml:space="preserve">
+    <value>版本</value>
+  </data>
+  <data name="&gt;&gt;Label15.Name" xml:space="preserve">
+    <value>Label15</value>
+  </data>
+  <data name="&gt;&gt;Label15.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label15.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Label15.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="CheckBox15.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CheckBox15.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CheckBox15.Location" type="System.Drawing.Point, System.Drawing">
+    <value>291, 56</value>
+  </data>
+  <data name="CheckBox15.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 16</value>
+  </data>
+  <data name="CheckBox15.TabIndex" type="System.Int32, mscorlib">
+    <value>47</value>
+  </data>
+  <data name="CheckBox15.Text" xml:space="preserve">
+    <value>Mob Dismemberment</value>
+  </data>
+  <data name="&gt;&gt;CheckBox15.Name" xml:space="preserve">
+    <value>CheckBox15</value>
+  </data>
+  <data name="&gt;&gt;CheckBox15.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CheckBox15.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;CheckBox15.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -979,7 +1384,10 @@
     <value>6, 12</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>284, 312</value>
+    <value>584, 312</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Ver172</value>
