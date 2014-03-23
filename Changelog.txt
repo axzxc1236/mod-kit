@@ -1,7 +1,7 @@
    0.6(開發中):
        在1.6.4新增了Rei's minimap、CraftGuide、iChun Util、Mob Amputation、Mob Dismemberment、CodeChickenCore、Not Enough Items、Waila
        在1.7.2新增了CraftGuide、Waila
-       
+       在1.6.4新增了提示
    
    0.5:
        在credits新增Lunatrius的模組

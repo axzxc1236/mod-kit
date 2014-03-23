@@ -76,6 +76,7 @@ Partial Class Ver164
         Me.ComboBox16 = New System.Windows.Forms.ComboBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.CheckBox16 = New System.Windows.Forms.CheckBox()
+        Me.notice = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'ComboBox9
@@ -620,11 +621,21 @@ Partial Class Ver164
         Me.CheckBox16.Text = "Not Enough Items"
         Me.CheckBox16.UseVisualStyleBackColor = True
         '
+        'notice
+        '
+        Me.notice.AutoSize = True
+        Me.notice.Location = New System.Drawing.Point(255, 282)
+        Me.notice.Name = "notice"
+        Me.notice.Size = New System.Drawing.Size(294, 12)
+        Me.notice.TabIndex = 86
+        Me.notice.Text = "*Rei's Minimap和Voxelmap都是地圖模組，建議只裝一種"
+        '
         'Ver164
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(584, 312)
+        Me.Controls.Add(Me.notice)
         Me.Controls.Add(Me.ComboBox16)
         Me.Controls.Add(Me.Label16)
         Me.Controls.Add(Me.CheckBox16)
@@ -739,4 +750,5 @@ Partial Class Ver164
     Friend WithEvents ComboBox16 As System.Windows.Forms.ComboBox
     Friend WithEvents Label16 As System.Windows.Forms.Label
     Friend WithEvents CheckBox16 As System.Windows.Forms.CheckBox
+    Friend WithEvents notice As System.Windows.Forms.Label
 End Class
