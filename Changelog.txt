@@ -1,4 +1,4 @@
-   0.6(開發中):
+   0.6:
        在1.6.4新增了Rei's minimap、CraftGuide、iChun Util、Mob Amputation、Mob Dismemberment、CodeChickenCore、Not Enough Items、Waila
        在1.7.2新增了CraftGuide、Waila
        在1.6.4新增了提示
