@@ -453,7 +453,7 @@
 
         Dim count, current As Short
         current += 1
-        If CheckBox1.Enabled = True And CheckBox1.Checked = True Then count += 1
+        If CheckBox1.Enabled = True And CheckBox1.Checked = True And Not My.Computer.FileSystem.DirectoryExists(Main.TextBox1.Text & "\versions\1.7.2-Forge" & ComboBox1.Text) Then count += 1
         If CheckBox2.Enabled = True And CheckBox2.Checked = True Then count += 1
         If CheckBox3.Enabled = True And CheckBox3.Checked = True Then count += 1
         If CheckBox4.Enabled = True And CheckBox4.Checked = True Then count += 1
@@ -561,10 +561,64 @@
             current += 1
         End If
 
-        If CheckBox9.Enabled And CheckBox9.Checked = True Then
-            Me.Text = current & " of " & count & "-安裝InGameInfoXML"
-            If ComboBox9.Text = "latest" Then ComboBox9.Text = "2.5.1.36"
-            Call download("http://mc.lunatri.us/files/mods/forge/InGameInfoXML/[1.6.4]InGameInfoXML-" & ComboBox9.Text & ".jar", Main.TextBox1.Text & "\mods\[1.6.4]InGameInfoXML-" & CheckBox9.Text & ".jar")
+        If CheckBox10.Enabled And CheckBox10.Checked = True Then
+            Me.Text = current & " of " & count & "-安裝Rei's minimap"
+            Call download("https://dl.dropboxusercontent.com/u/34787499/minecraft/1.6.4/%5B1.6.4%5DReiMinimap_v3.4_01.zip", Main.TextBox1.Text & "\mods\[1.6.4]ReiMinimap_v3.4_01.zip")
+            current += 1
+        End If
+
+        If CheckBox11.Enabled And CheckBox11.Checked = True Then
+            Me.Text = current & " of " & count & "-安裝CraftGuide"
+            If ComboBox11.Text = "latest" Then ComboBox11.Text = "1.6.7.5"
+            If Not ComboBox11.Text = "1.6.7.5" Then Call download("https://dl.dropboxusercontent.com/u/26846767/Minecraft/CraftGuide/1.6.2/CraftGuide-" & ComboBox11.Text & ".zip", Main.TextBox1.Text & "\mods\[1.6.2]CraftGuide-" & ComboBox11.Text & ".zip")
+            If ComboBox11.Text = "1.6.7.5" Then Call download("https://dl.dropboxusercontent.com/u/26846767/Minecraft/CraftGuide/1.6.4/CraftGuide-1.6.7.5.zip", Main.TextBox1.Text & "\mods\[1.6.4]CraftGuide-1.6.7.5.zip")
+            current += 1
+        End If
+
+        If CheckBox12.Enabled And CheckBox12.Checked = True Then
+            Me.Text = current & " of " & count & "-安裝iChun Util"
+            If ComboBox12.Text = "latest" Then ComboBox12.Text = "2.4.0"
+            Call download("http://repo.creeperhost.net/downloads/ichun/util%5EiChunUtil" & ComboBox12.Text & ".zip", Main.TextBox1.Text & "\mods\iChunUtil" & ComboBox12.Text & ".zip")
+            current += 1
+        End If
+
+        If CheckBox13.Enabled And CheckBox13.Checked = True Then
+            Me.Text = current & " of " & count & "-安裝Mob Amputation"
+            If ComboBox13.Text = "latest" Then ComboBox13.Text = "2.0.1"
+            Call download("http://repo.creeperhost.net/downloads/ichun/files%5EMobAmputation" & ComboBox13.Text & ".zip", Main.TextBox1.Text & "\mods\MobAmputation" & ComboBox13.Text & ".zip")
+            current += 1
+        End If
+
+        If CheckBox14.Enabled And CheckBox14.Checked = True Then
+            Me.Text = current & " of " & count & "-安裝Mob Dismemberment"
+            Call download("http://repo.creeperhost.net/downloads/ichun/files%5EMobDismemberment2.0.0.zip", Main.TextBox1.Text & "\mods\MobDismemberment2.0.0.zip")
+            current += 1
+        End If
+
+        If CheckBox15.Enabled And CheckBox15.Checked = True Then
+            Me.Text = current & " of " & count & "-安裝CodeChickenCore"
+            If ComboBox15.Text = "latest" Then ComboBox15.Text = "0.9.0.9"
+            If Not ComboBox15.Text = "0.9.0.9" Then Call download("http://www.chickenbones.craftsaddle.org/Files/Old_Versions/1.6.4/CodeChickenCore%20" & ComboBox15.Text & ".jar", Main.TextBox1.Text & "\mods\CodeChickenCore " & ComboBox15.Text & ".jar")
+            If ComboBox15.Text = "0.9.0.9" Then Call download("http://www.chickenbones.craftsaddle.org/Files/New_Versions/1.6.4/CodeChickenCore%200.9.0.9.jar", Main.TextBox1.Text & "\mods\CodeChickenCore 0.9.0.9.jar")
+            current += 1
+        End If
+
+        If CheckBox16.Enabled And CheckBox16.Checked = True Then
+            Me.Text = current & " of " & count & "-安裝Not Enough Items"
+            If ComboBox16.Text = "latest" Then ComboBox16.Text = "1.6.1.9"
+            If Not ComboBox16.Text = "1.6.1.9" Then Call download("http://www.chickenbones.craftsaddle.org/Files/Old_Versions/1.6.4/NotEnoughItems%20" & ComboBox16.Text & ".jar", Main.TextBox1.Text & "\mods\NotEnoughItems " & ComboBox16.Text & ".jar")
+            If ComboBox16.Text = "1.6.1.9" Then Call download("http://www.chickenbones.craftsaddle.org/Files/New_Versions/1.6.4/NotEnoughItems%201.6.1.9.jar", Main.TextBox1.Text & "\mods\NotEnoughItems 1.6.1.9.jar")
+            current += 1
+        End If
+
+        If CheckBox17.Enabled And CheckBox17.Checked = True Then
+            Me.Text = current & " of " & count & "-安裝Waila"
+            If ComboBox17.Text = "latest" Then ComboBox17.Text = "1.5.1a"
+            If ComboBox17.Text = "1.5.1a" Then Call download("http://www.curseforge.com/media/files/775/607/Waila_1.5.1a.zip", Main.TextBox1.Text & "\mods\Waila_1.5.1a.zip")
+            If ComboBox17.Text = "1.5.1" Then Call download("http://www.curseforge.com/media/files/774/674/Waila_1.5.1.zip", Main.TextBox1.Text & "\mods\Waila_1.5.1.zip")
+            If ComboBox17.Text = "1.5.0" Then Call download("http://www.curseforge.com/media/files/774/350/Waila_1.5.0.zip", Main.TextBox1.Text & "\mods\Waila_1.5.0.zip")
+            If ComboBox17.Text = "1.4.5a" Then Call download("http://www.curseforge.com/media/files/773/186/Waila_1.4.5a.zip", Main.TextBox1.Text & "\mods\Waila_1.4.5a.zip")
+            If ComboBox17.Text = "1.4.5" Then Call download("http://www.curseforge.com/media/files/771/381/Waila_1.4.5.zip", Main.TextBox1.Text & "\mods\Waila_1.4.5.zip")
             current += 1
         End If
 
