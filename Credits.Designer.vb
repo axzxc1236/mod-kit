@@ -31,6 +31,11 @@ Partial Class Credits
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Button5 = New System.Windows.Forms.Button()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.Button7 = New System.Windows.Forms.Button()
+        Me.Button8 = New System.Windows.Forms.Button()
+        Me.Button9 = New System.Windows.Forms.Button()
+        Me.Button10 = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -47,7 +52,7 @@ Partial Class Credits
         '
         Me.Button1.Location = New System.Drawing.Point(12, 28)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(432, 23)
+        Me.Button1.Size = New System.Drawing.Size(404, 23)
         Me.Button1.TabIndex = 1
         Me.Button1.Text = "bspkrs的模組(ArmorStatusHUD、bspkrsCore、DirectionHUD、StatusEffectHUD)"
         Me.Button1.UseVisualStyleBackColor = True
@@ -56,32 +61,32 @@ Partial Class Credits
         '
         Me.Button2.Location = New System.Drawing.Point(12, 57)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(96, 23)
+        Me.Button2.Size = New System.Drawing.Size(138, 23)
         Me.Button2.TabIndex = 2
-        Me.Button2.Text = "Inventory tweaks"
+        Me.Button2.Text = "Kobata的Inventory tweaks"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(114, 57)
+        Me.Button3.Location = New System.Drawing.Point(156, 56)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
+        Me.Button3.Size = New System.Drawing.Size(138, 23)
         Me.Button3.TabIndex = 3
-        Me.Button3.Text = "Voxelmap"
+        Me.Button3.Text = "MamiyaOtaru的Voxelmap"
         Me.Button3.UseVisualStyleBackColor = True
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(196, 56)
+        Me.Button4.Location = New System.Drawing.Point(300, 56)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(105, 23)
+        Me.Button4.Size = New System.Drawing.Size(173, 23)
         Me.Button4.TabIndex = 4
-        Me.Button4.Text = "Damage Indicators"
+        Me.Button4.Text = "rich1051414的Damage Indicators"
         Me.Button4.UseVisualStyleBackColor = True
         '
         'PictureBox1
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(15, 87)
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 144)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(100, 50)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -109,18 +114,68 @@ Partial Class Credits
         '
         'Button5
         '
-        Me.Button5.Location = New System.Drawing.Point(307, 57)
+        Me.Button5.Location = New System.Drawing.Point(422, 28)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(270, 23)
         Me.Button5.TabIndex = 8
         Me.Button5.Text = "Lunatrius的模組(LunatriusCore、InGame Info XML)"
         Me.Button5.UseVisualStyleBackColor = True
         '
+        'Button6
+        '
+        Me.Button6.Location = New System.Drawing.Point(12, 86)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(340, 23)
+        Me.Button6.TabIndex = 9
+        Me.Button6.Text = "iChun的模組(iChun Util、Mob Amputation、Mob Dismemberment)"
+        Me.Button6.UseVisualStyleBackColor = True
+        '
+        'Button7
+        '
+        Me.Button7.Location = New System.Drawing.Point(358, 86)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(316, 23)
+        Me.Button7.TabIndex = 10
+        Me.Button7.Text = "Chicken Bones的模組(CodeChickenCore、Not Enough Items)"
+        Me.Button7.UseVisualStyleBackColor = True
+        '
+        'Button8
+        '
+        Me.Button8.Location = New System.Drawing.Point(479, 57)
+        Me.Button8.Name = "Button8"
+        Me.Button8.Size = New System.Drawing.Size(137, 23)
+        Me.Button8.TabIndex = 11
+        Me.Button8.Text = "ReiFNSK的Rei's Minimap"
+        Me.Button8.UseVisualStyleBackColor = True
+        '
+        'Button9
+        '
+        Me.Button9.Location = New System.Drawing.Point(622, 56)
+        Me.Button9.Name = "Button9"
+        Me.Button9.Size = New System.Drawing.Size(109, 23)
+        Me.Button9.TabIndex = 12
+        Me.Button9.Text = "ProfMobius的Waila"
+        Me.Button9.UseVisualStyleBackColor = True
+        '
+        'Button10
+        '
+        Me.Button10.Location = New System.Drawing.Point(12, 115)
+        Me.Button10.Name = "Button10"
+        Me.Button10.Size = New System.Drawing.Size(138, 23)
+        Me.Button10.TabIndex = 13
+        Me.Button10.Text = "Uristqwerty的CraftGuide"
+        Me.Button10.UseVisualStyleBackColor = True
+        '
         'Credits
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(825, 562)
+        Me.ClientSize = New System.Drawing.Size(784, 562)
+        Me.Controls.Add(Me.Button10)
+        Me.Controls.Add(Me.Button9)
+        Me.Controls.Add(Me.Button8)
+        Me.Controls.Add(Me.Button7)
+        Me.Controls.Add(Me.Button6)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.LinkLabel1)
@@ -146,4 +201,9 @@ Partial Class Credits
     Friend WithEvents LinkLabel1 As System.Windows.Forms.LinkLabel
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Button5 As System.Windows.Forms.Button
+    Friend WithEvents Button6 As System.Windows.Forms.Button
+    Friend WithEvents Button7 As System.Windows.Forms.Button
+    Friend WithEvents Button8 As System.Windows.Forms.Button
+    Friend WithEvents Button9 As System.Windows.Forms.Button
+    Friend WithEvents Button10 As System.Windows.Forms.Button
 End Class

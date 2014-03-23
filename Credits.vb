@@ -30,6 +30,36 @@
         PictureBox1.Image = New System.Drawing.Bitmap(New IO.MemoryStream(New System.Net.WebClient().DownloadData("http://i.minus.com/jsMldYNHfiuf8.png")))
     End Sub
 
+    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+        LinkLabel1.Text = "Rei's Minimap模組原網"
+        Label2.Text = "http://www.minecraftforum.net/topic/482147-"
+        PictureBox1.Image = New System.Drawing.Bitmap(New IO.MemoryStream(New System.Net.WebClient().DownloadData("http://i.minus.com/i79but0AFVpRV.png")))
+    End Sub
+
+    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
+        LinkLabel1.Text = "ProfMobius模組網站"
+        Label2.Text = "http://www.mobiusstrip.eu/"
+        PictureBox1.Image = New System.Drawing.Bitmap(New IO.MemoryStream(New System.Net.WebClient().DownloadData("http://i.minus.com/ibpt1IskbYRtmt.png")))
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        LinkLabel1.Text = "iChun模組網站"
+        Label2.Text = "http://ichun.us/"
+        PictureBox1.Image = New System.Drawing.Bitmap(New IO.MemoryStream(New System.Net.WebClient().DownloadData("http://i.minus.com/iyTH57Dx1xtip.png")))
+    End Sub
+
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        LinkLabel1.Text = "Chicken Bones模組網站"
+        Label2.Text = "http://chickenbones.craftsaddle.org/"
+        PictureBox1.Image = New System.Drawing.Bitmap(New IO.MemoryStream(New System.Net.WebClient().DownloadData("http://i.minus.com/iRax7TiEg7LFG.png")))
+    End Sub
+
+    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
+        LinkLabel1.Text = "Craft Guide模組原網"
+        Label2.Text = "http://www.minecraftforum.net/topic/731133-"
+        PictureBox1.Image = New System.Drawing.Bitmap(New IO.MemoryStream(New System.Net.WebClient().DownloadData("http://i.minus.com/ic5D51bYh8s50.png")))
+    End Sub
+
     Private Sub Credits_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         Me.Hide()
         Main.Show()

@@ -435,9 +435,9 @@ Partial Class Ver164
         Me.CheckBox10.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.CheckBox10.Location = New System.Drawing.Point(12, 209)
         Me.CheckBox10.Name = "CheckBox10"
-        Me.CheckBox10.Size = New System.Drawing.Size(90, 16)
+        Me.CheckBox10.Size = New System.Drawing.Size(91, 16)
         Me.CheckBox10.TabIndex = 65
-        Me.CheckBox10.Text = "Rei's minimap"
+        Me.CheckBox10.Text = "Rei's Minimap"
         Me.CheckBox10.UseVisualStyleBackColor = True
         '
         'ComboBox11
