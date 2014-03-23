@@ -469,7 +469,7 @@
         If CheckBox14.Enabled = True And CheckBox14.Checked = True Then count += 1
         If CheckBox15.Enabled = True And CheckBox15.Checked = True Then count += 1
         If CheckBox16.Enabled = True And CheckBox16.Checked = True Then count += 1
-        If CheckBox16.Enabled = True And CheckBox16.Checked = True Then count += 1
+        If CheckBox17.Enabled = True And CheckBox17.Checked = True Then count += 1
         If Not My.Computer.FileSystem.FileExists(Main.TextBox1.Text & "\libraries\org\scala-lang\scala-compiler\2.10.2\scala-compiler-2.10.2.jar") Then count += 1
         If Not My.Computer.FileSystem.FileExists(Main.TextBox1.Text & "\libraries\org\scala-lang\scala-library\2.10.2\scala-library-2.10.2.jar") Then count += 1
 
