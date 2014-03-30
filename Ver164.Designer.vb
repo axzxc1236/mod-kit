@@ -22,6 +22,7 @@ Partial Class Ver164
     '請不要使用程式碼編輯器進行修改。
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.ComboBox9 = New System.Windows.Forms.ComboBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.CheckBox9 = New System.Windows.Forms.CheckBox()
@@ -77,6 +78,7 @@ Partial Class Ver164
         Me.Label16 = New System.Windows.Forms.Label()
         Me.CheckBox16 = New System.Windows.Forms.CheckBox()
         Me.notice = New System.Windows.Forms.Label()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.SuspendLayout()
         '
         'ComboBox9
@@ -630,6 +632,13 @@ Partial Class Ver164
         Me.notice.TabIndex = 86
         Me.notice.Text = "*Rei's Minimap和Voxelmap都是地圖模組，建議只裝一種"
         '
+        'ToolTip1
+        '
+        Me.ToolTip1.AutoPopDelay = 10000
+        Me.ToolTip1.InitialDelay = 500
+        Me.ToolTip1.IsBalloon = True
+        Me.ToolTip1.ReshowDelay = 100
+        '
         'Ver164
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -751,4 +760,5 @@ Partial Class Ver164
     Friend WithEvents Label16 As System.Windows.Forms.Label
     Friend WithEvents CheckBox16 As System.Windows.Forms.CheckBox
     Friend WithEvents notice As System.Windows.Forms.Label
+    Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
 End Class

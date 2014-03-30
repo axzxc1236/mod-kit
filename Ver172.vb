@@ -6,6 +6,19 @@
     Private Sub Ver172_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedToolWindow
 
+        ToolTip1.SetToolTip(CheckBox1, My.Resources.Tooltip.Forge)
+        ToolTip1.SetToolTip(CheckBox2, My.Resources.Tooltip.Intevtory_Tweaks)
+        ToolTip1.SetToolTip(CheckBox3, My.Resources.Tooltip.Voxelmap)
+        ToolTip1.SetToolTip(CheckBox4, My.Resources.Tooltip.Damage_Indicators)
+        ToolTip1.SetToolTip(CheckBox5, My.Resources.Tooltip.bspkrsCore)
+        ToolTip1.SetToolTip(CheckBox6, My.Resources.Tooltip.ArmorStatusHUD)
+        ToolTip1.SetToolTip(CheckBox7, My.Resources.Tooltip.DirectionHUD)
+        ToolTip1.SetToolTip(CheckBox8, My.Resources.Tooltip.StatusEffectHUD)
+        ToolTip1.SetToolTip(CheckBox9, My.Resources.Tooltip.LunatriusCore)
+        ToolTip1.SetToolTip(CheckBox10, My.Resources.Tooltip.InGameInfoXML)
+        ToolTip1.SetToolTip(CheckBox11, My.Resources.Tooltip.Waila)
+        ToolTip1.SetToolTip(CheckBox12, My.Resources.Tooltip.CraftGuide)
+
         'mod1 - Forge
         ComboBox1.Items.Add("latest")
         ComboBox1.Items.Add("Recommand")
@@ -475,6 +488,5 @@
     Sub replace_json(ByRef json_name As String, ByRef replace1 As String, ByRef replace2 As String)
         My.Computer.FileSystem.WriteAllText(Main.TextBox1.Text & "\versions\" & json_name & "\" & json_name & ".json", My.Computer.FileSystem.ReadAllText(Main.TextBox1.Text & "\versions\" & json_name & "\" & json_name & ".json").Replace(replace1, replace2), False)
     End Sub
-
 
 End Class

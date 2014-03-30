@@ -145,6 +145,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>mods-ver-172.resx</DependentUpon>
     </Compile>
+    <Compile Include="Tooltip.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Tooltip.resx</DependentUpon>
+    </Compile>
     <Compile Include="Ver164.Designer.vb">
       <DependentUpon>Ver164.vb</DependentUpon>
     </Compile>
@@ -187,6 +192,11 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>mods-ver-172.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tooltip.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Tooltip.Designer.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Ver164.resx">
       <DependentUpon>Ver164.vb</DependentUpon>

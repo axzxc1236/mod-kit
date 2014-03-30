@@ -7,6 +7,24 @@
     Private Sub Ver164_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedToolWindow
 
+        ToolTip1.SetToolTip(CheckBox1, My.Resources.Tooltip.Forge)
+        ToolTip1.SetToolTip(CheckBox2, My.Resources.Tooltip.Intevtory_Tweaks)
+        ToolTip1.SetToolTip(CheckBox3, My.Resources.Tooltip.Voxelmap)
+        ToolTip1.SetToolTip(CheckBox4, My.Resources.Tooltip.Damage_Indicators)
+        ToolTip1.SetToolTip(CheckBox5, My.Resources.Tooltip.bspkrsCore)
+        ToolTip1.SetToolTip(CheckBox6, My.Resources.Tooltip.ArmorStatusHUD)
+        ToolTip1.SetToolTip(CheckBox7, My.Resources.Tooltip.DirectionHUD)
+        ToolTip1.SetToolTip(CheckBox8, My.Resources.Tooltip.StatusEffectHUD)
+        ToolTip1.SetToolTip(CheckBox9, My.Resources.Tooltip.InGameInfoXML)
+        ToolTip1.SetToolTip(CheckBox10, My.Resources.Tooltip.Rei_s_Minimap)
+        ToolTip1.SetToolTip(CheckBox11, My.Resources.Tooltip.CraftGuide)
+        ToolTip1.SetToolTip(CheckBox12, My.Resources.Tooltip.iChun_Util)
+        ToolTip1.SetToolTip(CheckBox13, My.Resources.Tooltip.Mob_Amputation)
+        ToolTip1.SetToolTip(CheckBox14, My.Resources.Tooltip.Mob_Dismemberment)
+        ToolTip1.SetToolTip(CheckBox15, My.Resources.Tooltip.CodeChickenCore)
+        ToolTip1.SetToolTip(CheckBox16, My.Resources.Tooltip.Not_Enough_Items)
+        ToolTip1.SetToolTip(CheckBox17, My.Resources.Tooltip.Waila)
+
         'mod1 - Forge
         ComboBox1.Items.Add("latest")
         For i = 965 To 914 Step -1

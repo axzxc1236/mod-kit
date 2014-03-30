@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ArmorStatusHUD" xml:space="preserve">
+    <value>ArmorStatusHUD可以顯示出你身上裝備的耐久度</value>
+  </data>
+  <data name="bspkrsCore" xml:space="preserve">
+    <value>bspkrsCore是裝其他bspkrs製作的模組需要的前置模組</value>
+  </data>
+  <data name="CodeChickenCore" xml:space="preserve">
+    <value>CodeChickenCore是裝Not Enough Items所需要的前置模組</value>
+  </data>
+  <data name="CraftGuide" xml:space="preserve">
+    <value>CraftGuide可以讓你在遊戲中查詢合成表，預設按下G鍵可以開啟介面</value>
+  </data>
+  <data name="Damage_Indicators" xml:space="preserve">
+    <value>Damage Indicators可以顯示生物、玩家的血量以及受到的藥水效果</value>
+  </data>
+  <data name="DirectionHUD" xml:space="preserve">
+    <value>DirectionHUD在畫面上方會顯示出方位</value>
+  </data>
+  <data name="Forge" xml:space="preserve">
+    <value>Forge是很多模組需要的前置API，有90%↑的模組需要/支援Forge</value>
+  </data>
+  <data name="iChun_Util" xml:space="preserve">
+    <value>iChun Util是裝iChun所製作的模組的前置模組</value>
+  </data>
+  <data name="InGameInfoXML" xml:space="preserve">
+    <value>InGameInfoXML可以顯示出時間(以現實時間的方式來讓你知道現在遊戲的時間)、所處的生態系、亮度、經驗等等</value>
+  </data>
+  <data name="Intevtory_Tweaks" xml:space="preserve">
+    <value>Inventory Tweaks可以快速整理你凌亂的包包預設按下R鍵可以快速整理</value>
+  </data>
+  <data name="LunatriusCore" xml:space="preserve">
+    <value>LunatriusCore是裝InGameInfoXML的前置模組</value>
+  </data>
+  <data name="Mob_Amputation" xml:space="preserve">
+    <value>Mob Amputation是和Mob Dismemberment搭配的模組，打一些生物時會有身體分解、噴血的效果
+
+在單人如果骷髏弓箭手拿弓的手被打斷了他會直接衝過來打你</value>
+  </data>
+  <data name="Mob_Dismemberment" xml:space="preserve">
+    <value>Mob Dismemberment是和Mob Amputation搭配的模組，打一些生物時會有身體分解、噴血的效果
+
+在單人如果骷髏弓箭手拿弓的手被打斷了他會直接衝過來打你</value>
+  </data>
+  <data name="Not_Enough_Items" xml:space="preserve">
+    <value>Not Enough Items是一款很強大的模組，在安裝之後進入遊戲打開E鍵就會發現很大的改變
+
+右邊的方塊/物品在Cheat mode的時候可以拿出來(如果是單人遊戲或你是伺服的OP)
+
+游標放在方塊/物品上按R鍵可以看到方塊/物品怎麼合成而來
+
+游標放在方塊/物品上按U鍵可以看到方塊/物品可以合成出什麼
+
+</value>
+  </data>
+  <data name="Rei_s_Minimap" xml:space="preserve">
+    <value>Rei's Minimap是一款地圖模組，可以顯示出玩家附近的地形、生物等等，也可以標記地點(例如自己的家)作為引導
+
+*相較於Voxelmap，沒有礦道地圖，預設在多人也沒有辦法顯示生物</value>
+  </data>
+  <data name="StatusEffectHUD" xml:space="preserve">
+    <value>StatusEffectHUD可以讓你方便看到自己現在受到那些藥水狀態影響</value>
+  </data>
+  <data name="Voxelmap" xml:space="preserve">
+    <value>Voxelmap是一款地圖模組，可以顯示出玩家附近的地形(洞窟內也可以)、生物等等，也可以標記地點(例如自己的家)作為引導</value>
+  </data>
+  <data name="Waila" xml:space="preserve">
+    <value>Waila會在畫面上方顯示物品的提示(方塊名稱)，如果你有裝了新增方塊的模組，當你畫面滑過時還可以看到是哪個模組的方塊</value>
+  </data>
+</root>

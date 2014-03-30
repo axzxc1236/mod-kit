@@ -22,6 +22,7 @@ Partial Class Ver172
     '請不要使用程式碼編輯器進行修改。
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Ver172))
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
@@ -62,6 +63,7 @@ Partial Class Ver172
         Me.ComboBox12 = New System.Windows.Forms.ComboBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.CheckBox12 = New System.Windows.Forms.CheckBox()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.SuspendLayout()
         '
         'CheckBox1
@@ -300,6 +302,13 @@ Partial Class Ver172
         Me.CheckBox12.Name = "CheckBox12"
         Me.CheckBox12.UseVisualStyleBackColor = True
         '
+        'ToolTip1
+        '
+        Me.ToolTip1.AutoPopDelay = 10000
+        Me.ToolTip1.InitialDelay = 500
+        Me.ToolTip1.IsBalloon = True
+        Me.ToolTip1.ReshowDelay = 100
+        '
         'Ver172
         '
         resources.ApplyResources(Me, "$this")
@@ -387,4 +396,5 @@ Partial Class Ver172
     Friend WithEvents ComboBox12 As System.Windows.Forms.ComboBox
     Friend WithEvents Label12 As System.Windows.Forms.Label
     Friend WithEvents CheckBox12 As System.Windows.Forms.CheckBox
+    Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
 End Class
