@@ -336,22 +336,22 @@
             My.Computer.FileSystem.MoveFile(Environment.CurrentDirectory & "\mod-kit\Forge\install_profile.json", Main.TextBox1.Text & "\versions\1.7.2-Forge" & ComboBox1.Text & "\1.7.2-Forge" & ComboBox1.Text & ".json")
 
             For i = 0 To 11
-                DeleteLine(Main.TextBox1.Text & "\versions\1.7.2-Forge" & ComboBox1.Text & "\1.7.2-Forge" & ComboBox1.Text & ".json", 1)
+                Common_code.DeleteLine(Main.TextBox1.Text & "\versions\1.7.2-Forge" & ComboBox1.Text & "\1.7.2-Forge" & ComboBox1.Text & ".json", 1)
             Next
-            DeleteLine(Main.TextBox1.Text & "\versions\1.7.2-Forge" & ComboBox1.Text & "\1.7.2-Forge" & ComboBox1.Text & ".json", 206)
+            Common_code.DeleteLine(Main.TextBox1.Text & "\versions\1.7.2-Forge" & ComboBox1.Text & "\1.7.2-Forge" & ComboBox1.Text & ".json", 206)
 
-            'replace_json("1.7.2-Forge" & ComboBox1.Text, "", "")
-            replace_json("1.7.2-Forge" & ComboBox1.Text, "  ", "    ")
-            replace_json("1.7.2-Forge" & ComboBox1.Text, "    ", "	")
-            replace_json("1.7.2-Forge" & ComboBox1.Text, """" & "serverreq" & """" & ":true", """" & "serverreq" & """" & ": true")
-            replace_json("1.7.2-Forge" & ComboBox1.Text, """" & "clientreq" & """" & ":true", """" & "clientreq" & """" & ": true")
-            replace_json("1.7.2-Forge" & ComboBox1.Text, """" & "comment" & """" & " :", """" & "comment" & """" & ":")
-            replace_json("1.7.2-Forge" & ComboBox1.Text, """" & "url" & """" & " :", """" & "url" & """" & ":")
-            replace_json("1.7.2-Forge" & ComboBox1.Text, """" & "checksums" & """" & " : [ " & """" & "6ba65d12cd09d441083262d6f73d2257fec7c663" & """" & ", " & """" & "65de4339eaed1c3675485fb03a3532fecfd8e8cd" & """" & " ],",
+            'Common_code.replace_json("1.7.2-Forge" & ComboBox1.Text, "", "")
+            Common_code.replace_json("1.7.2-Forge" & ComboBox1.Text, "  ", "    ")
+            Common_code.replace_json("1.7.2-Forge" & ComboBox1.Text, "    ", "	")
+            Common_code.replace_json("1.7.2-Forge" & ComboBox1.Text, """" & "serverreq" & """" & ":true", """" & "serverreq" & """" & ": true")
+            Common_code.replace_json("1.7.2-Forge" & ComboBox1.Text, """" & "clientreq" & """" & ":true", """" & "clientreq" & """" & ": true")
+            Common_code.replace_json("1.7.2-Forge" & ComboBox1.Text, """" & "comment" & """" & " :", """" & "comment" & """" & ":")
+            Common_code.replace_json("1.7.2-Forge" & ComboBox1.Text, """" & "url" & """" & " :", """" & "url" & """" & ":")
+            Common_code.replace_json("1.7.2-Forge" & ComboBox1.Text, """" & "checksums" & """" & " : [ " & """" & "6ba65d12cd09d441083262d6f73d2257fec7c663" & """" & ", " & """" & "65de4339eaed1c3675485fb03a3532fecfd8e8cd" & """" & " ],",
                          """" & "checksums" & """" & ": [" & Chr(10) & "				" & """" & "6ba65d12cd09d441083262d6f73d2257fec7c663" & """" & "," & Chr(10) & "				" & """" & "65de4339eaed1c3675485fb03a3532fecfd8e8cd" & """" & Chr(10) & "			" & "],")
-            replace_json("1.7.2-Forge" & ComboBox1.Text, """" & "checksums" & """" & " : [ " & """" & "64c8b1380cc53d6850823d6e4e7ae984aa44ef9c" & """" & ", " & """" & "99fd0ffb66f3088b0cd1071315fd5eb2b2b070ff" & """" & " ],",
+            Common_code.replace_json("1.7.2-Forge" & ComboBox1.Text, """" & "checksums" & """" & " : [ " & """" & "64c8b1380cc53d6850823d6e4e7ae984aa44ef9c" & """" & ", " & """" & "99fd0ffb66f3088b0cd1071315fd5eb2b2b070ff" & """" & " ],",
                          """" & "checksums" & """" & ": [" & Chr(10) & "				" & """" & "64c8b1380cc53d6850823d6e4e7ae984aa44ef9c" & """" & "," & Chr(10) & "				" & """" & "99fd0ffb66f3088b0cd1071315fd5eb2b2b070ff" & """" & Chr(10) & "			" & "],")
-            replace_json("1.7.2-Forge" & ComboBox1.Text, Chr(10) & "}" & Chr(10), Chr(10) & "}")
+            Common_code.replace_json("1.7.2-Forge" & ComboBox1.Text, Chr(10) & "}" & Chr(10), Chr(10) & "}")
 
 
             Shell("mod-kit\encode_converter.exe " & Main.TextBox1.Text & "\versions\1.7.2-Forge" & ComboBox1.Text & "\1.7.2-Forge" & ComboBox1.Text & ".json", AppWinStyle.Hide, True)
@@ -367,73 +367,73 @@
             Dim ver As SByte
             If ComboBox2.Text.Length = 8 Then ver = ComboBox2.Text.Substring(ComboBox2.Text.Length - 3)
             If ComboBox2.Text.Length = 7 Then ver = ComboBox2.Text.Substring(ComboBox2.Text.Length - 2)
-            Call download("http://build.technicpack.net/job/Inventory-Tweaks/" & ver & "/artifact/build/libs/InventoryTweaks-" & ComboBox2.Text & ".jar", Main.TextBox1.Text & "\mods\" & "InventoryTweaks-" & ComboBox2.Text & ".jar")
+            Common_code.download("http://build.technicpack.net/job/Inventory-Tweaks/" & ver & "/artifact/build/libs/InventoryTweaks-" & ComboBox2.Text & ".jar", Main.TextBox1.Text & "\mods\" & "InventoryTweaks-" & ComboBox2.Text & ".jar")
             current += 1
         End If
 
-            If CheckBox3.Enabled And CheckBox3.Checked = True Then
-                Me.Text = current & " of " & count & "-安裝Voxelmap"
-                Call download("https://dl.dropboxusercontent.com/s/boitpzvszpbsqfx/voxelmap-1.7.2-1.0.jar", Main.TextBox1.Text & "\mods\" & "voxelmap-1.7.2-1.0.jar")
-                current += 1
-            End If
+        If CheckBox3.Enabled And CheckBox3.Checked = True Then
+            Me.Text = current & " of " & count & "-安裝Voxelmap"
+            Common_code.download("https://dl.dropboxusercontent.com/s/boitpzvszpbsqfx/voxelmap-1.7.2-1.0.jar", Main.TextBox1.Text & "\mods\" & "voxelmap-1.7.2-1.0.jar")
+            current += 1
+        End If
 
-            If CheckBox4.Enabled And CheckBox4.Checked = True Then
-                Me.Text = current & " of " & count & "-安裝Damage Indicators"
-                If ComboBox4.Text = "latest" Then ComboBox4.Text = "3.1.0"
-                Call download("https://dl.dropboxusercontent.com/u/74770478/%5B1.7.2%5DDamageIndicatorsMod-" & ComboBox4.Text & ".jar", Main.TextBox1.Text & "\mods\" & "[1.7.2]DamageIndicatorsMod-" & ComboBox4.Text & ".jar")
-                current += 1
-            End If
+        If CheckBox4.Enabled And CheckBox4.Checked = True Then
+            Me.Text = current & " of " & count & "-安裝Damage Indicators"
+            If ComboBox4.Text = "latest" Then ComboBox4.Text = "3.1.0"
+            Common_code.download("https://dl.dropboxusercontent.com/u/74770478/%5B1.7.2%5DDamageIndicatorsMod-" & ComboBox4.Text & ".jar", Main.TextBox1.Text & "\mods\" & "[1.7.2]DamageIndicatorsMod-" & ComboBox4.Text & ".jar")
+            current += 1
+        End If
 
-            If CheckBox5.Enabled And CheckBox5.Checked = True Then
-                Me.Text = current & " of " & count & "-安裝bspkrsCore"
-                Call download("http://bspk.rs/MC/bspkrsCore/[1.7.2]bspkrsCore-universal-6.0(1.7.2).jar", Main.TextBox1.Text & "\mods\[1.7.2]bspkrsCore-universal-6.0(1.7.2).jar")
-                current += 1
-            End If
+        If CheckBox5.Enabled And CheckBox5.Checked = True Then
+            Me.Text = current & " of " & count & "-安裝bspkrsCore"
+            Common_code.download("http://bspk.rs/MC/bspkrsCore/[1.7.2]bspkrsCore-universal-6.0(1.7.2).jar", Main.TextBox1.Text & "\mods\[1.7.2]bspkrsCore-universal-6.0(1.7.2).jar")
+            current += 1
+        End If
 
-            If CheckBox6.Enabled And CheckBox6.Checked = True Then
-                Me.Text = current & " of " & count & "-安裝ArmorStatusHUD"
-                If ComboBox6.Text = "latest" Then ComboBox6.Text = "1." & My.Resources.mods_ver_172.ASHUD172latest
-                Call download("http://bspk.rs/MC/ArmorStatusHUD/[1.7.2]ArmorStatusHUD-client-" & ComboBox6.Text & "(1.7.2).jar", Main.TextBox1.Text & "\mods\[1.7.2]ArmorStatusHUD-client-" & ComboBox6.Text & "(1.7.2).jar")
-                current += 1
-            End If
+        If CheckBox6.Enabled And CheckBox6.Checked = True Then
+            Me.Text = current & " of " & count & "-安裝ArmorStatusHUD"
+            If ComboBox6.Text = "latest" Then ComboBox6.Text = "1." & My.Resources.mods_ver_172.ASHUD172latest
+            Common_code.download("http://bspk.rs/MC/ArmorStatusHUD/[1.7.2]ArmorStatusHUD-client-" & ComboBox6.Text & "(1.7.2).jar", Main.TextBox1.Text & "\mods\[1.7.2]ArmorStatusHUD-client-" & ComboBox6.Text & "(1.7.2).jar")
+            current += 1
+        End If
 
-            If CheckBox7.Enabled And CheckBox7.Checked = True Then
-                Me.Text = current & " of " & count & "-安裝DirectionHUD"
-                If ComboBox7.Text = "latest" Then ComboBox7.Text = "1." & My.Resources.mods_ver_172.DHUD172latest
-                Call download("http://bspk.rs/MC/DirectionHUD/[1.7.2]DirectionHUD-client-" & ComboBox7.Text & "(1.7.2).jar", Main.TextBox1.Text & "\mods\" & "[1.7.2]DirectionHUD-client-" & ComboBox7.Text & "(1.7.2).jar")
-                current += 1
-            End If
+        If CheckBox7.Enabled And CheckBox7.Checked = True Then
+            Me.Text = current & " of " & count & "-安裝DirectionHUD"
+            If ComboBox7.Text = "latest" Then ComboBox7.Text = "1." & My.Resources.mods_ver_172.DHUD172latest
+            Common_code.download("http://bspk.rs/MC/DirectionHUD/[1.7.2]DirectionHUD-client-" & ComboBox7.Text & "(1.7.2).jar", Main.TextBox1.Text & "\mods\" & "[1.7.2]DirectionHUD-client-" & ComboBox7.Text & "(1.7.2).jar")
+            current += 1
+        End If
 
-            If CheckBox8.Enabled And CheckBox8.Checked = True Then
-                Me.Text = current & " of " & count & "-安裝StatusEffectHUD"
-                If ComboBox8.Text = "latest" Then ComboBox8.Text = "1." & My.Resources.mods_ver_172.SEHUD172latest
-                Call download("http://bspk.rs/MC/StatusEffectHUD/[1.7.2]StatusEffectHUD-client-" & ComboBox8.Text & "(1.7.2).jar", Main.TextBox1.Text & "\mods\" & "[1.7.2]StatusEffectHUD-client-" & ComboBox8.Text & "(1.7.2).jar")
-                current += 1
-            End If
+        If CheckBox8.Enabled And CheckBox8.Checked = True Then
+            Me.Text = current & " of " & count & "-安裝StatusEffectHUD"
+            If ComboBox8.Text = "latest" Then ComboBox8.Text = "1." & My.Resources.mods_ver_172.SEHUD172latest
+            Common_code.download("http://bspk.rs/MC/StatusEffectHUD/[1.7.2]StatusEffectHUD-client-" & ComboBox8.Text & "(1.7.2).jar", Main.TextBox1.Text & "\mods\" & "[1.7.2]StatusEffectHUD-client-" & ComboBox8.Text & "(1.7.2).jar")
+            current += 1
+        End If
 
-            If CheckBox9.Enabled And CheckBox9.Checked = True Then
-                Me.Text = current & " of " & count & "-安裝LunatriusCore"
-                If ComboBox9.Text = "latest" Then ComboBox9.Text = "1.0.1." & My.Resources.mods_ver_172.LunaCore172latest
-                Call download("http://mc.lunatri.us/files/mods/forge/LunatriusCore/[1.7.2]LunatriusCore-universal-" & ComboBox9.Text & ".jar", Main.TextBox1.Text & "\mods\" & "[1.7.2]LunatriusCore-universal-" & ComboBox9.Text & ".jar")
-                current += 1
-            End If
+        If CheckBox9.Enabled And CheckBox9.Checked = True Then
+            Me.Text = current & " of " & count & "-安裝LunatriusCore"
+            If ComboBox9.Text = "latest" Then ComboBox9.Text = "1.0.1." & My.Resources.mods_ver_172.LunaCore172latest
+            Common_code.download("http://mc.lunatri.us/files/mods/forge/LunatriusCore/[1.7.2]LunatriusCore-universal-" & ComboBox9.Text & ".jar", Main.TextBox1.Text & "\mods\" & "[1.7.2]LunatriusCore-universal-" & ComboBox9.Text & ".jar")
+            current += 1
+        End If
 
-            If CheckBox10.Enabled And CheckBox10.Checked = True Then
-                Me.Text = current & " of " & count & "-安裝InGameInfoXML"
-                If ComboBox10.Text = "latest" Then ComboBox10.Text = "2.6.0." & My.Resources.mods_ver_172.InGameInfo172latest
-                Call download("http://mc.lunatri.us/files/mods/forge/InGameInfoXML/[1.7.2]InGameInfoXML-" & ComboBox10.Text & ".jar", Main.TextBox1.Text & "\mods\[1.7.2]InGameInfoXML-" & ComboBox10.Text & ".jar")
+        If CheckBox10.Enabled And CheckBox10.Checked = True Then
+            Me.Text = current & " of " & count & "-安裝InGameInfoXML"
+            If ComboBox10.Text = "latest" Then ComboBox10.Text = "2.6.0." & My.Resources.mods_ver_172.InGameInfo172latest
+            Common_code.download("http://mc.lunatri.us/files/mods/forge/InGameInfoXML/[1.7.2]InGameInfoXML-" & ComboBox10.Text & ".jar", Main.TextBox1.Text & "\mods\[1.7.2]InGameInfoXML-" & ComboBox10.Text & ".jar")
             current += 1
         End If
 
         If CheckBox11.Enabled And CheckBox11.Checked = True Then
             Me.Text = current & " of " & count & "-安裝Waila"
-            Call download("http://addons.cursecdn.com/files/771/381/Waila_1.4.5.zip", Main.TextBox1.Text & "\mods\Waila-1.4.5_1.7.2.jar")
+            Common_code.download("http://addons.cursecdn.com/files/771/381/Waila_1.4.5.zip", Main.TextBox1.Text & "\mods\Waila-1.4.5_1.7.2.jar")
             current += 1
         End If
 
         If CheckBox12.Enabled And CheckBox12.Checked = True Then
             Me.Text = current & " of " & count & "-安裝CraftGuide"
-            Call download("http://addons.cursecdn.com/files/778/185/CraftGuide-1.6.7.5.zip", Main.TextBox1.Text & "\mods\CraftGuide-1.6.7.5.zip")
+            Common_code.download("http://addons.cursecdn.com/files/778/185/CraftGuide-1.6.7.5.zip", Main.TextBox1.Text & "\mods\CraftGuide-1.6.7.5.zip")
             current += 1
         End If
 
@@ -453,40 +453,20 @@
         My.Computer.FileSystem.CopyFile(Environment.CurrentDirectory & "\mod-kit\tmp.jar", Main.TextBox1.Text & "\versions\1.7.2-mod-kit\1.7.2-mod-kit.jar")
         My.Computer.Network.DownloadFile("http://s3.amazonaws.com/Minecraft.Download/versions/1.7.2/1.7.2.json", Main.TextBox1.Text & "\versions\1.7.2-mod-kit\1.7.2-mod-kit.json")
 
-        replace_json("1.7.2-mod-kit", """" & "id" & """" & ": " & """" & "1.7.2" & """", """" & "id" & """" & ": " & """" & "1.7.2-mod-kit" & """")
-        replace_json("1.7.2-mod-kit", "  " & """" & "minimumLauncherVersion" & """" & ": 9," & Chr(10), "")
-        replace_json("1.7.2-mod-kit", "Main" & """", "Main" & """" & "," & Chr(10) & "  " & """" & "minimumLauncherVersion" & """" & ": 9")
-        replace_json("1.7.2-mod-kit", "      " & """" & "natives" & """" & ": {" & Chr(10) & "        " & """" & "linux" & """" & ": " & """" & "natives-linux" & """" & "," & Chr(10) & "        " & """" & "windows" & """" & ": " & """" & "natives-windows" & """" & Chr(10) & "      " & "}," & Chr(10) & "      " & """" & "extract" & """" & ": {" & Chr(10) & "        " & """" & "exclude" & """" & ": [" & Chr(10) & "          " & """" & "META-INF/" & """" & Chr(10) & "        " & "]" & Chr(10) & "      " & "}," & Chr(10) & "      " & """" & "rules" & """" & ": [" & Chr(10) & "        " & "{" & Chr(10) & "          " & """" & "action" & """" & ": " & """" & "allow" & """" & Chr(10) & "        " & "}," & Chr(10) & "        " & "{" & Chr(10) & "          " & """" & "action" & """" & ": " & """" & "disallow" & """" & "," & Chr(10) & "          " & """" & "os" & """" & ": {" & Chr(10) & "            " & """" & "name" & """" & ": " & """" & "osx" & """" & Chr(10) & "          " & "}" & Chr(10) & "        " & "}" & Chr(10) & "      " & "]",
+        Common_code.replace_json("1.7.2-mod-kit", """" & "id" & """" & ": " & """" & "1.7.2" & """", """" & "id" & """" & ": " & """" & "1.7.2-mod-kit" & """")
+        Common_code.replace_json("1.7.2-mod-kit", "  " & """" & "minimumLauncherVersion" & """" & ": 9," & Chr(10), "")
+        Common_code.replace_json("1.7.2-mod-kit", "Main" & """", "Main" & """" & "," & Chr(10) & "  " & """" & "minimumLauncherVersion" & """" & ": 9")
+        Common_code.replace_json("1.7.2-mod-kit", "      " & """" & "natives" & """" & ": {" & Chr(10) & "        " & """" & "linux" & """" & ": " & """" & "natives-linux" & """" & "," & Chr(10) & "        " & """" & "windows" & """" & ": " & """" & "natives-windows" & """" & Chr(10) & "      " & "}," & Chr(10) & "      " & """" & "extract" & """" & ": {" & Chr(10) & "        " & """" & "exclude" & """" & ": [" & Chr(10) & "          " & """" & "META-INF/" & """" & Chr(10) & "        " & "]" & Chr(10) & "      " & "}," & Chr(10) & "      " & """" & "rules" & """" & ": [" & Chr(10) & "        " & "{" & Chr(10) & "          " & """" & "action" & """" & ": " & """" & "allow" & """" & Chr(10) & "        " & "}," & Chr(10) & "        " & "{" & Chr(10) & "          " & """" & "action" & """" & ": " & """" & "disallow" & """" & "," & Chr(10) & "          " & """" & "os" & """" & ": {" & Chr(10) & "            " & """" & "name" & """" & ": " & """" & "osx" & """" & Chr(10) & "          " & "}" & Chr(10) & "        " & "}" & Chr(10) & "      " & "]",
                                                                                                                                                                                                      "      " & """" & "rules" & """" & ": [" & Chr(10) & "        " & "{" & Chr(10) & "          " & """" & "action" & """" & ": " & """" & "allow" & """" & Chr(10) & "        " & "}," & Chr(10) & "        " & "{" & Chr(10) & "          " & """" & "action" & """" & ": " & """" & "disallow" & """" & "," & Chr(10) & "          " & """" & "os" & """" & ": {" & Chr(10) & "            " & """" & "name" & """" & ": " & """" & "osx" & """" & Chr(10) & "          " & "}" & Chr(10) & "        " & "}" & Chr(10) & "      " & "]," & Chr(10) & "      " & """" & "natives" & """" & ": {" & Chr(10) & "        " & """" & "linux" & """" & ": " & """" & "natives-linux" & """" & "," & Chr(10) & "        " & """" & "windows" & """" & ": " & """" & "natives-windows" & """" & Chr(10) & "      " & "}," & Chr(10) & "      " & """" & "extract" & """" & ": {" & Chr(10) & "        " & """" & "exclude" & """" & ": [" & Chr(10) & "          " & """" & "META-INF/" & """" & Chr(10) & "        " & "]" & Chr(10) & "      " & "}")
-        replace_json("1.7.2-mod-kit", "      " & """" & "natives" & """" & ": {" & Chr(10) & "        " & """" & "osx" & """" & ": " & """" & "natives-osx" & """" & Chr(10) & "      " & "}," & Chr(10) & "      " & """" & "extract" & """" & ": {" & Chr(10) & "        " & """" & "exclude" & """" & ": [" & Chr(10) & "          " & """" & "META-INF/" & """" & Chr(10) & "        " & "]" & Chr(10) & "      " & "}," & Chr(10) & "      " & """" & "rules" & """" & ": [" & Chr(10) & "        " & "{" & Chr(10) & "          " & """" & "action" & """" & ": " & """" & "allow" & """" & "," & Chr(10) & "          " & """" & "os" & """" & ": {" & Chr(10) & "            " & """" & "name" & """" & ": " & """" & "osx" & """" & Chr(10) & "          " & "}" & Chr(10) & "        " & "}" & Chr(10) & "      " & "]",
+        Common_code.replace_json("1.7.2-mod-kit", "      " & """" & "natives" & """" & ": {" & Chr(10) & "        " & """" & "osx" & """" & ": " & """" & "natives-osx" & """" & Chr(10) & "      " & "}," & Chr(10) & "      " & """" & "extract" & """" & ": {" & Chr(10) & "        " & """" & "exclude" & """" & ": [" & Chr(10) & "          " & """" & "META-INF/" & """" & Chr(10) & "        " & "]" & Chr(10) & "      " & "}," & Chr(10) & "      " & """" & "rules" & """" & ": [" & Chr(10) & "        " & "{" & Chr(10) & "          " & """" & "action" & """" & ": " & """" & "allow" & """" & "," & Chr(10) & "          " & """" & "os" & """" & ": {" & Chr(10) & "            " & """" & "name" & """" & ": " & """" & "osx" & """" & Chr(10) & "          " & "}" & Chr(10) & "        " & "}" & Chr(10) & "      " & "]",
                                                                                                                                                                                                      "      " & """" & "rules" & """" & ": [" & Chr(10) & "        " & "{" & Chr(10) & "          " & """" & "action" & """" & ": " & """" & "allow" & """" & "," & Chr(10) & "          " & """" & "os" & """" & ": {" & Chr(10) & "            " & """" & "name" & """" & ": " & """" & "osx" & """" & Chr(10) & "          " & "}" & Chr(10) & "        " & "}" & Chr(10) & "      " & "]," & Chr(10) & "      " & """" & "natives" & """" & ": {" & Chr(10) & "        " & """" & "osx" & """" & ": " & """" & "natives-osx" & """" & Chr(10) & "      " & "}," & Chr(10) & "      " & """" & "extract" & """" & ": {" & Chr(10) & "        " & """" & "exclude" & """" & ": [" & Chr(10) & "          " & """" & "META-INF/" & """" & Chr(10) & "        " & "]" & Chr(10) & "      " & "}")
-        replace_json("1.7.2-mod-kit", "--" & Chr(10) & "assetsDir", "--assetsDir")
-        replace_json("1.7.2-mod-kit", "org.lwjgl.lwjgl:lwjgl-platform:2.9.1-" & Chr(10) & Chr(10), "org.lwjgl.lwjgl:lwjgl-platform:2.9.1-")
-        replace_json("1.7.2-mod-kit", ": 9" & Chr(10) & "}" & Chr(10), ": 9" & Chr(10) & "}")
-        
+        Common_code.replace_json("1.7.2-mod-kit", "--" & Chr(10) & "assetsDir", "--assetsDir")
+        Common_code.replace_json("1.7.2-mod-kit", "org.lwjgl.lwjgl:lwjgl-platform:2.9.1-" & Chr(10) & Chr(10), "org.lwjgl.lwjgl:lwjgl-platform:2.9.1-")
+        Common_code.replace_json("1.7.2-mod-kit", ": 9" & Chr(10) & "}" & Chr(10), ": 9" & Chr(10) & "}")
+
         Shell("mod-kit\encode_converter.exe " & Main.TextBox1.Text & "\versions\1.7.2-mod-kit\1.7.2-mod-kit.json", AppWinStyle.Hide, True)
 
         MsgBox("Done!")
-    End Sub
-    
-    Sub download(ByVal address As String, ByVal path As String)
-        My.Computer.Network.DownloadFile(address, path, "", "", False, 100000, True)
-    End Sub
-
-    Public Sub DeleteLine(ByRef FileAddress As String, ByRef line As Integer)
-        'the code is a copy of the code here
-        'orginal:http://www.dreamincode.net/forums/topic/62488-code-for-delete-a-line-from-text-file/page__view__findpost__p__411311?s=b79e4c8d4e7a0e952d902dd2b02a551f
-
-        Dim TheFileLines As New List(Of String)
-        TheFileLines.AddRange(System.IO.File.ReadAllLines(FileAddress))
-        ' if line is beyond end of list the exit sub
-        If line >= TheFileLines.Count Then Exit Sub
-        TheFileLines.RemoveAt(line)
-        System.IO.File.WriteAllLines(FileAddress, TheFileLines.ToArray)
-    End Sub
-
-    Sub replace_json(ByRef json_name As String, ByRef replace1 As String, ByRef replace2 As String)
-        My.Computer.FileSystem.WriteAllText(Main.TextBox1.Text & "\versions\" & json_name & "\" & json_name & ".json", My.Computer.FileSystem.ReadAllText(Main.TextBox1.Text & "\versions\" & json_name & "\" & json_name & ".json").Replace(replace1, replace2), False)
     End Sub
 
 End Class

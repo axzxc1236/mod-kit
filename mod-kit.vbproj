@@ -125,6 +125,7 @@
     <Compile Include="Changelog.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Common_code.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>

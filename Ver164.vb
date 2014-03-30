@@ -514,24 +514,24 @@
             If ComboBox1.Text.Substring(ComboBox1.Text.Length - 3) <= 953 Then My.Computer.FileSystem.MoveFile(Environment.CurrentDirectory & "\mod-kit\Forge\minecraftforge-universal-1.6.4-" & ComboBox1.Text & ".jar", Main.TextBox1.Text & "\libraries\net\minecraftforge\minecraftforge\" & ComboBox1.Text & "\minecraftforge-" & ComboBox1.Text & ".jar")
             My.Computer.FileSystem.MoveFile(Environment.CurrentDirectory & "\mod-kit\Forge\install_profile.json", Main.TextBox1.Text & "\versions\1.6.4-Forge" & ComboBox1.Text & "\1.6.4-Forge" & ComboBox1.Text & ".json")
 
-            replace_json("1.6.4-Forge" & ComboBox1.Text, "    ", "	")
-            DeleteLine(Main.TextBox1.Text & "\versions\1.6.4-Forge" & ComboBox1.Text & "\1.6.4-Forge" & ComboBox1.Text & ".json", 1)
-            replace_json("1.6.4-Forge" & ComboBox1.Text, "							", "@7")
-            replace_json("1.6.4-Forge" & ComboBox1.Text, "						", "@6")
-            replace_json("1.6.4-Forge" & ComboBox1.Text, "					", "@5")
-            replace_json("1.6.4-Forge" & ComboBox1.Text, "				", "@4")
-            replace_json("1.6.4-Forge" & ComboBox1.Text, "			", "@3")
-            replace_json("1.6.4-Forge" & ComboBox1.Text, "		", "@2")
-            replace_json("1.6.4-Forge" & ComboBox1.Text, "	", "")
-            replace_json("1.6.4-Forge" & ComboBox1.Text, "@2", "	")
-            replace_json("1.6.4-Forge" & ComboBox1.Text, "@3", "		")
-            replace_json("1.6.4-Forge" & ComboBox1.Text, "@4", "			")
-            replace_json("1.6.4-Forge" & ComboBox1.Text, "@5", "				")
-            replace_json("1.6.4-Forge" & ComboBox1.Text, "@6", "					")
-            replace_json("1.6.4-Forge" & ComboBox1.Text, "@7", "						")
+            Common_code.replace_json("1.6.4-Forge" & ComboBox1.Text, "    ", "	")
+            Common_code.DeleteLine(Main.TextBox1.Text & "\versions\1.6.4-Forge" & ComboBox1.Text & "\1.6.4-Forge" & ComboBox1.Text & ".json", 1)
+            Common_code.replace_json("1.6.4-Forge" & ComboBox1.Text, "							", "@7")
+            Common_code.replace_json("1.6.4-Forge" & ComboBox1.Text, "						", "@6")
+            Common_code.replace_json("1.6.4-Forge" & ComboBox1.Text, "					", "@5")
+            Common_code.replace_json("1.6.4-Forge" & ComboBox1.Text, "				", "@4")
+            Common_code.replace_json("1.6.4-Forge" & ComboBox1.Text, "			", "@3")
+            Common_code.replace_json("1.6.4-Forge" & ComboBox1.Text, "		", "@2")
+            Common_code.replace_json("1.6.4-Forge" & ComboBox1.Text, "	", "")
+            Common_code.replace_json("1.6.4-Forge" & ComboBox1.Text, "@2", "	")
+            Common_code.replace_json("1.6.4-Forge" & ComboBox1.Text, "@3", "		")
+            Common_code.replace_json("1.6.4-Forge" & ComboBox1.Text, "@4", "			")
+            Common_code.replace_json("1.6.4-Forge" & ComboBox1.Text, "@5", "				")
+            Common_code.replace_json("1.6.4-Forge" & ComboBox1.Text, "@6", "					")
+            Common_code.replace_json("1.6.4-Forge" & ComboBox1.Text, "@7", "						")
 
             For i = 207 To 218
-                DeleteLine(Main.TextBox1.Text & "\versions\1.6.4-Forge" & ComboBox1.Text & "\1.6.4-Forge" & ComboBox1.Text & ".json", 207)
+                Common_code.DeleteLine(Main.TextBox1.Text & "\versions\1.6.4-Forge" & ComboBox1.Text & "\1.6.4-Forge" & ComboBox1.Text & ".json", 207)
             Next
 
             Shell("mod-kit\encode_converter.exe " & Main.TextBox1.Text & "\versions\1.6.4-Forge" & ComboBox1.Text & "\1.6.4-Forge" & ComboBox1.Text & ".json", AppWinStyle.Hide, True)
@@ -542,134 +542,114 @@
         If CheckBox2.Enabled And CheckBox2.Checked = True Then
             Me.Text = current & " of " & count & "-安裝Inventory tweaks"
             If ComboBox2.Text = "latest" Then ComboBox2.Text = "1.57-dev-95"
-            Call download("http://build.technicpack.net/job/Inventory-Tweaks/" & ComboBox2.Text.Substring(ComboBox2.Text.Length - 2) & "/artifact/build/libs/InventoryTweaks-" & ComboBox2.Text & ".jar", Main.TextBox1.Text & "\mods\" & "InventoryTweaks-" & ComboBox2.Text & ".jar")
+            Common_code.download("http://build.technicpack.net/job/Inventory-Tweaks/" & ComboBox2.Text.Substring(ComboBox2.Text.Length - 2) & "/artifact/build/libs/InventoryTweaks-" & ComboBox2.Text & ".jar", Main.TextBox1.Text & "\mods\" & "InventoryTweaks-" & ComboBox2.Text & ".jar")
             current += 1
         End If
 
         If CheckBox3.Enabled And CheckBox3.Checked = True Then
             Me.Text = current & " of " & count & "-安裝Voxelmap"
-            Call download("https://dl.dropboxusercontent.com/s/c0ch778cnd9xmb1/ZansMinimap1.6.4.zip", Main.TextBox1.Text & "\mods\" & "ZansMinimap1.6.4.zip")
+            Common_code.download("https://dl.dropboxusercontent.com/s/c0ch778cnd9xmb1/ZansMinimap1.6.4.zip", Main.TextBox1.Text & "\mods\" & "ZansMinimap1.6.4.zip")
             current += 1
         End If
 
         If CheckBox4.Enabled And CheckBox4.Checked = True Then
             Me.Text = current & " of " & count & "-安裝Damage Indicators"
             If ComboBox4.Text = "latest" Then ComboBox4.Text = "2.9.2.3"
-            Call download("https://dl.dropboxusercontent.com/u/74770478/1.6.4%20DamageIndicatorsv" & ComboBox4.Text & ".zip", Main.TextBox1.Text & "\mods\" & "[1.6.4]DamageIndicatorsMod-" & ComboBox4.Text & ".zip")
+            Common_code.download("https://dl.dropboxusercontent.com/u/74770478/1.6.4%20DamageIndicatorsv" & ComboBox4.Text & ".zip", Main.TextBox1.Text & "\mods\" & "[1.6.4]DamageIndicatorsMod-" & ComboBox4.Text & ".zip")
             current += 1
         End If
 
         If CheckBox5.Enabled And CheckBox5.Checked = True Then
             Me.Text = current & " of " & count & "-安裝bspkrsCore"
             If ComboBox5.Text = "latest" Then ComboBox5.Text = "5.3"
-            Call download("http://bspk.rs/MC/bspkrsCore/[1.6.4]bspkrsCorev" & ComboBox5.Text & ".zip", Main.TextBox1.Text & "\mods\[1.6.4]bspkrsCorev" & ComboBox5.Text & ".zip")
+            Common_code.download("http://bspk.rs/MC/bspkrsCore/[1.6.4]bspkrsCorev" & ComboBox5.Text & ".zip", Main.TextBox1.Text & "\mods\[1.6.4]bspkrsCorev" & ComboBox5.Text & ".zip")
             current += 1
         End If
 
         If CheckBox6.Enabled And CheckBox6.Checked = True Then
             Me.Text = current & " of " & count & "-安裝ArmorStatusHUD"
             If ComboBox6.Text = "latest" Then ComboBox6.Text = "1.15"
-            Call download("http://bspk.rs/MC/ArmorStatusHUD/[1.6.4]ArmorStatusHUDv" & ComboBox6.Text & ".zip", Main.TextBox1.Text & "\mods\[1.6.4]ArmorStatusHUDv" & ComboBox6.Text & ".zip")
+            Common_code.download("http://bspk.rs/MC/ArmorStatusHUD/[1.6.4]ArmorStatusHUDv" & ComboBox6.Text & ".zip", Main.TextBox1.Text & "\mods\[1.6.4]ArmorStatusHUDv" & ComboBox6.Text & ".zip")
             current += 1
         End If
 
         If CheckBox7.Enabled And CheckBox7.Checked = True Then
             Me.Text = current & " of " & count & "-安裝DirectionHUD"
             If ComboBox7.Text = "latest" Then ComboBox7.Text = "1.16"
-            Call download("http://bspk.rs/MC/DirectionHUD/[1.6.4]DirectionHUDv" & ComboBox7.Text & ".zip", Main.TextBox1.Text & "\mods\" & "[1.6.4]DirectionHUDv" & ComboBox7.Text & ".zip")
+            Common_code.download("http://bspk.rs/MC/DirectionHUD/[1.6.4]DirectionHUDv" & ComboBox7.Text & ".zip", Main.TextBox1.Text & "\mods\" & "[1.6.4]DirectionHUDv" & ComboBox7.Text & ".zip")
             current += 1
         End If
 
         If CheckBox8.Enabled And CheckBox8.Checked = True Then
             Me.Text = current & " of " & count & "-安裝StatusEffectHUD"
             If ComboBox8.Text = "latest" Then ComboBox8.Text = "1.19"
-            Call download("http://bspk.rs/MC/StatusEffectHUD/[1.6.4]StatusEffectHUDv" & ComboBox8.Text & ".zip", Main.TextBox1.Text & "\mods\" & "[1.6.4]StatusEffectHUDv" & ComboBox8.Text & ".zip")
+            Common_code.download("http://bspk.rs/MC/StatusEffectHUD/[1.6.4]StatusEffectHUDv" & ComboBox8.Text & ".zip", Main.TextBox1.Text & "\mods\" & "[1.6.4]StatusEffectHUDv" & ComboBox8.Text & ".zip")
             current += 1
         End If
 
         If CheckBox10.Enabled And CheckBox10.Checked = True Then
             Me.Text = current & " of " & count & "-安裝Rei's minimap"
-            Call download("https://dl.dropboxusercontent.com/u/34787499/minecraft/1.6.4/%5B1.6.4%5DReiMinimap_v3.4_01.zip", Main.TextBox1.Text & "\mods\[1.6.4]ReiMinimap_v3.4_01.zip")
+            Common_code.download("https://dl.dropboxusercontent.com/u/34787499/minecraft/1.6.4/%5B1.6.4%5DReiMinimap_v3.4_01.zip", Main.TextBox1.Text & "\mods\[1.6.4]ReiMinimap_v3.4_01.zip")
             current += 1
         End If
 
         If CheckBox11.Enabled And CheckBox11.Checked = True Then
             Me.Text = current & " of " & count & "-安裝CraftGuide"
             If ComboBox11.Text = "latest" Then ComboBox11.Text = "1.6.7.5"
-            If Not ComboBox11.Text = "1.6.7.5" Then Call download("https://dl.dropboxusercontent.com/u/26846767/Minecraft/CraftGuide/1.6.2/CraftGuide-" & ComboBox11.Text & ".zip", Main.TextBox1.Text & "\mods\[1.6.2]CraftGuide-" & ComboBox11.Text & ".zip")
-            If ComboBox11.Text = "1.6.7.5" Then Call download("https://dl.dropboxusercontent.com/u/26846767/Minecraft/CraftGuide/1.6.4/CraftGuide-1.6.7.5.zip", Main.TextBox1.Text & "\mods\[1.6.4]CraftGuide-1.6.7.5.zip")
+            If Not ComboBox11.Text = "1.6.7.5" Then Common_code.download("https://dl.dropboxusercontent.com/u/26846767/Minecraft/CraftGuide/1.6.2/CraftGuide-" & ComboBox11.Text & ".zip", Main.TextBox1.Text & "\mods\[1.6.2]CraftGuide-" & ComboBox11.Text & ".zip")
+            If ComboBox11.Text = "1.6.7.5" Then Common_code.download("https://dl.dropboxusercontent.com/u/26846767/Minecraft/CraftGuide/1.6.4/CraftGuide-1.6.7.5.zip", Main.TextBox1.Text & "\mods\[1.6.4]CraftGuide-1.6.7.5.zip")
             current += 1
         End If
 
         If CheckBox12.Enabled And CheckBox12.Checked = True Then
             Me.Text = current & " of " & count & "-安裝iChun Util"
             If ComboBox12.Text = "latest" Then ComboBox12.Text = "2.4.0"
-            Call download("http://repo.creeperhost.net/downloads/ichun/util%5EiChunUtil" & ComboBox12.Text & ".zip", Main.TextBox1.Text & "\mods\iChunUtil" & ComboBox12.Text & ".zip")
+            Common_code.download("http://repo.creeperhost.net/downloads/ichun/util%5EiChunUtil" & ComboBox12.Text & ".zip", Main.TextBox1.Text & "\mods\iChunUtil" & ComboBox12.Text & ".zip")
             current += 1
         End If
 
         If CheckBox13.Enabled And CheckBox13.Checked = True Then
             Me.Text = current & " of " & count & "-安裝Mob Amputation"
             If ComboBox13.Text = "latest" Then ComboBox13.Text = "2.0.1"
-            Call download("http://repo.creeperhost.net/downloads/ichun/files%5EMobAmputation" & ComboBox13.Text & ".zip", Main.TextBox1.Text & "\mods\MobAmputation" & ComboBox13.Text & ".zip")
+            Common_code.download("http://repo.creeperhost.net/downloads/ichun/files%5EMobAmputation" & ComboBox13.Text & ".zip", Main.TextBox1.Text & "\mods\MobAmputation" & ComboBox13.Text & ".zip")
             current += 1
         End If
 
         If CheckBox14.Enabled And CheckBox14.Checked = True Then
             Me.Text = current & " of " & count & "-安裝Mob Dismemberment"
-            Call download("http://repo.creeperhost.net/downloads/ichun/files%5EMobDismemberment2.0.0.zip", Main.TextBox1.Text & "\mods\MobDismemberment2.0.0.zip")
+            Common_code.download("http://repo.creeperhost.net/downloads/ichun/files%5EMobDismemberment2.0.0.zip", Main.TextBox1.Text & "\mods\MobDismemberment2.0.0.zip")
             current += 1
         End If
 
         If CheckBox15.Enabled And CheckBox15.Checked = True Then
             Me.Text = current & " of " & count & "-安裝CodeChickenCore"
             If ComboBox15.Text = "latest" Then ComboBox15.Text = "0.9.0.9"
-            If Not ComboBox15.Text = "0.9.0.9" Then Call download("http://www.chickenbones.craftsaddle.org/Files/Old_Versions/1.6.4/CodeChickenCore%20" & ComboBox15.Text & ".jar", Main.TextBox1.Text & "\mods\CodeChickenCore " & ComboBox15.Text & ".jar")
-            If ComboBox15.Text = "0.9.0.9" Then Call download("http://www.chickenbones.craftsaddle.org/Files/New_Versions/1.6.4/CodeChickenCore%200.9.0.9.jar", Main.TextBox1.Text & "\mods\CodeChickenCore 0.9.0.9.jar")
+            If Not ComboBox15.Text = "0.9.0.9" Then Common_code.download("http://www.chickenbones.craftsaddle.org/Files/Old_Versions/1.6.4/CodeChickenCore%20" & ComboBox15.Text & ".jar", Main.TextBox1.Text & "\mods\CodeChickenCore " & ComboBox15.Text & ".jar")
+            If ComboBox15.Text = "0.9.0.9" Then Common_code.download("http://www.chickenbones.craftsaddle.org/Files/New_Versions/1.6.4/CodeChickenCore%200.9.0.9.jar", Main.TextBox1.Text & "\mods\CodeChickenCore 0.9.0.9.jar")
             current += 1
         End If
 
         If CheckBox16.Enabled And CheckBox16.Checked = True Then
             Me.Text = current & " of " & count & "-安裝Not Enough Items"
             If ComboBox16.Text = "latest" Then ComboBox16.Text = "1.6.1.9"
-            If Not ComboBox16.Text = "1.6.1.9" Then Call download("http://www.chickenbones.craftsaddle.org/Files/Old_Versions/1.6.4/NotEnoughItems%20" & ComboBox16.Text & ".jar", Main.TextBox1.Text & "\mods\NotEnoughItems " & ComboBox16.Text & ".jar")
-            If ComboBox16.Text = "1.6.1.9" Then Call download("http://www.chickenbones.craftsaddle.org/Files/New_Versions/1.6.4/NotEnoughItems%201.6.1.9.jar", Main.TextBox1.Text & "\mods\NotEnoughItems 1.6.1.9.jar")
+            If Not ComboBox16.Text = "1.6.1.9" Then Common_code.download("http://www.chickenbones.craftsaddle.org/Files/Old_Versions/1.6.4/NotEnoughItems%20" & ComboBox16.Text & ".jar", Main.TextBox1.Text & "\mods\NotEnoughItems " & ComboBox16.Text & ".jar")
+            If ComboBox16.Text = "1.6.1.9" Then Common_code.download("http://www.chickenbones.craftsaddle.org/Files/New_Versions/1.6.4/NotEnoughItems%201.6.1.9.jar", Main.TextBox1.Text & "\mods\NotEnoughItems 1.6.1.9.jar")
             current += 1
         End If
 
         If CheckBox17.Enabled And CheckBox17.Checked = True Then
             Me.Text = current & " of " & count & "-安裝Waila"
             If ComboBox17.Text = "latest" Then ComboBox17.Text = "1.5.1a"
-            If ComboBox17.Text = "1.5.1a" Then Call download("http://www.curseforge.com/media/files/775/607/Waila_1.5.1a.zip", Main.TextBox1.Text & "\mods\Waila_1.5.1a.zip")
-            If ComboBox17.Text = "1.5.1" Then Call download("http://www.curseforge.com/media/files/774/674/Waila_1.5.1.zip", Main.TextBox1.Text & "\mods\Waila_1.5.1.zip")
-            If ComboBox17.Text = "1.5.0" Then Call download("http://www.curseforge.com/media/files/774/350/Waila_1.5.0.zip", Main.TextBox1.Text & "\mods\Waila_1.5.0.zip")
-            If ComboBox17.Text = "1.4.5a" Then Call download("http://www.curseforge.com/media/files/773/186/Waila_1.4.5a.zip", Main.TextBox1.Text & "\mods\Waila_1.4.5a.zip")
-            If ComboBox17.Text = "1.4.5" Then Call download("http://www.curseforge.com/media/files/771/381/Waila_1.4.5.zip", Main.TextBox1.Text & "\mods\Waila_1.4.5.zip")
+            If ComboBox17.Text = "1.5.1a" Then Common_code.download("http://www.curseforge.com/media/files/775/607/Waila_1.5.1a.zip", Main.TextBox1.Text & "\mods\Waila_1.5.1a.zip")
+            If ComboBox17.Text = "1.5.1" Then Common_code.download("http://www.curseforge.com/media/files/774/674/Waila_1.5.1.zip", Main.TextBox1.Text & "\mods\Waila_1.5.1.zip")
+            If ComboBox17.Text = "1.5.0" Then Common_code.download("http://www.curseforge.com/media/files/774/350/Waila_1.5.0.zip", Main.TextBox1.Text & "\mods\Waila_1.5.0.zip")
+            If ComboBox17.Text = "1.4.5a" Then Common_code.download("http://www.curseforge.com/media/files/773/186/Waila_1.4.5a.zip", Main.TextBox1.Text & "\mods\Waila_1.4.5a.zip")
+            If ComboBox17.Text = "1.4.5" Then Common_code.download("http://www.curseforge.com/media/files/771/381/Waila_1.4.5.zip", Main.TextBox1.Text & "\mods\Waila_1.4.5.zip")
             current += 1
         End If
 
         MsgBox("Done!")
 
         Me.Name = "Ver164"
-    End Sub
-
-    Sub download(ByVal address As String, ByVal path As String)
-        My.Computer.Network.DownloadFile(address, path, "", "", False, 100000, True)
-    End Sub
-
-    Public Sub DeleteLine(ByRef FileAddress As String, ByRef line As Integer)
-        'the code is a copy of the code here
-        'orginal:http://www.dreamincode.net/forums/topic/62488-code-for-delete-a-line-from-text-file/page__view__findpost__p__411311?s=b79e4c8d4e7a0e952d902dd2b02a551f
-
-        Dim TheFileLines As New List(Of String)
-        TheFileLines.AddRange(System.IO.File.ReadAllLines(FileAddress))
-        ' if line is beyond end of list the exit sub
-        If line >= TheFileLines.Count Then Exit Sub
-        TheFileLines.RemoveAt(line)
-        System.IO.File.WriteAllLines(FileAddress, TheFileLines.ToArray)
-    End Sub
-
-    Sub replace_json(ByRef json_name As String, ByRef replace1 As String, ByRef replace2 As String)
-        My.Computer.FileSystem.WriteAllText(Main.TextBox1.Text & "\versions\" & json_name & "\" & json_name & ".json", My.Computer.FileSystem.ReadAllText(Main.TextBox1.Text & "\versions\" & json_name & "\" & json_name & ".json").Replace(replace1, replace2), False)
     End Sub
 End Class
