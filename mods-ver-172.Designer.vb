@@ -119,7 +119,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  查詢類似 1047 的當地語系化字串。
+        '''  查詢類似 1054 的當地語系化字串。
         '''</summary>
         Friend Shared ReadOnly Property forge172latest() As String
             Get
@@ -164,7 +164,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  查詢類似 116 的當地語系化字串。
+        '''  查詢類似 118 的當地語系化字串。
         '''</summary>
         Friend Shared ReadOnly Property Invtweak172latest() As String
             Get

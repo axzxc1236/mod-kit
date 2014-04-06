@@ -37,6 +37,7 @@ Partial Class Main
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
+        Me.Button7 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Button1
@@ -117,12 +118,12 @@ Partial Class Main
         Me.TextBox1.Location = New System.Drawing.Point(12, 121)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.ReadOnly = True
-        Me.TextBox1.Size = New System.Drawing.Size(290, 22)
+        Me.TextBox1.Size = New System.Drawing.Size(206, 22)
         Me.TextBox1.TabIndex = 9
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(308, 119)
+        Me.Button4.Location = New System.Drawing.Point(227, 121)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(23, 23)
         Me.Button4.TabIndex = 10
@@ -161,11 +162,21 @@ Partial Class Main
         Me.Button6.Text = "License"
         Me.Button6.UseVisualStyleBackColor = True
         '
+        'Button7
+        '
+        Me.Button7.Location = New System.Drawing.Point(256, 121)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(75, 23)
+        Me.Button7.TabIndex = 14
+        Me.Button7.Text = "開啟資料夾"
+        Me.Button7.UseVisualStyleBackColor = True
+        '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(346, 148)
+        Me.Controls.Add(Me.Button7)
         Me.Controls.Add(Me.Button6)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Button3)
@@ -200,5 +211,6 @@ Partial Class Main
     Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents Button5 As System.Windows.Forms.Button
     Friend WithEvents Button6 As System.Windows.Forms.Button
+    Friend WithEvents Button7 As System.Windows.Forms.Button
 
 End Class

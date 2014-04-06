@@ -54,8 +54,10 @@
         'detect .minecraft
         If My.Computer.FileSystem.DirectoryExists(TextBox1.Text) Then
             Label2.Text = "☑ 發現(或已指定).minecraft資料夾"
+            Button7.Enabled = True
         Else
             Label2.Text = "☒ 沒有發現.minecraft資料夾"
+            Button7.Enabled = False
         End If
 
         'detect launcher_profiles.json
@@ -71,5 +73,9 @@
         Else
             Label4.Text = "☒ 沒有使用過舊版啟動器(沒發現bin資料夾)"
         End If
+    End Sub
+
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        Process.Start("explorer.exe", TextBox1.Text)
     End Sub
 End Class

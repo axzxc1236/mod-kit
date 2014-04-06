@@ -34,6 +34,8 @@
 
         'mod2 - Inventory tweaks
         ComboBox2.Items.Add("latest")
+        ComboBox2.Items.Add("1.58-dev-118")
+        ComboBox2.Items.Add("1.57-dev-117")
         ComboBox2.Items.Add("1.57-116")
         For i = Val(My.Resources.mods_ver_172.Invtweak172latest) To Val(My.Resources.mods_ver_172.Invtweak172min) Step -1
             ComboBox2.Items.Add("1.57-dev-" & i)
@@ -363,10 +365,10 @@
 
         If CheckBox2.Enabled And CheckBox2.Checked = True Then
             Me.Text = current & " of " & count & "-安裝Inventory tweaks"
-            If ComboBox2.Text = "latest" Then ComboBox2.Text = "1.57-" & My.Resources.mods_ver_172.Invtweak172latest
+            If ComboBox2.Text = "latest" Then ComboBox2.Text = "1.58-dev-" & My.Resources.mods_ver_172.Invtweak172latest
             Dim ver As SByte
-            If ComboBox2.Text.Length = 8 Then ver = ComboBox2.Text.Substring(ComboBox2.Text.Length - 3)
-            If ComboBox2.Text.Length = 7 Then ver = ComboBox2.Text.Substring(ComboBox2.Text.Length - 2)
+            If ComboBox2.Text.Length = 12 Or ComboBox2.Text.Length = 7 Then ver = ComboBox2.Text.Substring(ComboBox2.Text.Length - 3)
+            If ComboBox2.Text.Length = 11 Then ver = ComboBox2.Text.Substring(ComboBox2.Text.Length - 2)
             Common_code.download("http://build.technicpack.net/job/Inventory-Tweaks/" & ver & "/artifact/build/libs/InventoryTweaks-" & ComboBox2.Text & ".jar", Main.TextBox1.Text & "\mods\" & "InventoryTweaks-" & ComboBox2.Text & ".jar")
             current += 1
         End If
